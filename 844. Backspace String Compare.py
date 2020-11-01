@@ -7,5 +7,6 @@ class Solution:
             else:
                 stack.append(c)
         return stack
+    
     def backspaceCompare(self, S: str, T: str) -> bool:
         return self.f(S) == self.f(T)
