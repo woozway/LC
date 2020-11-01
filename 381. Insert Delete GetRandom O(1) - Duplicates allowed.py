@@ -1,4 +1,10 @@
 class RandomizedCollection:
+    """
+    dict[val] = index of val in list v
+    when do removing, get any one index of the val to be deleted in v, 
+    and denote it as idx, then swap it with the last val in v (if with 
+    a different index), change index to idx and then pop it out
+    """
     def __init__(self):
         self.v = []
         self.d = {}
