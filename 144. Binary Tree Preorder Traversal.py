@@ -1,14 +1,15 @@
 class Solution:
     def preorderTraversal(self, root: TreeNode) -> List[int]:
         """
-        Recursive solution is trivial, could you do it iteratively?
+        Recursive solution is trivial, do it iteratively
         """
-        if not root: return []
-        stack = [root]
-        ans = []
-        while stack:
-            tmp = stack.pop()
-            ans.append(tmp.val)            
-            if tmp.right: stack.append(tmp.right)
-            if tmp.left:  stack.append(tmp.left)
+        ans, stack = [], []
+        while root or len(stack):
+            while root:
+                stack.append(root)
+                ans.append(root.val)
+                root = root.left
+            if len(stack):
+                root = stack.pop()
+                root = root.right
         return ans
