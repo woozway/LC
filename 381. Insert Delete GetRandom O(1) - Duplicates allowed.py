@@ -1,31 +1,31 @@
 class RandomizedCollection:
     def __init__(self):
-        self.vals = []
-        self.index = {}
+        self.v = []
+        self.d = {}
         
     def insert(self, val: int) -> bool:
-        self.vals.append(val)
-        if val in self.index:
-            self.index[val].add(len(self.vals)-1)
+        self.v.append(val)
+        if val in self.d:
+            self.d[val].add(len(self.v)-1)
             return False
         else:
-            self.index[val] = {len(self.vals)-1}
+            self.d[val] = {len(self.v)-1}
             return True
         
-    def remove(self,val):
-        if val not in self.index:
+    def remove(self, val: int) -> bool:
+        if val not in self.d:
             return False
-        last = len(self.vals)-1
-        idx = self.index[val].pop()
-        if not len(self.index[val]):
-            del self.index[val]
+        last = len(self.v)-1
+        idx = self.d[val].pop()
+        if not len(self.d[val]):
+            del self.d[val]
         if idx != last:
-            self.vals[idx] = self.vals[last]
-            self.index[self.vals[idx]].remove(last)
-            self.index[self.vals[idx]].add(idx)
-        self.vals.pop()
+            self.v[idx] = self.v[last]
+            self.d[self.v[idx]].remove(last)
+            self.d[self.v[idx]].add(idx)
+        self.v.pop()
         return True
     
     def getRandom(self) -> int:
-        if self.vals:
-            return self.vals[random.randint(0,len(self.vals)-1)]
+        if self.v:
+            return self.v[random.randint(0, len(self.v)-1)]
