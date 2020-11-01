@@ -1,2 +1,2 @@
 # leetcode-drafting
-problem solving of leetcode
+problem solving of leetcode in python3
