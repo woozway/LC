@@ -1,5 +1,8 @@
 class Solution:
     def islandPerimeter(self, grid: List[List[int]]) -> int:
+        """
+        wrap it up with one more layer
+        """
         c, m, n = 0, len(grid), len(grid[0])
         for i in range(m):
             grid[i].insert(n, 0)
