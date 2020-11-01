@@ -12,4 +12,3 @@ class Solution:
         chaser.next = chaser.next.next
         return dummy.next
     
-    
