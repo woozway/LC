@@ -4,7 +4,7 @@ class Solution:
     singly-linked list traversal in one pass
     """
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-        dummy = ListNode(-1, head);
+        dummy = ListNode(-1, head)
         runner = chaser = dummy
         for i in range(n):
             runner = runner.next
