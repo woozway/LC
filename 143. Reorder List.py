@@ -1,8 +1,8 @@
 class Solution:
-    """
-    Do not return anything, modify head in-place instead.
-    """
     def reorderList(self, head: ListNode) -> None:
+        """
+        Do not return anything, modify head in-place instead.
+        """
         from collections import deque
         dq = deque()
         tmp = head
