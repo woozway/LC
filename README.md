@@ -1,2 +1,2 @@
 # leetcode-drafting
-problem solving of leetcode website
+problem solving of leetcode
