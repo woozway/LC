@@ -8,6 +8,8 @@ class Solution:
         dummy = ListNode(-1, head);
         runner, chaser = dummy, dummy
         for i in range(n): runner = runner.next
-        while runner.next != None: runner, chaser = runner.next, chaser.next
+        while runner.next: runner, chaser = runner.next, chaser.next
         chaser.next = chaser.next.next
         return dummy.next
+    
+    
