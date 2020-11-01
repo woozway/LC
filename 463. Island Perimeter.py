@@ -2,6 +2,7 @@ class Solution:
     def islandPerimeter(self, grid: List[List[int]]) -> int:
         """
         wrap it up with one more layer
+        with the reinforcement of the locality principle
         """
         c, m, n = 0, len(grid), len(grid[0])
         for i in range(m):
