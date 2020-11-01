@@ -3,11 +3,15 @@ class Solution:
         n = len(A)
         v1, v2 = [0]*n, [0]*n
         for i in range(n):
-            if i == 0: v1[i] = 1
-            else: v1[i] = v1[i-1]+1 if A[i]>A[i-1] else 1
+            if i == 0:
+                v1[i] = 1
+            else:
+                v1[i] = v1[i-1]+1 if A[i]>A[i-1] else 1
         for i in range(n-1, -1, -1):
-            if i == n-1: v2[i] = 1
-            else: v2[i] = v2[i+1]+1 if A[i]>A[i+1] else 1
+            if i == n-1:
+                v2[i] = 1
+            else:
+                v2[i] = v2[i+1]+1 if A[i]>A[i+1] else 1
         maxn, index = -1, -1
         for i in range(n):
             tot = v1[i]+v2[i]-1
