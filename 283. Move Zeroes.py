@@ -2,6 +2,7 @@ class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
         in-place implementation
+        invariant: num[0...i] as the non-zero part
         """
         n = len(nums)
         i = -1
