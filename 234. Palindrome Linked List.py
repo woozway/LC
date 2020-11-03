@@ -4,9 +4,11 @@ class Solution:
         while head:
             v.append(head.val)
             head = head.next
-        i, j = 0, len(v)-1
+        i = 0
+        j = len(v)-1
         while i < j:
             if v[i] != v[j]:
-                return False;
-            i, j = i+1, j-1
+                return False
+            i += 1
+            j -= 1
         return True
