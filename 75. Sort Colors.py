@@ -4,9 +4,8 @@ class Solution:
         without using the library's sort function
         with a one-pass algorithm using only O(1) constant space
         """
-        n = len(nums)
         lt = -1
-        gt = n
+        gt = len(nums)
         i = 0
         while i < gt:
             if nums[i] == 0:
