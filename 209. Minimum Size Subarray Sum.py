@@ -19,6 +19,4 @@ class Solution:
                 i += 1
             if total >= s:
                 ans = min(ans, j-i+1)
-        if ans == n+1:
-            return 0
-        return ans
+        return 0 if ans == n+1 else ans
