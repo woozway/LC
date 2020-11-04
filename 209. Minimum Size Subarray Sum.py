@@ -4,8 +4,6 @@ class Solution:
         sliding window nums[i..j], O(n) solution
         """
         n = len(nums)
-        if n < 1:
-            return 0
         i = 0
         j = -1
         total = 0
