@@ -3,12 +3,10 @@ class Solution:
         n = len(arr)
         if n < m*k:
             return False
-        for l in range(n - m*k + 1):
-            offset = 0
-            while offset < m*k:
-                if arr[l+offset] != arr[l+offset%m]:
-                    break
-                offset += 1
-            if offset == m * k:
-                return True
+        for i in range(0, n-m*k+1):
+            flag = 1
+            for j in range(i+m, i+m*k):
+                if arr[j] != arr[j-m]:
+                    flag = 0
+            if flag == 1: return True
         return False
