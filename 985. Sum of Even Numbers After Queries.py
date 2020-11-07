@@ -8,4 +8,3 @@ class Solution:
             if A[index] % 2 == 0: S += A[index]
             ans.append(S)
         return ans
-        
