@@ -1,5 +1,8 @@
 class Solution:
     def sortedSquares(self, A: List[int]) -> List[int]:
+        """
+        T=O(n), S=O(1)
+        """
         n = len(A)
         ans = [0]*n
         i, j, p = 0, n-1, n-1
