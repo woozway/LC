@@ -1,5 +1,8 @@
 class Solution:
     def sortArrayByParityII(self, A: List[int]) -> List[int]:
+        """
+        T=O(n), S=O(1)
+        """
         j = 1
         for i in range(0, len(A), 2):
             if A[i] % 2:
