@@ -1,5 +1,8 @@
 class Solution:
     def sortArrayByParity(self, A: List[int]) -> List[int]:
+        """
+        T=O(n), S=O(1)
+        """
         i, j = 0, len(A)-1
         while i < j:
             if A[i]%2 > A[j]%2:
