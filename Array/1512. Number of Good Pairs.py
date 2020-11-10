@@ -4,4 +4,4 @@ class Solution:
         T=O(n), S=O(n)
         """
         m = collections.Counter(nums)
-        return sum(v * (v - 1) // 2 for k, v in m.items())
+        return sum(v * (v - 1) // 2 for v in m.values())
