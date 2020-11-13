@@ -1,5 +1,8 @@
 class Solution:
     def arrayPairSum(self, nums: List[int]) -> int:
+        """
+        T=O(n), S=O(n)
+        """
         d = [0]*20001
         for i in range(len(nums)):
             d[nums[i]+10000] += 1
