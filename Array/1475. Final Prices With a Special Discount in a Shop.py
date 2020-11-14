@@ -1,7 +1,7 @@
 class Solution:
     def finalPrices(self, prices: List[int]) -> List[int]:
         """
-        monotone stack
+        T=O(n), monotone stack
         """
         n = len(prices)
         stack = []
