@@ -1,5 +1,5 @@
 class Solution:
-    def fib(self, N):
+    def fib(self, N: int) -> int:
         """
         T=O(1), S=O(1)
         """
