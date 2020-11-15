@@ -1,7 +1,7 @@
 class Solution:
     def findTheDistanceValue(self, arr1: List[int], arr2: List[int], d: int) -> int:
         """
-        T=O(n+mlgm), m: the size of list arr2
+        T=O((n+m)lgm), m: the size of list arr2
         """
         arr2.sort()
         cnt = 0
