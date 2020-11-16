@@ -1,5 +1,5 @@
 class Solution:
-    def majorityElement(self, nums):
+    def majorityElement(self, nums: List[int]) -> int:
         """
         T=O(n), S=O(1), Boyer-Moore algo
         """
