@@ -1,5 +1,4 @@
 class OrderedStream:
-
     def __init__(self, n: int):
         self.val = [None]*n
         self.ptr = 0
