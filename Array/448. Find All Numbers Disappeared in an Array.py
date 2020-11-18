@@ -1,5 +1,8 @@
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        """
+        T=O(n), S=O(1)
+        """
         n = len(nums)
         for i in range(n):
             new_index = abs(nums[i]) - 1
