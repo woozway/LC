@@ -5,8 +5,8 @@ class Solution:
             new_index = abs(nums[i]) - 1
             if nums[new_index] > 0:
                 nums[new_index] *= -1
-        result = []    
+        ans = []    
         for i in range(1, n+1):
             if nums[i-1] > 0:
-                result.append(i)
-        return result
+                ans.append(i)
+        return ans
