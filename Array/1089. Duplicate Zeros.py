@@ -2,8 +2,8 @@ class Solution:
     def duplicateZeros(self, arr: List[int]) -> None:
         """
         T=O(n), S=O(1), in-place,
-        need to take care of the boundary case: 
-        0 shoud be duplicate but run out of space in arr
+        need to take care of the boundary case: which is when 
+        meeting 0 shoud be duplicate but run out of space in arr
         """
         possible_dups = 0
         right = len(arr) - 1
