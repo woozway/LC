@@ -1,5 +1,8 @@
 class Solution:
     def maximumProduct(self, nums: List[int]) -> int:
+        """
+        T=O(n), S=O(1)
+        """
         min1, min2, max1, max2, max3 = inf, inf, -inf, -inf, -inf
         for x in nums:
             if x <= min1:
