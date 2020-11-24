@@ -1,12 +1,12 @@
 class Solution:
-    def sortArrayByParity(self, A: List[int]) -> List[int]:
-        """
-        T=O(n), S=O(1)
-        """
-        i, j = 0, len(A)-1
-        while i < j:
-            if A[i]%2 > A[j]%2:
-                A[i], A[j] = A[j], A[i]
-            if A[i]%2 == 0: i += 1
-            if A[j]%2 == 1: j -= 1
-        return A
+  def sortArrayByParity(self, A: List[int]) -> List[int]:
+    """
+    T=O(n), S=O(1)
+    """
+    i, j = 0, len(A)-1
+    while i < j:
+      if A[i]%2 > A[j]%2:
+        A[i], A[j] = A[j], A[i]
+      if A[i]%2 == 0: i += 1
+      if A[j]%2 == 1: j -= 1
+    return A
