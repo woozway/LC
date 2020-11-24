@@ -4,4 +4,4 @@ class Solution:
     T=O(n), S=O(n)
     """
     m = Counter(nums)
-    return sum(v * (v - 1) // 2 for v in m.values())
+    return sum(v * (v-1) // 2 for v in m.values())
