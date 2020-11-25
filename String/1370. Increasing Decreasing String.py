@@ -3,7 +3,7 @@ class Solution:
     num = [0] * 26
     for ch in s:
       num[ord(ch) - ord('a')] += 1
-    ret = list()
+    ret = []
     while len(ret) < len(s):
       for i in range(26):
         if num[i]:
@@ -13,4 +13,4 @@ class Solution:
         if num[i]:
           ret.append(chr(i + ord('a')))
           num[i] -= 1
-    return "".join(ret)
+    return ''.join(ret)
