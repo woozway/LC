@@ -6,7 +6,7 @@ class Solution:
       word_cnt = Counter(word)
       for c in word_cnt:
         if chars_cnt[c] < word_cnt[c]:
-            break
+          break
       else:
         ans += len(word)
     return ans
