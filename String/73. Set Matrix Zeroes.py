@@ -7,7 +7,7 @@ class Solution:
       if matrix[i][0] == 0:
         is_col = True
       for j in range(1, C):
-        if matrix[i][j]  == 0:
+        if matrix[i][j] == 0:
           matrix[0][j] = 0
           matrix[i][0] = 0
     for i in range(1, R):
