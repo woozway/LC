@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
   def setZeroes(self, matrix: List[List[int]]) -> None:
     R = len(matrix)
     C = len(matrix[0])
