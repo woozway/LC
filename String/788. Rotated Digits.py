@@ -1,5 +1,8 @@
 class Solution:
   def rotatedDigits(self, N: int) -> int:
+    """
+    T=O(lgn), S=O(lgn)
+    """
     A = list(map(int, str(N)))
     memo = {}
     def dp(i, equality_flag, involution_flag):
