@@ -5,7 +5,7 @@ class Solution:
     if not t.left and not t.right:
       return str(t.val)
     ans = str(t.val)
-    ans += '(' + (self.tree2str(t.left) if t.left else '') + ')'
+    ans += '(' + self.tree2str(t.left) + ')'
     if t.right:
       ans += '(' + self.tree2str(t.right) + ')'
     return ans
