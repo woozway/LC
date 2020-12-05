@@ -1,5 +1,8 @@
 class Solution:
   def strStr(self, haystack: str, needle: str) -> int:
+    """
+    T=O(n), S=O(1), use Rabin Karp algo
+    """
     L, n = len(needle), len(haystack)
     if L > n:
       return -1
