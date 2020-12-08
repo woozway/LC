@@ -5,4 +5,4 @@ class Solution:
         if d == '0' or n % int(d) > 0:
           return False
       return True
-    return list(filter(self_dividing, range(left, right+1)))
+    return filter(self_dividing, range(left, right+1))
