@@ -1,7 +1,7 @@
 class Solution:
   def isHappy(self, n: int) -> bool:  
     """
-    T=O(lgn), S=O(1)
+    T=O(lgn), S=O(1), Floyd's cycle detection algo
     """
     def get_next(num):
       total = 0
