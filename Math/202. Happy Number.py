@@ -1,18 +1,18 @@
 class Solution:
-  def isHappy(self, n: int) -> bool:
+  def isHappy(self, n: int) -> bool:  
     """
     T=O(lgn), S=O(1)
     """
-    def get_next(number):
-      total_sum = 0
-      while number > 0:
-        number, digit = divmod(number, 10)
-        total_sum += digit ** 2
-      return total_sum
+    def get_next(num):
+      total = 0
+      while num > 0:
+        num, digit = divmod(num, 10)
+        total += digit ** 2
+      return total
 
-    slow_runner = n
-    fast_runner = get_next(n)
-    while fast_runner != 1 and slow_runner != fast_runner:
-      slow_runner = get_next(slow_runner)
-      fast_runner = get_next(get_next(fast_runner))
-    return fast_runner == 1
+    turtle = n
+    hare = get_next(n)
+    while hare != 1 and turtle != hare:
+      turtle = get_next(turtle)
+      hare = get_next(get_next(hare))
+    return hare == 1
