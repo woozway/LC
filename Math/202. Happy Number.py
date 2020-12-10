@@ -10,9 +10,9 @@ class Solution:
         total += digit ** 2
       return total
 
-    turtle = n
+    tortoise = n
     hare = get_next(n)
-    while hare != 1 and turtle != hare:
-      turtle = get_next(turtle)
+    while hare != 1 and tortoise != hare:
+      tortoise = get_next(tortoise)
       hare = get_next(get_next(hare))
     return hare == 1
