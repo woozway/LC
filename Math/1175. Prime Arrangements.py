@@ -12,7 +12,7 @@ class Solution:
       return cnt
     
     def numOfPermu(n):
-      return reduce(int.__mul__, [i for i in range(1, n+1)], 1)
+      return reduce(mul, [i for i in range(1, n+1)], 1)
     
     cnt = cntPrimes(n)
     return numOfPermu(cnt) * numOfPermu(n-cnt) % (10**9+7)
