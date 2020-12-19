@@ -1,7 +1,5 @@
 class Solution:
-  
   def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
-    
     def check(o, t):
       if not o and not t:
         return True
