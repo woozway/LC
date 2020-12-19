@@ -1,5 +1,6 @@
 class Solution:
   def preorder(self, root: 'Node') -> List[int]:
+    """ do it iteratively """
     if root is None:
       return []
     stack, ans = [root], []            
