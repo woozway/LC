@@ -3,11 +3,11 @@ class Solution:
     """ do it iteratively """
     if root is None:
       return []
-    stack, output = [root, ], []
+    stack, ans = [root, ], []
     while stack:
       root = stack.pop()
       if root is not None:
-        output.append(root.val)
+        ans.append(root.val)
       for c in root.children:
         stack.append(c)
-    return output[::-1]
+    return ans[::-1]
