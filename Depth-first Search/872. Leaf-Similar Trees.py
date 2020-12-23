@@ -6,5 +6,4 @@ class Solution:
           yield node.val
         yield from dfs(node.left)
         yield from dfs(node.right)
-
     return list(dfs(root1)) == list(dfs(root2))
