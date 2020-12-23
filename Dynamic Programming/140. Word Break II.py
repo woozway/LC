@@ -1,8 +1,6 @@
 class Solution:
   def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
-    """
-    decorator in python3.x really is a black magic!
-    """
+    """ decorator in python3.x really is a black magic! """
     m = {}
     st = set(wordDict)
     @lru_cache(None)
