@@ -8,5 +8,4 @@ class Solution:
         return True
       S.add(root.val)
       return dfs(root.left) or dfs(root.right)
-
     return dfs(root)
