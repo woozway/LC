@@ -8,5 +8,4 @@ class Solution:
         return total
       else:
         return dfs(root.left, total) + dfs(root.right, total)
-
     return dfs(root, 0)
