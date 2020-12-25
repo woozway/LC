@@ -1,5 +1,5 @@
-class Solution(object):
-  def calPoints(self, ops):
+class Solution:
+  def calPoints(self, ops: List[str]) -> int:
     stack = []
     for op in ops:
       if op == '+':
