@@ -5,8 +5,8 @@ class Solution:
       if c == '(': 
         if stack:
           ans += c
-        stack.append('(')
-      if c == ')': 
+        stack.append(c)
+      else:
         stack.pop()
         if stack:
           ans += c
