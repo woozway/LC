@@ -19,4 +19,4 @@ class MyQueue:
     return self.s2[-1] if self.s2 else self.front
 
   def empty(self) -> bool:
-    return True if not self.s1 and not self.s2 else False
+    return not self.s1 and not self.s2
