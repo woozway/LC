@@ -1,8 +1,6 @@
 class Solution:
   def minSubArrayLen(self, s: int, nums: List[int]) -> int:
-    """
-    sliding window nums[i..j], O(n) solution
-    """
+    """ sliding window nums[i..j], O(n) solution """
     n = len(nums)
     i = 0
     j = -1
