@@ -9,6 +9,5 @@ class Solution:
           ans.append('Push')
           j += 1
         elif target[j] > i:
-          ans.append('Push')
-          ans.append('Pop')
+          ans.extend(['Push', 'Pop'])
     return ans
