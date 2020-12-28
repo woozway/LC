@@ -13,4 +13,4 @@ class Solution:
                     d[-v-x] = 1
                 else:
                     res.add((v, -v-x, x))
-        return list(map(list, res))
+        return map(list, res)
