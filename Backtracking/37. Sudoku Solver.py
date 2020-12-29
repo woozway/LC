@@ -7,7 +7,7 @@ class Solution:
         for i in range(len(board)):
             for j in range(len(board[0])):
                 if board[i][j] == '.':
-                    for c in [str(x) for x in range(1, 10)]:
+                    for c in {'1','2','3','4','5','6','7','8','9'}:
                         if self.isValid(board, i, j, c):
                             board[i][j] = c
                             if self.solve(board):
