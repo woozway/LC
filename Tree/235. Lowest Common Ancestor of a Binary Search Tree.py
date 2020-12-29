@@ -1,11 +1,7 @@
 class Solution:
-  def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
-    ancestor = root
-    while True:
-      if p.val < ancestor.val and q.val < ancestor.val:
-        ancestor = ancestor.left
-      elif p.val > ancestor.val and q.val > ancestor.val:
-        ancestor = ancestor.right
-      else:
-        break
-    return ancestor
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if p.val < root.val > q.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        if p.val > root.val < q.val:
+            return self.lowestCommonAncestor(root.right, p, q)
+        return root
