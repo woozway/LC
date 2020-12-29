@@ -27,4 +27,3 @@ class Solution:
             for i in res:
                 board.append('.' * i + 'Q' + '.' * (n - i - 1))
         return [board[i:i+n] for i in range(0, len(board), n)]
-    
