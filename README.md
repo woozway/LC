@@ -1,4 +1,4 @@
 # leetcode-drafting
-problem solving of leetcode in python3
+trial and error of leetcode problemsets in py3
 
 for reference: https://leetcode.com/problemset/all/
