@@ -24,7 +24,7 @@ class Solution:
                 if board[i][j] in root:
                     self._dfs(board, i, j, '', root)
                     
-        return self.result
+        return list(self.result)
                     
     def _dfs(self, board, i, j, cur_word, cur_dict):
         cur_word += board[i][j]
