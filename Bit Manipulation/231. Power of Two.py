@@ -5,5 +5,4 @@ class Solution:
         get the rightmost 1-bit in n: x & (-x)
         set the rightmost 1-bit to 0-bit in n: x & (x - 1)
         """
-        if n == 0: return False
-        return n & (n - 1) == 0
+        return n > 0 and not (n & n-1)
