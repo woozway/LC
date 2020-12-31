@@ -39,5 +39,4 @@ class Solution:
             if 0 <= x < self.m and 0 <= y < self.n \
                 and board[x][y] != '@' and board[x][y] in cur_dict:
                 self._dfs(board, x, y, cur_word, cur_dict)
-                
         board[i][j] = tmp
