@@ -44,7 +44,7 @@ class Solution:
                     continue
                 for d in directions:
                     nr, nc = i + d[0], j + d[1]
-                    if nr >= 0 and nc >= 0 and nr < m and nc < n and grid[nr][nc] == '1':
+                    if 0 <= nr < m and 0 <= nc < n and grid[nr][nc] == '1':
                         uf.union(i*n+j, nr*n+nc)
         
         return uf.count
