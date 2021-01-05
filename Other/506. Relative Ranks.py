@@ -7,10 +7,10 @@ class Solution:
         for i in range(len(nums)):
             if i == 0:
                 nums[pairs[i][1]] = "Gold Medal"
-            if i == 1:
+            elif i == 1:
                 nums[pairs[i][1]] = "Silver Medal"
-            if i == 2:
+            elif i == 2:
                 nums[pairs[i][1]] = "Bronze Medal"
-            if i > 2:
+            else:
                 nums[pairs[i][1]] = str(i + 1)
         return nums
