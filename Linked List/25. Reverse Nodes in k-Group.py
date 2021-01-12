@@ -14,13 +14,6 @@
 
 # T=O(n), S=O(1)
 class Solution:
-    
-    def reverse(self, head, tail):
-        cur, prev = head, tail.next
-        while prev != tail:
-            cur.next, prev, cur = prev, cur, cur.next
-        return tail, head
-
     def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
         dummy = ListNode(-1, head)
         pre = dummy
@@ -28,12 +21,15 @@ class Solution:
             tail = pre
             for _ in range(k):
                 tail = tail.next
-                if not tail:
+                if tail is None:
                     return dummy.next
-            nex = tail.next
+            rest = tail.next
             head, tail = self.reverse(head, tail)
-
-            pre.next, tail.next = head, nex
-            pre, head = tail, tail.next
-        
+            pre.next, head, pre = head, rest, tail
         return dummy.next
+
+    def reverse(self, head, tail):
+        pre, cur = tail.next, head
+        while pre != tail:
+            cur.next, cur, pre = pre, cur.next, cur
+        return tail, head
