@@ -27,7 +27,7 @@
 # T=O(n), S=O(1)
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
-        fast = slow = head
+        slow = fast = head
         while slow and fast and fast.next:
             slow, fast = slow.next, fast.next.next
             if slow is fast:
