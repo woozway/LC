@@ -6,6 +6,7 @@
 3. Coding
 4. Tests
 """
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
