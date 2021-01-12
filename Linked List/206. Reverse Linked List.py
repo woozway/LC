@@ -12,13 +12,13 @@
 #         self.val = val
 #         self.next = next
 
-# T=O(n), S=O(1)
-class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
-        cur, prev = head, None
-        while cur:
-            cur.next, prev, cur = prev, cur, cur.next
-        return prev
+# # T=O(n), S=O(1)
+# class Solution:
+#     def reverseList(self, head: ListNode) -> ListNode:
+#         cur, prev = head, None
+#         while cur:
+#             cur.next, prev, cur = prev, cur, cur.next
+#         return prev
 
 # T=O(n), S=O(n)
 class Solution:
