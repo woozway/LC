@@ -3,7 +3,7 @@
 2. Possible solutions
  - brute force: a+b+c=0
  - brute force with hashMap: c=-(a+b)
- - sort and find
+ - sort and find (two pointers)
 3. Coding
 4. Tests
 """
