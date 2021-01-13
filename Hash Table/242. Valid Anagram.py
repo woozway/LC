@@ -7,12 +7,12 @@
 4. Tests
 """
 
-# # T=O(nlgn), S=O(n)
+# # T=O(nlgn)
 # class Solution:
 #     def isAnagram(self, s: str, t: str) -> bool:
 #         return sorted(s) == sorted(t)
 
-# T=O(n), S=O(n)
+# T=O(n)
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         return collections.Counter(s) == collections.Counter(t)
