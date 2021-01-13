@@ -1,7 +1,29 @@
+"""
+1. Clarification
+2. Possible solutions
+ - brute force: a+b+c=0
+ - brute force with hashMap: c=-(a+b)
+ - sort and find
+3. Coding
+4. Tests
+"""
+
+# # T=O(n^3), S=O(1), Time Limit Exceeded
+# class Solution:
+#     def threeSum(self, nums: List[int]) -> List[List[int]]:
+#         res = set()
+#         n = len(nums)
+#         for i in range(n):
+#             for j in range(i+1, n):
+#                 for k in range(j+1, n):
+#                     if nums[i] + nums[j] + nums[k] == 0:
+#                         res.add(tuple(sorted([nums[i], nums[j], nums[k]])))
+#         return list(res)
+
+# T=O(n^2), S=O(n)
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        if len(nums) < 3:
-            return []
+        if len(nums) < 3: return []
         nums.sort()
         res = set()
         for i, v in enumerate(nums[:-2]):
@@ -14,3 +36,25 @@ class Solution:
                 else:
                     res.add((v, -v-x, x))
         return map(list, res)
+
+# # T=O(n^2), S=O(1)
+# class Solution:
+#     def threeSum(self, nums: List[int]) -> List[List[int]]:
+#         res = []
+#         nums.sort()
+#         for i in range(len(nums)-2):
+#             if i > 0 and nums[i] == nums[i-1]:
+#                 continue
+#             l, r = i+1, len(nums)-1
+#             while l < r:
+#                 s = nums[i] + nums[l] + nums[r]
+#                 if s < 0: l += 1
+#                 elif s > 0: r -= 1
+#                 else:
+#                     res.append((nums[i], nums[l], nums[r]))
+#                     while l < r and nums[l] == nums[l+1]:
+#                         l += 1
+#                     while l < r and nums[r] == nums[r-1]:
+#                         r -= 1
+#                     l += 1; r -= 1
+#         return res
