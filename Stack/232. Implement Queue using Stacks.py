@@ -1,3 +1,12 @@
+"""
+1. Clarification
+2. Possible solutions
+ - use 2 stacks to implement queue
+3. Coding
+4. Tests
+"""
+
+# T=O(n), S=O(n), each operation is amortized O(1) time complexity
 class MyQueue:
 
     def __init__(self):
@@ -14,7 +23,14 @@ class MyQueue:
         if not self.s2:
             while self.s1:
                 self.s2.append(self.s1.pop())
-        return self.s2[-1]        
+        return self.s2[-1]
 
     def empty(self) -> bool:
         return not self.s1 and not self.s2
+
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.peek()
+# param_4 = obj.empty()
