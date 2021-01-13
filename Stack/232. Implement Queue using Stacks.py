@@ -6,7 +6,7 @@
 4. Tests
 """
 
-# T=O(n), S=O(n), each operation is amortized O(1) time complexity
+# each operation is amortized O(1) time complexity
 class MyQueue:
 
     def __init__(self):
