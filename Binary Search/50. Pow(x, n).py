@@ -20,7 +20,7 @@
 #     def myPow(self, x: float, n: int) -> float:
 #         return x**n
 
-# T=O(n), Time Limit Exceeded
+# # T=O(n), Time Limit Exceeded
 # class Solution:
 #     def myPow(self, x: float, n: int) -> float:
 #         ans = 1.0
