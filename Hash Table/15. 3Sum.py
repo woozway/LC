@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force: a+b+c=0
- - use hashMap: c=-(a+b)
- - sort and find (two pointers)
+ - brute force
+ - hashMap, c=-(a+b)
+ - two pointers (sort and find)
 3. Coding
 4. Tests
 """
