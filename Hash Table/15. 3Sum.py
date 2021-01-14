@@ -2,22 +2,23 @@
 1. Clarification
 2. Possible solutions
  - brute force: a+b+c=0
- - brute force with hashMap: c=-(a+b)
+ - use hashMap: c=-(a+b)
  - sort and find (two pointers)
 3. Coding
 4. Tests
 """
 
-# # T=O(n^3), S=O(1), Time Limit Exceeded
+# # T=O(n^3), S=O(1)
 # class Solution:
 #     def threeSum(self, nums: List[int]) -> List[List[int]]:
+#         nums.sort()
 #         res = set()
 #         n = len(nums)
 #         for i in range(n):
-#             for j in range(i+1, n):
-#                 for k in range(j+1, n):
+#             for j in range(i + 1, n):
+#                 for k in range(j + 1, n):
 #                     if nums[i] + nums[j] + nums[k] == 0:
-#                         res.add(tuple(sorted([nums[i], nums[j], nums[k]])))
+#                         res.add(tuple([nums[i], nums[j], nums[k]]))
 #         return list(res)
 
 # T=O(n^2), S=O(n)
