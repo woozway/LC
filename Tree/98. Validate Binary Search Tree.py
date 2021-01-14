@@ -18,14 +18,14 @@
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
         self.prev = None
-        return self.inorder(root)
+        return self.isValid(root)
 
-    def inorder(self, root):
+    def isValid(self, root):
         if root is None: return True
-        if not self.inorder(root.left): return False
+        if not self.isValid(root.left): return False
         if self.prev and self.prev.val >= root.val: return False
         self.prev = root
-        return self.inorder(root.right)
+        return self.isValid(root.right)
 
 # # T=O(n), S=O(n)
 # class Solution:
