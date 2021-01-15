@@ -49,14 +49,14 @@
 # T=O(nlgn), S=O(lgn)
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        return self.majority_element_rec(nums, 0, len(nums)-1)
+        return self.devi_n_conq(nums, 0, len(nums)-1)
 
-    def majority_element_rec(self, nums, lo, hi):
+    def devi_n_conq(self, nums, lo, hi):
         if lo == hi: return nums[lo]
         
         mid = lo + (hi - lo)//2
-        left = self.majority_element_rec(nums, lo, mid)
-        right = self.majority_element_rec(nums, mid+1, hi)
+        left = self.devi_n_conq(nums, lo, mid)
+        right = self.devi_n_conq(nums, mid+1, hi)
         if left == right: return left
         
         left_count = sum(1 for i in range(lo, hi+1) if nums[i] == left)
