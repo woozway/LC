@@ -15,5 +15,5 @@ class Solution:
 # # T=O(1), S=O(1)
 # class Solution:
 #     def totalMoney(self, n: int) -> int:
-#         fullWeek, day = n // 7, n % 7
-#         return (49 + 7*fullWeek) * fullWeek // 2 + (2*fullWeek + day + 1) * day // 2
+#         extra, weeks = n % 7, n // 7
+#         return 28*weeks + 7*weeks*(weeks-1)//2 + weeks*extra + extra*(extra+1)//2
