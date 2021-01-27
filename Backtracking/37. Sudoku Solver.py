@@ -1,27 +1,36 @@
+"""
+1. Clarification
+2. Possible solutions
+ - simple backtracking + naive dfs
+ - backtracking + preprocessing + handle blank with minimun optional number
+ - advanced data structure: DancingLinks
+3. Coding
+4. Tests
+"""
+
+# simple backtracking + naive dfs
 class Solution:
     def solveSudoku(self, board: List[List[str]]) -> None:
-        if not board or len(board) == 0: return
-        self.solve(board)
-        
-    def solve(self, board):
+        if not board: return
+        self.dfs(board)
+
+    def dfs(self, board):
         for i in range(len(board)):
             for j in range(len(board[0])):
-                if board[i][j] == '.':
-                    for c in {'1','2','3','4','5','6','7','8','9'}:
-                        if self.isValid(board, i, j, c):
-                            board[i][j] = c
-                            if self.solve(board):
-                                return True
-                            else:
-                                board[i][j] = '.'
-                    return False
-        return True
-    
-    def isValid(self, board, row, col, c):
-        for i in range(9):
-            if board[i][col] != '.' and board[i][col] == c: return False
-            if board[row][i] != '.' and board[row][i] == c: return False
-            if board[3 * (row // 3) + i // 3][3 * (col // 3) + i % 3] != '.'\
-                    and board[3 * (row // 3) + i // 3][3 * (col // 3) + i % 3] == c:
+                if board[i][j] != '.':
+                    continue
+                for c in '123456789':
+                    if self.isValid(board, i, j, c):
+                        board[i][j] = c
+                        if self.dfs(board):
+                            return True
+                        board[i][j] = '.'
                 return False
+        return True
+
+    def isValid(self, board, row, col, c):
+        for i in range(len(board)):
+            if board[row][i] == c: return False
+            if board[i][col] == c: return False
+            if board[3*(row//3) + i//3][3*(col//3) + i%3] == c: return False
         return True
