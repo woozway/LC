@@ -1,3 +1,14 @@
+"""
+1. Clarification
+2. Possible solutions
+ - Trie (dictionary tree)
+3. Coding
+4. Tests
+"""
+
+# insert: T=O(m), S=O(m)
+# search: T=O(m), S=O(1)
+# startsWith: T=O(m), S=O(1)
 class Trie:
 
     def __init__(self):
@@ -25,3 +36,9 @@ class Trie:
                 return False
             node = node[char]
         return True
+
+# Your Trie object will be instantiated and called as such:
+# obj = Trie()
+# obj.insert(word)
+# param_2 = obj.search(word)
+# param_3 = obj.startsWith(prefix)
