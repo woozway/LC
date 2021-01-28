@@ -34,7 +34,7 @@
 # T=O(n!), S=O(n)
 class Solution:
     def totalNQueens(self, n: int) -> int:
-        if n < 1: return []
+        if n < 1: return 0
         self.count = 0
         self._dfs(n, 0, 0, 0, 0)
         return self.count
