@@ -3,7 +3,9 @@
 2. Possible solutions
  - mod
  - log2
- - bit manipulation (2 versions)
+ - bit manipulation (2 versions):
+        get the rightmost 1-bit in n: x & (-x)
+        set the rightmost 1-bit to 0-bit in n: x & (x - 1)
 3. Coding
 4. Tests
 """
