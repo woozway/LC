@@ -2,7 +2,7 @@
 1. Clarification
 2. Possible solutions
  - x & 1 + count + x >> 1
- - Brian Kernighan Algorithm: x & (x - 1)
+ - Brian Kernighan Algorithm: x & (x - 1) to get the last 1-bit
 3. Coding
 4. Tests
 """
@@ -10,18 +10,18 @@
 # # T=O(1), S=O(1)
 # class Solution:
 #     def hammingWeight(self, n: int) -> int:
-#         count = 0
-#         while n:
-#             if n & 1:
-#                 count += 1
-#             n >>= 1
-#         return count
+#         rst, mask = 0, 1
+#         for i in range(32):
+#             if n & mask:
+#                 rst += 1
+#             mask <<= 1
+#         return rst
 
 # T=O(1), S=O(1)
 class Solution:
     def hammingWeight(self, n: int) -> int:
-        count = 0
+        rst = 0
         while n:
             n &= n - 1
-            count += 1
-        return count
+            rst += 1
+        return rst
