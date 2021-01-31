@@ -31,6 +31,6 @@ class Solution:
 #             num = nums[i]
 #             curMax, curMin = curMax * num, curMin * num
 #             curMin, curMax = min(curMax, curMin, num), max(curMax, curMin, num)
-#             print(curMin, curMax)
+#             # print(curMin, curMax)
 #             res = curMax if curMax > res else res
 #         return res
