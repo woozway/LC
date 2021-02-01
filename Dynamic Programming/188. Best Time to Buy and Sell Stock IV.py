@@ -18,8 +18,8 @@ class Solution:
         for i in range(1, n):
             for j in range(0, k + 1):
                 if j == 0:
-                    dp[i][0][0] = dp[i - 1][0][0]
-                    dp[i][0][1] = max(dp[i - 1][0][1], dp[i - 1][0][0] - prices[i])
+                    dp[i][j][0] = dp[i - 1][j][0]
+                    dp[i][j][1] = max(dp[i - 1][j][1], dp[i - 1][j][0] - prices[i])
                     continue
                 dp[i][j][0] = max(dp[i - 1][j][0], dp[i - 1][j - 1][1] + prices[i])
                 dp[i][j][1] = max(dp[i - 1][j][1], dp[i - 1][j][0] - prices[i])
