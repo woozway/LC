@@ -7,7 +7,7 @@
 """
 
 
-# T=O(n), S=O(n)
+# T=O(n), S=O(n), dp[i][j][k], i: day, j: transaction times, k: whether hold a stock
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         if not prices: return 0
