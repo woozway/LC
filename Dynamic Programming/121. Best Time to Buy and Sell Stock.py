@@ -11,7 +11,6 @@
 # # T=O(n), S=O(1)
 # class Solution:
 #     def maxProfit(self, prices: List[int]) -> int:
-#         inf = int(1e9)
 #         minPrice = inf
 #         maxProf = 0
 #         for price in prices:
