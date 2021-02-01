@@ -24,7 +24,8 @@ class Solution:
             dp[i][1][0] = max(dp[i - 1][1][0], dp[i - 1][0][1] + prices[i])
             dp[i][1][1] = max(dp[i - 1][1][1], dp[i - 1][1][0] - prices[i])
             dp[i][2][0] = max(dp[i - 1][2][0], dp[i - 1][1][1] + prices[i])
-        return max(dp[n-1][0][0], dp[n-1][1][0], dp[n-1][2][0])
+            dp[i][2][1] = max(dp[i - 1][2][1], dp[i - 1][2][0] - prices[i])
+        return max(dp[n-1][0][0], dp[n-1][1][0], dp[n-1][2][0], dp[n-1][2][1])
 
 
 # # T=O(n), S=O(1)
