@@ -15,24 +15,22 @@
 # class Solution:
 #     def numIslands(self, grid: List[List[str]]) -> int:
 #         if not grid or not grid[0]: return 0
-#         self.max_x = len(grid);
-#         self.max_y = len(grid[0]);
+#         self.m = len(grid);
+#         self.n = len(grid[0]);
 #         self.grid = grid
 #         self.visited = set()
-#         # return sum([self.floodfill_dfs(i, j) for i in range(self.max_x) for j in range(self.max_y)])
-#         return sum([self.floodfill_bfs(i, j) for i in range(self.max_x) for j in range(self.max_y)])
+#         # return sum([self.floodfill_dfs(i, j) for i in range(self.m) for j in range(self.n)])
+#         return sum([self.floodfill_bfs(i, j) for i in range(self.m) for j in range(self.n)])
 # 
 #     # def floodfill_dfs(self, x, y):
-#     #     if not self._is_valid(x, y):
-#     #         return 0
+#     #     if not self._is_valid(x, y): return 0
 #     #     self.visited.add((x, y))
 #     #     for k in range(4):
 #     #         self.floodfill_dfs(x + dx[k], y + dy[k])
 #     #     return 1
 # 
 #     def floodfill_bfs(self, x, y):
-#         if not self._is_valid(x, y):
-#             return 0
+#         if not self._is_valid(x, y): return 0
 #         self.visited.add((x, y))
 #         queue = collections.deque()
 #         queue.append((x, y))
@@ -46,10 +44,8 @@
 #         return 1
 # 
 #     def _is_valid(self, x, y):
-#         if x < 0 or x >= self.max_x or y < 0 or y >= self.max_y:
-#             return False
-#         if self.grid[x][y] == '0' or ((x, y) in self.visited):
-#             return False
+#         if x < 0 or x >= self.m or y < 0 or y >= self.n: return False
+#         if self.grid[x][y] == '0' or ((x, y) in self.visited): return False
 #         return True
 
 
