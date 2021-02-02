@@ -1,3 +1,12 @@
+"""
+1. Clarification
+2. Possible solutions
+3. Coding
+4. Tests
+"""
+
+
+# T=O(1), S=O(capacity)
 class LRUCache:
 
     def __init__(self, capacity: int):
@@ -5,8 +14,7 @@ class LRUCache:
         self.remain = capacity
 
     def get(self, key: int) -> int:
-        if key not in self.dic:
-            return -1
+        if key not in self.dic: return -1
         v = self.dic.pop(key)
         self.dic[key] = v
         return v
