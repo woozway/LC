@@ -36,7 +36,7 @@
 #             elif j == n:
 #                 ans.append(A[i] * A[i])
 #                 i -= 1
-#             elif A[i] * A[i] < A[j] * A[j]:
+#             elif abs(A[i]) < abs(A[j]):
 #                 ans.append(A[i] * A[i])
 #                 i -= 1
 #             else:
