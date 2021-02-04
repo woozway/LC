@@ -53,7 +53,7 @@ class Solution:
         ans = [0] * n
         i, j, pos = 0, n - 1, n - 1
         while i <= j:
-            if A[i] * A[i] > A[j] * A[j]:
+            if abs(A[i]) > abs(A[j]):
                 ans[pos] = A[i] * A[i]
                 i += 1
             else:
