@@ -19,6 +19,7 @@
 # # T=O(n), S=O(1)
 # class Solution:
 #     def sortedSquares(self, A: List[int]) -> List[int]:
+#         if not A: return []
 #         n = len(A)
 #         negative = -1
 #         for i, num in enumerate(A):
@@ -47,6 +48,7 @@
 # T=O(n), S=O(1)
 class Solution:
     def sortedSquares(self, A: List[int]) -> List[int]:
+        if not A: return []
         n = len(A)
         ans = [0] * n
         i, j, pos = 0, n - 1, n - 1
