@@ -22,8 +22,8 @@ class Solution:
         return max(max_count, count)
 
 
-# T=O(n), S=O(1), pythonic
-class Solution:
-    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
-        if not nums: return 0
-        return max(map(len, ''.join(map(str, nums)).split('0')))
+# # T=O(n), S=O(1), pythonic
+# class Solution:
+#     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+#         if not nums: return 0
+#         return max(map(len, ''.join(map(str, nums)).split('0')))
