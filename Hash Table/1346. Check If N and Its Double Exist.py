@@ -20,7 +20,7 @@
 #         return False
 
 
-# # T=O(nlgn), S=(n)
+# # T=O(nlgn), S=O(n), python sort
 # class Solution:
 #     def checkIfExist(self, arr: List[int]) -> bool:
 #         if len(arr) < 2: return False
