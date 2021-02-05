@@ -1,6 +1,22 @@
+"""
+1. Clarification
+2. Possible solutions
+ - one pass
+3. Coding
+4. Tests
+"""
+
+
+# T=O(n), S=O(1)
 class Solution:
-  def validMountainArray(self, A: List[int]) -> bool:
-    l, r = 0, len(A)-1
-    while l < r and A[l] < A[l+1]: l += 1
-    while r > l and A[r] < A[r-1]: r -= 1
-    return l == r and l != 0 and r != len(A)-1
+    def validMountainArray(self, arr: List[int]) -> bool:
+        if not arr: return False
+        n = len(arr)
+        i = 0
+        while i + 1 < n and arr[i] < arr[i + 1]:
+            i += 1
+        if i == 0 or i == n - 1:
+            return False
+        while i + 1 < n and arr[i] > arr[i + 1]:
+            i += 1
+        return i == n - 1
