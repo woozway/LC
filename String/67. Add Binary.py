@@ -17,7 +17,7 @@
 #         return f'{int(a, 2) + int(b, 2):b}'
 
 
-# T=O(n+m), S=O(n+m)
+# T=O(max(n,m)), S=O(1)
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
         if not a or not b: return ''
@@ -34,7 +34,7 @@ class Solution:
         return ans[::-1]
 
 
-# # T=O(n+m), S=O(n+m)
+# # T=O(n+m+X*max(n,m)), S=O(n+m)
 # class Solution:
 #     def addBinary(self, a: str, b: str) -> str:
 #         if not a or not b: return ''
