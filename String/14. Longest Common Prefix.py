@@ -10,7 +10,7 @@
 """
 
 
-# T=O(m*n), S=O(1)
+# T=O(m*n), S=O(1), m=avg(map(len, strs)), n=len(strs)
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         if not strs: return ''
@@ -29,7 +29,7 @@ class Solution:
         return str1[:index]
 
 
-# # T=O(m*n), S=O(1)
+# # T=O(m*n), S=O(1), m=avg(map(len, strs)), n=len(strs)
 # class Solution:
 #     def longestCommonPrefix(self, strs: List[str]) -> str:
 #         if not strs: return ''
@@ -42,12 +42,11 @@ class Solution:
 #         return strs[0]
 
 
-# # T=O(m*n), S=O(1)
+# # T=O(m*n), S=O(mlgn), m=avg(map(len, strs)), n=len(strs)
 # class Solution:
 #     def longestCommonPrefix(self, strs: List[str]) -> str:
 #         def lcp(start, end):
-#             if start == end:
-#                 return strs[start]
+#             if start == end: return strs[start]
 #             mid = (start + end) // 2
 #             lcpLeft, lcpRight = lcp(start, mid), lcp(mid + 1, end)
 #             minLength = min(len(lcpLeft), len(lcpRight))
@@ -55,19 +54,19 @@ class Solution:
 #                 if lcpLeft[i] != lcpRight[i]:
 #                     return lcpLeft[:i]
 #             return lcpLeft[:minLength]
-
+#
 #         if not strs: return ''
 #         if len(strs) == 1: return strs[0]
-#         return '' if not strs else lcp(0, len(strs) - 1)
+#         return lcp(0, len(strs) - 1)
 
 
-# # T=O(m*n), S=O(1)
+# # T=O(mnlogm), S=O(1), m=min(map(len, strs)), n=len(strs)
 # class Solution:
 #     def longestCommonPrefix(self, strs: List[str]) -> str:
 #         def isCommonPrefix(length):
 #             str0, count = strs[0][:length], len(strs)
 #             return all(strs[i][:length] == str0 for i in range(1, count))
-
+# 
 #         if not strs: return ''
 #         if len(strs) == 1: return strs[0]
 #         minLength = min(len(s) for s in strs)
