@@ -1,18 +1,33 @@
+"""
+1. Clarification
+2. Possible solutions
+ - sort
+ - hashMap
+3. Coding
+4. Tests
+"""
+
+
+# T=O(nlgn), S=O(n)
 class Solution:
-  def arrayPairSum(self, nums: List[int]) -> int:
-    """
-    T=O(n), S=O(n)
-    """
-    d = [0]*20001
-    for i in range(len(nums)):
-      d[nums[i]+10000] += 1
-    i, j, ans = 0, 0, 0
-    while i < 20001:
-      if d[i]:
-        if j%2 == 0:
-          ans += i-10000
-        d[i] -= 1
-        j += 1
-      else:
-        i += 1
-    return ans
+    def arrayPairSum(self, nums: List[int]) -> int:
+        if not nums or len(nums) % 2: return 0
+        nums.sort()
+        ans = 0
+        for i in range(0, len(nums), 2):
+            ans += nums[i]
+        return ans
+
+
+# # T=O(n), S=O(n)
+# class Solution:
+#     def arrayPairSum(self, nums: List[int]) -> int:
+#         if not nums or len(nums) % 2: return 0
+#         count = collections.Counter()
+#         for num in nums:
+#             count[num] += 1
+#         d, Sum = 0, 0
+#         for i in range(-10000, 10001):
+#             Sum += (count[i] + 1 - d) // 2 * i
+#             d = (2 + count[i] - d) % 2
+#         return Sum
