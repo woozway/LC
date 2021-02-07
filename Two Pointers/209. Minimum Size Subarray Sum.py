@@ -34,11 +34,11 @@
 #         sums = [0]
 #         for i in range(n):
 #             sums.append(sums[-1] + nums[i])
-#         for i in range(1, n + 1):
-#             tmp = target + sums[i - 1]
+#         for i in range(0, n):
+#             tmp = target + sums[i]
 #             bound = bisect.bisect_left(sums, tmp)
 #             if bound != len(sums):
-#                 ans = min(ans, bound - (i - 1))
+#                 ans = min(ans, bound - i)
 #         return 0 if ans == n + 1 else ans
 
 
