@@ -34,7 +34,7 @@
 #         sums = [0]
 #         for i in range(n):
 #             sums.append(sums[-1] + nums[i])
-#         for i in range(0, n):
+#         for i in range(n):
 #             tmp = target + sums[i]
 #             bound = bisect.bisect_left(sums, tmp)
 #             if bound != len(sums):
