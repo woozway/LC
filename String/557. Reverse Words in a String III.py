@@ -1,3 +1,14 @@
+"""
+1. Clarification
+2. Possible solutions
+ - pythonic cheating
+3. Coding
+4. Tests
+"""
+
+
+# T=O(n), S=O(n)
 class Solution:
-  def reverseWords(self, s: str) -> str:
-    return ' '.join(x[::-1] for x in s.split())
+    def reverseWords(self, s: str) -> str:
+        if not s: return ''
+        return ' '.join(word[::-1] for word in s.split())
