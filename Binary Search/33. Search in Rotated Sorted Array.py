@@ -1,10 +1,21 @@
 """
 1. Clarification
 2. Possible solutions
+ - brute force
  - binary search
 3. Coding
 4. Tests
 """
+
+
+# # T=O(n), S=O(1)
+# class Solution:
+#     def search(self, nums: List[int], target: int) -> int:
+#         if not nums: return -1
+#         for i, num in enumerate(nums):
+#             if num == target:
+#                 return i
+#         return -1
 
 
 # T=O(lgn), S=O(1)
