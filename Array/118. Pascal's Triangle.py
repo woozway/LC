@@ -3,6 +3,7 @@
 2. Possible solutions
  - dynamic programming v1
  - dynamic programming v2
+ - dynamic programming v3
 3. Coding
 4. Tests
 """
@@ -31,3 +32,19 @@ class Solution:
 #                 row[j] = triangle[row_num-1][j-1] + triangle[row_num-1][j]
 #             triangle.append(row)
 #         return triangle
+
+
+# # T=O(n^2), S=O(1)
+# class Solution:
+#     def generate(self, numRows: int) -> List[List[int]]:
+#         if numRows <= 0: return []
+#         ret = list()
+#         for i in range(numRows):
+#             row = list()
+#             for j in range(0, i + 1):
+#                 if j == 0 or j == i:
+#                     row.append(1)
+#                 else:
+#                     row.append(ret[i - 1][j] + ret[i - 1][j - 1])
+#             ret.append(row)
+#         return ret
