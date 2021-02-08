@@ -19,18 +19,18 @@
 #         return len(nums) - 1
 
 
-# T=O(lgn), S=O(lgn)
-class Solution:
-    def findPeakElement(self, nums: List[int]) -> int:
-        if not nums: return -1
-        return self.search(nums, 0, len(nums) - 1)
+# # T=O(lgn), S=O(lgn)
+# class Solution:
+#     def findPeakElement(self, nums: List[int]) -> int:
+#         if not nums: return -1
+#         return self.search(nums, 0, len(nums) - 1)
 
-    def search(self, nums, left, right):
-        if left == right: return left
-        mid = left + (right - left) // 2
-        if nums[mid] > nums[mid + 1]:
-            return self.search(nums, left, mid)
-        return self.search(nums, mid + 1, right)
+#     def search(self, nums, left, right):
+#         if left == right: return left
+#         mid = left + (right - left) // 2
+#         if nums[mid] > nums[mid + 1]:
+#             return self.search(nums, left, mid)
+#         return self.search(nums, mid + 1, right)
 
 
 # T=O(lgn), S=O(1)
