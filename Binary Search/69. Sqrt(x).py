@@ -2,7 +2,7 @@
 1. Clarification
 2. Possible solutions
  - exp and log
- - binary search
+ - binary search I
  - Newton's method
 3. Coding
 4. Tests
