@@ -21,7 +21,7 @@ class Solution:
         if not nums: return int(-inf)
         left, right = 0, len(nums) - 1
         while nums[left] > nums[right]:
-            mid = (left + right) // 2
+            mid = left + (right - left) // 2
             if nums[mid] < nums[right]:
                 right = mid
             else:
