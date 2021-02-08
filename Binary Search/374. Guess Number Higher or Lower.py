@@ -61,4 +61,4 @@ class Solution:
 #                 left = mid2 + 1
 #             else:
 #                 left, right = mid1 + 1, mid2 - 1
-#         return -1
+#         return 0
