@@ -33,7 +33,7 @@ class Solution:
         left_idx = self.extreme_insertion_index(nums, target, True)
         if left_idx == len(nums) or nums[left_idx] != target:
             return [-1, -1]
-        return [left_idx, self.extreme_insertion_index(nums, target, False)-1]
+        return [left_idx, self.extreme_insertion_index(nums, target, False) - 1]
 
     def extreme_insertion_index(self, nums, target, left):
         lo, hi = 0, len(nums)
