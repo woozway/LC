@@ -1,12 +1,24 @@
 """
 1. Clarification
 2. Possible solutions
+ - sort
  - merge
  - binary search v1
  - binary search v2
 3. Coding
 4. Tests
 """
+
+
+# # T=O((m+n)lg(m+n)), S=O(m+n)
+# class Solution:
+#     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+#         m, n = len(nums1), len(nums2)
+#         if m > n: nums1, nums2, m, n = nums2, nums1, n, m
+#         if n == 0: raise ValueError
+#         ret = sorted(nums1 + nums2)
+#         mid = (m + n - 1) // 2
+#         return ret[mid] if (m + n) % 2 else (ret[mid] + ret[mid + 1]) / 2
 
 
 # # T=O(m+n), S=O(m+n)
