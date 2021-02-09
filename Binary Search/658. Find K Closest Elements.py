@@ -33,7 +33,7 @@
 #         return arr[left:left + k]
 
 
-# T=O(lgn), S=O(1)
+# T=O(lg(n-k)), S=O(1)
 class Solution:
     def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
         if not arr or k < 1 or k > len(arr): return []
