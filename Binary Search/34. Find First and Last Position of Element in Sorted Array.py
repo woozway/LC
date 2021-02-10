@@ -53,5 +53,4 @@ class Solution:
 #         left = bisect.bisect_left(nums, target)
 #         if left != len(nums) and nums[left] == target:
 #             return [left, bisect.bisect(nums, target) - 1]
-#         else:
-#             return [-1, -1]
+#         return [-1, -1]
