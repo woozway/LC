@@ -1,5 +1,3 @@
-
-
 """
 1. Clarification
 2. Possible solutions
