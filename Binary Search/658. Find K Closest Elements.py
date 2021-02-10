@@ -3,7 +3,7 @@
 2. Possible solutions
  - sort
  - two pointers
- - binary search III
+ - binary search II
 3. Coding
 4. Tests
 """
