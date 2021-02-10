@@ -67,6 +67,7 @@ class Solution:
                 else:
                     k -= newIndex2 - index2 + 1
                     index2 = newIndex2 + 1
+                   
         m, n = len(nums1), len(nums2)
         if m > n: nums1, nums2, m, n = nums2, nums1, n, m
         if n == 0: raise ValueError
