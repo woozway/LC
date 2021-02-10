@@ -12,6 +12,7 @@
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         if not nums1 or not nums2: return []
+        # return collections.Counter(nums1) & collections.Counter(nums2)
         return set(nums1) & set(nums2)
 
 
