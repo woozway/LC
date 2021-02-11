@@ -26,6 +26,7 @@ class Solution:
             preorder(root.right)
 
         res = list()
+        if not root: return res
         preorder(root)
         return res
 
