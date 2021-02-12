@@ -29,3 +29,26 @@ class Solution:
         if not inorder or not postorder or len(inorder) != len(postorder): return None
         val2idx = {val: idx for idx, val in enumerate(inorder)}
         return helper(0, len(inorder) - 1)
+
+       
+# # T=O(n), S=O(n)
+# class Solution:
+#     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
+#         if not inorder or not postorder or len(inorder) != len(postorder): return None
+#         root = TreeNode(postorder[-1])
+#         stack = []
+#         stack.append(root)
+#         inorderIndex = len(inorder) - 1
+#         for i in range(len(postorder) - 2, -1, -1):
+#             postorderVal = postorder[i]
+#             node = stack[-1]
+#             if node.val != inorder[inorderIndex]:
+#                 node.right = TreeNode(postorderVal)
+#                 stack.append(node.right)
+#             else:
+#                 while stack and stack[-1].val == inorder[inorderIndex]:
+#                     node = stack.pop()
+#                     inorderIndex -= 1
+#                 node.left = TreeNode(postorderVal)
+#                 stack.append(node.left)
+#         return root
