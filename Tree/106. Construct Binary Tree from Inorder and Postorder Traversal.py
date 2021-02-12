@@ -37,8 +37,7 @@ class Solution:
 #     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
 #         if not inorder or not postorder or len(inorder) != len(postorder): return None
 #         root = TreeNode(postorder[-1])
-#         stack = []
-#         stack.append(root)
+#         stack = [root]
 #         inorderIndex = len(inorder) - 1
 #         for i in range(len(postorder) - 2, -1, -1):
 #             postorderVal = postorder[i]
