@@ -26,26 +26,25 @@ class Solution:
         if not root: return True
         return check(root, root)
 
-
+       
 # # T=O(n), S=O(n)
 # class Solution:
 #     def isSymmetric(self, root: TreeNode) -> bool:
-#         def check(u, v):
-#             q = collections.deque()
-#             q.append(u)
-#             q.append(v)
-#             while q:
-#                 u = q.popleft()
-#                 v = q.popleft()
-#                 if not u and not v:
-#                     continue
-#                 if (not u or not v) or (u.val != v.val):
-#                     return False
-#                 q.append(u.left)
-#                 q.append(v.right)
-#                 q.append(u.right)
-#                 q.append(v.left)
-#             return True
-# 
 #         if not root: return True
-#         return check(root, root)
+#         q = collections.deque()
+#         q.append(root)
+#         q.append(root)
+#         while q:
+#             u = q.popleft()
+#             v = q.popleft()
+#             if not u and not v:
+#                 continue
+#             if not u or not v:
+#                 return False
+#             if u.val != v.val:
+#                 return False
+#             q.append(u.left)
+#             q.append(v.right)
+#             q.append(u.right)
+#             q.append(v.left)
+#         return True
