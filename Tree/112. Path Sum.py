@@ -17,15 +17,15 @@
 
 # T=O(n), S=O(h)
 class Solution:
-    def hasPathSum(self, root: TreeNode, sum: int) -> bool:
+    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
         if not root: return False
-        if not root.left and not root.right: return sum == root.val
-        return self.hasPathSum(root.left, sum - root.val) or self.hasPathSum(root.right, sum - root.val)
+        if not root.left and not root.right: return targetSum == root.val
+        return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val)
 
 
 # # T=O(n), S=O(h)
 # class Solution:
-#     def hasPathSum(self, root: TreeNode, sum: int) -> bool:
+#     def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
 #         if not root: return False
 #         que_node = collections.deque([root])
 #         que_val = collections.deque([root.val])
@@ -33,7 +33,7 @@ class Solution:
 #             now = que_node.popleft()
 #             temp = que_val.popleft()
 #             if not now.left and not now.right:
-#                 if temp == sum:
+#                 if temp == targetSum:
 #                     return True
 #                 continue
 #             if now.left:
