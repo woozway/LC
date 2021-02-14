@@ -7,6 +7,7 @@
 4. Tests
 """
 
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -22,6 +23,7 @@
 #         if p.val > root.val < q.val:
 #             return self.lowestCommonAncestor(root.right, p, q)
 #         return root
+
 
 # T=O(n), S=O(1)
 class Solution:
