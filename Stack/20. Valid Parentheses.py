@@ -11,6 +11,7 @@
 # # T=O(n^2), S=O(1)
 # class Solution:
 #     def isValid(self, s: str) -> bool:
+#         if len(s) % 2: return False
 #         while '()' in s or '[]' in s or '{}' in s:
 #             s = s.replace('()', '').replace('[]', '').replace('{}', '')
 #         return s == ''
@@ -19,6 +20,7 @@
 # T=O(n), S=O(n)
 class Solution:
     def isValid(self, s: str) -> bool:
+        if len(s) % 2: return False
         stack = []
         paren_map = {')': '(', ']': '[', '}': '{'}
         for c in s:
