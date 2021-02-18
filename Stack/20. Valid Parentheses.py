@@ -7,12 +7,14 @@
 4. Tests
 """
 
+
 # # T=O(n^2), S=O(1)
 # class Solution:
 #     def isValid(self, s: str) -> bool:
 #         while '()' in s or '[]' in s or '{}' in s:
 #             s = s.replace('()', '').replace('[]', '').replace('{}', '')
 #         return s == ''
+
 
 # T=O(n), S=O(n)
 class Solution:
