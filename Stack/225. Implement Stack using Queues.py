@@ -6,6 +6,7 @@
 4. Tests
 """
 
+
 # each operation is O(1) except for push - O(n)
 class MyStack:
 
@@ -26,6 +27,7 @@ class MyStack:
     def empty(self) -> bool:
         return not self.q
 
+     
 # Your MyStack object will be instantiated and called as such:
 # obj = MyStack()
 # obj.push(x)
