@@ -16,7 +16,6 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 """
 
-
 # T=O(n), S=O(n)
 class Solution:
     def __init__(self):
