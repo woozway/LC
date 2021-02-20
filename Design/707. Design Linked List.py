@@ -36,9 +36,7 @@ class MyLinkedList:
         self.addAtIndex(self.size, val)
 
     def addAtIndex(self, index: int, val: int) -> None:
-        if index > self.size: return
-        if index < 0:
-            index = 0
+        if index < 0 or index > self.size: return
         self.size += 1
         pred = self.head
         for _ in range(index):
@@ -102,9 +100,7 @@ class MyLinkedList:
 #         succ.prev = to_add
 # 
 #     def addAtIndex(self, index: int, val: int) -> None:
-#         if index > self.size: return
-#         if index < 0:
-#             index = 0
+#         if index < 0 or index > self.size: return
 #         if index < self.size - index:
 #             pred = self.head
 #             for _ in range(index):
