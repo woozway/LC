@@ -7,6 +7,7 @@
 4. Tests
 """
 
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -20,6 +21,7 @@
 #         while cur:
 #             cur.next, prev, cur = prev, cur, cur.next
 #         return prev
+
 
 # T=O(n), S=O(n)
 class Solution:
