@@ -1,8 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - swap values in adjacent nodes
- - only nodes themselves may be changed
+     - swap values in adjacent nodes
+     - only nodes themselves may be changed
+     - recursion
 3. Coding
 4. Tests
 """
@@ -35,3 +36,13 @@ class Solution:
             pre.next, b.next, a.next = b, a, b.next
             pre = a
         return self.next
+
+
+# # T=O(n), S=O(n)
+# class Solution:
+#     def swapPairs(self, head: ListNode) -> ListNode:
+#         if not head or not head.next: return head
+#         newHead = head.next
+#         head.next = self.swapPairs(newHead.next)
+#         newHead.next = head
+#         return newHead
