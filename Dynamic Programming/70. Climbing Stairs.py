@@ -1,10 +1,10 @@
 """
 1. Clarification
 2. Possible solutions
- - recursion, naive fibonacci
- - memoization
- - dynamic programming
- - Fibonacci Formula
+     - recursion, naive fibonacci
+     - memoization
+     - dynamic programming
+     - Fibonacci Formula
 3. Coding
 4. Tests
 """
