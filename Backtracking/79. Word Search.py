@@ -1,11 +1,12 @@
 """
 1. Clarification
 2. Possible solutions
- - dfs + backtracking
- - trie + dfs + backtracking
+     - dfs + backtracking
+     - trie + dfs + backtracking
 3. Coding
 4. Tests
 """
+
 
 # dfs + backtracking
 class Solution:
@@ -34,6 +35,7 @@ class Solution:
         self.visited.remove((row, col))
         return result
 
+    
 # # trie + dfs + backtracking
 # dx = [-1, 1, 0, 0]
 # dy = [0, 0, -1, 1]
