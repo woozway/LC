@@ -1,12 +1,13 @@
 """
 1. Clarification
 2. Possible solutions
- - simple backtracking + naive dfs
- - backtracking + preprocessing + handle blank with minimun optional number
- - advanced data structure: DancingLinks
+     - simple backtracking + naive dfs
+     - backtracking + preprocessing + handle blank with minimun optional number
+     - advanced data structure: DancingLinks
 3. Coding
 4. Tests
 """
+
 
 # simple backtracking + naive dfs
 class Solution:
