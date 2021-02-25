@@ -1,11 +1,12 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - backtracking
+     - brute force
+     - backtracking
 3. Coding
 4. Tests
 """
+
 
 # T=O(n!), S=O(n)
 class Solution:
