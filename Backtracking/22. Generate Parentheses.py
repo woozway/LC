@@ -1,11 +1,12 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - dfs, backtracking
+     - brute force
+     - dfs, backtracking
 3. Coding
 4. Tests
 """
+
 
 # # T=O(n*4^n), S=O(n)
 # class Solution:
@@ -34,6 +35,7 @@
 #             else: bal -= 1
 #             if bal < 0: return False
 #         return bal == 0
+
 
 # T=O(4^n/sqrt(n)), S=O(n)
 class Solution:
