@@ -1,10 +1,11 @@
 """
 1. Clarification
 2. Possible solutions
- - simple backtracking + naive dfs
+     - simple backtracking + naive dfs
 3. Coding
 4. Tests
 """
+
 
 # T=O(1), S=O(1)
 class Solution:
