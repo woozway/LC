@@ -1,18 +1,60 @@
-class Solution:
-  def isHappy(self, n: int) -> bool:  
-    """
-    T=O(lgn), S=O(1), Floyd's cycle detection algo
-    """
-    def get_next(num):
-      total = 0
-      while num > 0:
-        num, digit = divmod(num, 10)
-        total += digit ** 2
-      return total
+"""
+1. Clarification
+2. Possible solutions
+     - hash set
+     - fast & slow pointers
+     - maths
+3. Coding
+4. Tests
+"""
 
-    tortoise = n
-    hare = get_next(n)
-    while hare != 1 and tortoise != hare:
-      tortoise = get_next(tortoise)
-      hare = get_next(get_next(hare))
-    return hare == 1
+
+# T=O(lgn), S=O(lgn)
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        def get_next(n):
+            total_sum = 0
+            while n > 0:
+                n, digit = divmod(n, 10)
+                total_sum += digit ** 2
+            return total_sum
+
+        seen = set()
+        while n != 1 and n not in seen:
+            seen.add(n)
+            n = get_next(n)
+        return n == 1
+
+
+# # T=O(lgn), S=O(1), Floyd's cycle detection algo
+# class Solution:
+#     def isHappy(self, n: int) -> bool:
+#         def get_next(number):
+#             total_sum = 0
+#             while number > 0:
+#                 number, digit = divmod(number, 10)
+#                 total_sum += digit ** 2
+#             return total_sum
+# 
+#         slow_runner = n
+#         fast_runner = get_next(n)
+#         while fast_runner != 1 and slow_runner != fast_runner:
+#             slow_runner = get_next(slow_runner)
+#             fast_runner = get_next(get_next(fast_runner))
+#         return fast_runner == 1
+
+
+# # T=O(lgn), S=O(1)
+# class Solution:
+#     def isHappy(self, n: int) -> bool:
+#         def get_next(number):
+#             total_sum = 0
+#             while number > 0:
+#                 number, digit = divmod(number, 10)
+#                 total_sum += digit ** 2
+#             return total_sum
+#
+#         cycle_members = {4, 16, 37, 58, 89, 145, 42, 20}
+#         while n != 1 and n not in cycle_members:
+#             n = get_next(n)
+#         return n == 1
