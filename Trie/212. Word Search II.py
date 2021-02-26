@@ -1,11 +1,12 @@
 """
 1. Clarification
 2. Possible solutions
- - naive dfs
- - trie + dfs + backtracking
+     - naive dfs
+     - trie + dfs + backtracking
 3. Coding
 4. Tests
 """
+
 
 # trie + dfs + backtracking
 dx = [-1, 1, 0, 0]
