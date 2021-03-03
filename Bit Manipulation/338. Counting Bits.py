@@ -1,11 +1,12 @@
 """
 1. Clarification
 2. Possible solutions
- - bit manipulation
- - dynamic programming
+     - bit manipulation
+     - dynamic programming
 3. Coding
 4. Tests
 """
+
 
 # T=O(nk), S=O(n)
 class Solution:
@@ -22,6 +23,7 @@ class Solution:
             rst += 1
         return rst
 
+    
 # # T=O(n), S=O(n)
 # class Solution:
 #     def countBits(self, num: int) -> List[int]:
