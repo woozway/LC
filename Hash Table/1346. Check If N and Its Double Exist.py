@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - sort + two pointers
- - hash
+     - Brute force
+     - Sort + Two pointers
+     - Hash
 3. Coding
 4. Tests
 """
@@ -20,7 +20,7 @@
 #         return False
 
 
-# # T=O(nlgn), S=O(n), python sort
+# # T=O(nlgn), S=O(n) as in python sort, O(lgn) as general quicksort
 # class Solution:
 #     def checkIfExist(self, arr: List[int]) -> bool:
 #         if len(arr) < 2: return False
