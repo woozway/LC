@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - two pointers v1
- - two pointers v2
+     - Brute force
+     - Two pointers v1
+     - Two pointers v2
 3. Coding
 4. Tests
 """
