@@ -1,15 +1,15 @@
 """
 1. Clarification
 2. Possible solutions
- - brute quicksort
- - two pointers v1
- - two pointers v2
+     - Brutal quicksort
+     - Two pointers v1
+     - Two pointers v2
 3. Coding
 4. Tests
 """
 
 
-# # T=O((m+n)lg(m+n)), S=O(1)
+# # T=O((m+n)lg(m+n)), S=O(lg(m+n)) by quicksort, but O(m+n) in python
 # class Solution:
 #     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
 #         if not nums1 or not nums2: return
