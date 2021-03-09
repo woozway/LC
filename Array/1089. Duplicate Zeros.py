@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - two passes
+     - Brute insert 0
+     - Two pointers
 3. Coding
 4. Tests
 """
