@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - str
- - log
+     - built-in str
+     - built-in log10
 3. Coding
 4. Tests
 """
