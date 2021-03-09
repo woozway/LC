@@ -26,19 +26,22 @@
 class Solution:
     def duplicateZeros(self, arr: List[int]) -> None:
         if not arr: return
-        possible_dups = 0
-        length_ = len(arr) - 1
-        for left in range(length_ + 1):
-            if left > length_ - possible_dups:
+        n = len(arr)
+        taken = possible_dups = zero_count = 0
+        for num in arr:
+            if num != 0:
+                taken += 1
+            else:
+                zero_count += 1
+                if n - taken != 1:
+                    possible_dups += 1
+                taken += 2
+            if taken >= n:
                 break
-            if arr[left] == 0:
-                if left == length_ - possible_dups:
-                    arr[length_] = 0
-                    length_ -= 1
-                    break
-                possible_dups += 1
-        last = length_ - possible_dups
-        for i in range(last, -1, -1):
+        if zero_count != possible_dups:
+            arr[n - 1] = 0
+        right = n - 1 - possible_dups - (zero_count - possible_dups)
+        for i in range(right, -1, -1):
             if arr[i] == 0:
                 arr[i + possible_dups] = 0
                 possible_dups -= 1
