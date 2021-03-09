@@ -7,6 +7,6 @@
    - *same direction*
    - *opposite directions*
    - *fixed width*
-   - *bucket sort if numbers are in some range*
+   - *bucket sort if all the numbers are in some range*
    - *use index or signs of numbers as additional resources*
    ![alt text](https://github.com/chopchap/leetcode/blob/main/images/Array_Basics_Conclusion_1.png?raw=true)
