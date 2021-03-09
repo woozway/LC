@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - reversed traverse
+     - Brute force
+     - Reversed traverse
 3. Coding
 4. Tests
 """
