@@ -2,6 +2,7 @@
 1. Clarification
 2. Possible solutions
      - Sort
+     - Bucket Sort
 3. Coding
 4. Tests
 """
