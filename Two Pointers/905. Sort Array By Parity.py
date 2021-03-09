@@ -1,10 +1,10 @@
 """
 1. Clarification
 2. Possible solutions
- - sort
- - two passes
- - two pointers + in-place v1
- - two pointers + in-place v2
+     - Sort + lambda
+     - Two Passes
+     - Two pointers + in-place v1
+     - Two pointers + in-place v2
 3. Coding
 4. Tests
 """
