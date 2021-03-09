@@ -20,6 +20,7 @@
 #                     return True
 #         return False
 
+
 # # T=O(nlgn), S=O(n) as in python sort, O(lgn) as general quicksort
 # class Solution:
 #     def checkIfExist(self, arr: List[int]) -> bool:
@@ -38,14 +39,15 @@
 #     def checkIfExist(self, arr: List[int]) -> bool:
 #         if len(arr) < 2: return False
 #         arr.sort()
+#         n = len(arr)
 #         q = 0
-#         for p in range(len(arr)):
-#             while q < len(arr) and arr[p] * 2 > arr[q]:
+#         for p in range(n):
+#             while q < n and arr[p] * 2 > arr[q]:
 #                 q += 1
-#             if q != len(arr) and p != q and arr[p] * 2 == arr[q]:
+#             if q != n and p != q and arr[p] * 2 == arr[q]:
 #                 return True
-#         q = len(arr) - 1
-#         for p in range(len(arr) - 1, -1, -1):
+#         q = n - 1
+#         for p in range(n - 1, -1, -1):
 #             while q > -1 and arr[p] * 2 < arr[q]:
 #                 q -= 1
 #             if q != -1 and p != q and arr[p] * 2 == arr[q]:
