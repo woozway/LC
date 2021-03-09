@@ -2,6 +2,7 @@
 1. Clarification
 2. Possible solutions
      - Brute force
+     - Sort + Binary search
      - Sort + Two pointers
      - Hash
 3. Coding
@@ -19,8 +20,20 @@
 #                     return True
 #         return False
 
-
 # # T=O(nlgn), S=O(n) as in python sort, O(lgn) as general quicksort
+# class Solution:
+#     def checkIfExist(self, arr: List[int]) -> bool:
+#         if len(arr) < 2: return False
+#         arr.sort()
+#         n = len(arr)
+#         for i in range(n - 1):
+#             ret = bisect.bisect(arr, 2 * arr[i])
+#             if ret - 1 != i and arr[ret - 1] == 2 * arr[i]:
+#                 return True
+#         return False
+
+
+# # T=O(nlgn), S=O(n)
 # class Solution:
 #     def checkIfExist(self, arr: List[int]) -> bool:
 #         if len(arr) < 2: return False
