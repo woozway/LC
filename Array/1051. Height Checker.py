@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - sort
+     - Sort
 3. Coding
 4. Tests
 """
