@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - one pass
+     - One Pass
 3. Coding
 4. Tests
 """
