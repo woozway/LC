@@ -42,15 +42,15 @@
 #         n = len(arr)
 #         q = 0
 #         for p in range(n):
-#             while q < n and arr[p] * 2 > arr[q]:
+#             while q < n and arr[q] < arr[p] * 2:
 #                 q += 1
-#             if q != n and p != q and arr[p] * 2 == arr[q]:
+#             if q != n and q != p and arr[q] == arr[p] * 2:
 #                 return True
 #         q = n - 1
 #         for p in range(n - 1, -1, -1):
-#             while q > -1 and arr[p] * 2 < arr[q]:
+#             while q > -1 and arr[q] > arr[p] * 2:
 #                 q -= 1
-#             if q != -1 and p != q and arr[p] * 2 == arr[q]:
+#             if q != -1 and q != p and arr[q] == arr[p] * 2:
 #                 return True
 #         return False
 
