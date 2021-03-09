@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - two pointers
+     - Two pointers
 3. Coding
 4. Tests
 """
