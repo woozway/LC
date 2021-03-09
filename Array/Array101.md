@@ -3,7 +3,6 @@
 ## In-Place Operations
 1. iterating right to left
 2. two pointers technique
-   ---------------
    - *readPointer + writePointer*
    - *same direction*
    - *opposite directions*
