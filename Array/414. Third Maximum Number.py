@@ -13,7 +13,7 @@
 #     def thirdMax(self, nums: List[int]) -> int:
 #         if not nums: return -float('inf')
 #         n = len(nums)
-#         distinct = {x for x in nums}
+#         distinct = set(nums)
 #         sz = len(distinct)
 #         ordered = sorted(distinct)
 #         return ordered[-1] if sz < 3 else ordered[-3]
