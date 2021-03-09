@@ -27,8 +27,7 @@ class Solution:
 #         arr = [0] * 101
 #         for height in heights:
 #             arr[height] += 1
-#         count = 0
-#         j = 0
+#         j = count = 0
 #         for i in range(1, 101):
 #             while arr[i] > 0:
 #                 if heights[j] != i:
