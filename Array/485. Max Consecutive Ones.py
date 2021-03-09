@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - one pass
- - pythonic
+     - One pass
+     - Pythonic
 3. Coding
 4. Tests
 """
@@ -22,7 +22,7 @@ class Solution:
         return max(max_count, count)
 
 
-# # T=O(n), S=O(1), pythonic
+# # T=O(n), S=O(n)
 # class Solution:
 #     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
 #         if not nums: return 0
