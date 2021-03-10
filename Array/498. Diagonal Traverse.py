@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - Brute force
+     - Brute force, index sum
      - Diagonal iteration and reversal
      - Simulation
 3. Coding
