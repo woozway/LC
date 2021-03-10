@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - diagonal iteration and reversal
- - simulation
+     - Brute force
+     - Diagonal iteration and reversal
+     - Simulation
 3. Coding
 4. Tests
 """
