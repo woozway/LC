@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - Brute force, index sum
+     - Brute force, index sum: r + c = d
      - Diagonal iteration and reversal
      - Simulation
 3. Coding
