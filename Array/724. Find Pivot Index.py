@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - prefix sum
+     - Brute force
+     - Prefix sum
 3. Coding
 4. Tests
 """
