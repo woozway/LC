@@ -35,7 +35,7 @@ class Solution:
         result, intermediate = [], []
         for d in range(m-1 + n-1 + 1):
             intermediate.clear()
-            r, c = 0 if d < n else d - n + 1, d if d < n else n - 1
+            r, c = 0 if d < n else d - (n-1), d - 0 if d < n else n - 1
             while r < m and c > -1:
                 intermediate.append(matrix[r][c])
                 r += 1
