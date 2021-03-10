@@ -15,7 +15,7 @@
 #         if not matrix or not matrix[0]: return []
 #         m, n = len(matrix), len(matrix[0])
 #         ans = []
-#         for k in range(m + n - 1):
+#         for k in range(m-1 + n-1 + 1):
 #             tmp = []
 #             for i in range(m):
 #                 for j in range(n):
@@ -33,7 +33,7 @@ class Solution:
         if not matrix or not matrix[0]: return []
         m, n = len(matrix), len(matrix[0])
         result, intermediate = [], []
-        for d in range(m + n - 1):
+        for d in range(m-1 + n-1 + 1):
             intermediate.clear()
             r, c = 0 if d < n else d - n + 1, d if d < n else n - 1
             while r < m and c > -1:
