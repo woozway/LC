@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - pythonic cheating
- - handmade
- - deque
+     - Pythonic built-in
+     - Hand-crafted
+     - Deque
 3. Coding
 4. Tests
 """
