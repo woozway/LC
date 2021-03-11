@@ -1,10 +1,10 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - extra array
- - cyclic replacements
- - reverse
+     - Brute force
+     - Extra array
+     - Cyclic replacements
+     - Reverse
 3. Coding
 4. Tests
 """
