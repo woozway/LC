@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - python3 built-in
- - simulation
- - bit manipulation
+     - Python3 built-in
+     - Simulation
+     - Bit manipulation
 3. Coding
 4. Tests
 """
