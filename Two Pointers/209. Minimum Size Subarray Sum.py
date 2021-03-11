@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - prefix sum + binary search
- - two pointers
+     - Brute force
+     - Prefix sum + Binary search
+     - Two Pointers
 3. Coding
 4. Tests
 """
