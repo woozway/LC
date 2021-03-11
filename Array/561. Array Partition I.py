@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - sort
- - hashMap
+     - Sort
+     - HashMap
 3. Coding
 4. Tests
 """
