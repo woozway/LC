@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - Simulation
+     - Simulation + Set
      - Layer by layer
 3. Coding
 4. Tests
@@ -12,22 +12,22 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         if not matrix or not matrix[0]: return []
-        R, C = len(matrix), len(matrix[0])
-        seen = [[False] * C for _ in matrix]
-        ans = []
+        m, n = len(matrix), len(matrix[0])
+        seen = set()
+        ret = []
         dr = [0, 1, 0, -1]
         dc = [1, 0, -1, 0]
         r = c = di = 0
-        for _ in range(R * C):
-            ans.append(matrix[r][c])
-            seen[r][c] = True
+        for _ in range(m * n):
+            ret.append(matrix[r][c])
+            seen.add((r, c))
             cr, cc = r + dr[di], c + dc[di]
-            if 0 <= cr < R and 0 <= cc < C and not seen[cr][cc]:
+            if 0 <= cr < m and 0 <= cc < n and (cr, cc) not in seen:
                 r, c = cr, cc
             else:
                 di = (di + 1) % 4
                 r, c = r + dr[di], c + dc[di]
-        return ans
+        return ret
 
 
 # # T=O(R*C), S=O(1)
