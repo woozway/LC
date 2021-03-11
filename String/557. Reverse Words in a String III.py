@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - Pythonic built-in
+     - Python built-in
 3. Coding
 4. Tests
 """
