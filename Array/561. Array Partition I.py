@@ -11,12 +11,8 @@
 # T=O(nlgn), S=O(n)
 class Solution:
     def arrayPairSum(self, nums: List[int]) -> int:
-        if not nums or len(nums) % 2: return 0
         nums.sort()
-        ans = 0
-        for i in range(0, len(nums), 2):
-            ans += nums[i]
-        return ans
+        return sum(nums[::2])
 
 
 # # T=O(n), S=O(n)
