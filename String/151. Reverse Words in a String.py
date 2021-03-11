@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - Pythonic built-in
+     - Python built-in
      - Hand-crafted
      - Deque
 3. Coding
