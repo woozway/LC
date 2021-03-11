@@ -52,22 +52,22 @@ class Solution:
 #     def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
 #         if not matrix or not matrix[0]: return []
 #         m, n = len(matrix), len(matrix[0])
-#         row, column = 0, 0
+#         row, col = 0, 0
 #         direction = 1
 #         result = []
-#         while row < m and column < n:
-#             result.append(matrix[row][column])
+#         while row < m and col < n:
+#             result.append(matrix[row][col])
 #             new_row = row + (-1 if direction == 1 else 1)
-#             new_column = column + (1 if direction == 1 else -1)
-#             if new_row < 0 or new_row == m or new_column < 0 or new_column == n:
+#             new_col = col + (1 if direction == 1 else -1)
+#             if not (0 <= new_row < m) or not (0 <= new_col < n):
 #                 if direction:
-#                     row += (column == n - 1)
-#                     column += (column < n - 1)
+#                     row += (col == n - 1)
+#                     col += (col < n - 1)
 #                 else:
-#                     column += (row == m - 1)
+#                     col += (row == m - 1)
 #                     row += (row < m - 1)
 #                 direction = 1 - direction
 #             else:
 #                 row = new_row
-#                 column = new_column
+#                 col = new_col
 #         return result
