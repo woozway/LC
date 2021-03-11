@@ -1,10 +1,10 @@
 """
 1. Clarification
 2. Possible solutions
- - horizontal scanning
- - vertical scanning
- - divide and conquer
- - binary search
+     - Horizontal scanning
+     - Vertical scanning
+     - Divide and conquer
+     - Binary search
 3. Coding
 4. Tests
 """
