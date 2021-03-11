@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - binary search
- - two pointers
+     - Binary Search
+     - Two Pointers
 3. Coding
 4. Tests
 """
