@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - dynamic programming v1
- - dynamic programming v2
+     - Dynamic programming v1
+     - Dynamic programming v2
 3. Coding
 4. Tests
 """
