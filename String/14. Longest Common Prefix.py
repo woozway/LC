@@ -54,7 +54,7 @@ class Solution:
 #                 if lcpLeft[i] != lcpRight[i]:
 #                     return lcpLeft[:i]
 #             return lcpLeft[:minLength]
-#
+
 #         if not strs: return ''
 #         if len(strs) == 1: return strs[0]
 #         return lcp(0, len(strs) - 1)
@@ -66,7 +66,7 @@ class Solution:
 #         def isCommonPrefix(length):
 #             str0, count = strs[0][:length], len(strs)
 #             return all(strs[i][:length] == str0 for i in range(1, count))
-# 
+
 #         if not strs: return ''
 #         if len(strs) == 1: return strs[0]
 #         minLength = min(len(s) for s in strs)
