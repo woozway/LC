@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - recursion
- - two pointers
+     - Recursion
+     - Two Pointers
 3. Coding
 4. Tests
 """
@@ -15,7 +15,7 @@
 #             if left < right:
 #                 s[left], s[right] = s[right], s[left]
 #                 helper(left + 1, right - 1)
-# 
+
 #         if not s: return
 #         helper(0, len(s) - 1)
 
