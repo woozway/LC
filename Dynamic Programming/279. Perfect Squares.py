@@ -44,7 +44,7 @@ class Solution:
         return dp[-1]
 
 
-# # T=O(n^h/2), S=O(n^1/2)
+# # T=O(n^h/2), S=O(n^1/2), h: # of maximum recursion
 # class Solution:
 #     def numSquares(self, n: int) -> int:
 #         def is_divided_by(n, count):
