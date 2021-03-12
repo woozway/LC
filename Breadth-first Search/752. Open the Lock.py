@@ -15,7 +15,7 @@ class Solution:
                 x = int(node[i])
                 for d in (-1, 1):
                     y = (x + d) % 10
-                    yield node[:i] + str(y) + node[i+1:]
+                    yield node[:i] + str(y) + node[i + 1:]
 
         dead = set(deadends)
         queue = collections.deque([('0000', 0)])
@@ -27,5 +27,5 @@ class Solution:
             for nei in neighbors(node):
                 if nei not in seen:
                     seen.add(nei)
-                    queue.append((nei, depth+1))
+                    queue.append((nei, depth + 1))
         return -1
