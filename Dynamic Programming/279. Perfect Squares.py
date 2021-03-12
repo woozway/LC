@@ -35,19 +35,24 @@
 #     def numSquares(self, n: int) -> int:
 #         if n < 2: return n
 #         square_nums = [i * i for i in range(1, int(n ** 0.5) + 1)]
+#         visited = set()
+#         q = collections.deque()
+#         q.append(n)
+#         visited.add(n)
 #         cnt = 0
-#         toCheck = {n}
-#         while toCheck:
+#         while q:
 #             cnt += 1
-#             temp = set()
-#             for x in toCheck:
-#                 for y in square_nums:
-#                     if x == y:
+#             for _ in range(len(q)):
+#                 node = q.popleft()
+#                 for square in square_nums:
+#                     diff = node - square
+#                     if diff == 0:
 #                         return cnt
-#                     if x < y:
+#                     elif diff < 0:
 #                         break
-#                     temp.add(x - y)
-#             toCheck = temp
+#                     if diff not in visited:
+#                         q.append(diff)
+#                         visited.add(diff)
 #         return cnt
 
 
