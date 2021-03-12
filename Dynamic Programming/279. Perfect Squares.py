@@ -1,11 +1,11 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force + recursion
- - dp
- - greedy
- - greedy + bfs
- - maths
+     - Brute force + Recursion
+     - Dynamic programming
+     - Greedy
+     - Greedy + bfs
+     - Maths
 3. Coding
 4. Tests
 """
@@ -23,7 +23,7 @@
 #                 new_num = minNumSquares(k - square) + 1
 #                 min_num = min(min_num, new_num)
 #             return min_num
-#
+
 #         if n < 1: return 0
 #         square_nums = [i ** 2 for i in range(1, int(math.sqrt(n)) + 1)]
 #         return minNumSquares(n)
@@ -53,7 +53,7 @@ class Solution:
 #                 if is_divided_by(n - k, count - 1):
 #                     return True
 #             return False
-#
+
 #         if n < 1: return 0
 #         square_nums = set([i * i for i in range(1, int(n**0.5) + 1)])
 #         for count in range(1, n+1):
@@ -88,7 +88,7 @@ class Solution:
 #     def isSquare(self, n: int) -> bool:
 #         sq = int(math.sqrt(n))
 #         return sq * sq == n
-#
+
 #     def numSquares(self, n: int) -> int:
 #         if n < 1: return 0
 #         while (n & 3) == 0:
