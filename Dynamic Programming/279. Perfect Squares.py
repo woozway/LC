@@ -16,7 +16,7 @@
 #     def numSquares(self, n: int) -> int:
 #         def minNumSquares(k):
 #             if k in square_nums: return 1
-#             min_num = float('inf')
+#             min_num = inf
 #             for square in square_nums:
 #                 if k < square:
 #                     break
@@ -34,13 +34,13 @@ class Solution:
     def numSquares(self, n: int) -> int:
         if n < 1: return 0
         square_nums = [i ** 2 for i in range(0, int(math.sqrt(n)) + 1)]
-        dp = [float('inf')] * (n + 1)
+        dp = [inf] * (n + 1)
         dp[0] = 0
         for i in range(1, n + 1):
             for square in square_nums:
                 if i < square:
                     break
-                dp[i] = min(dp[i], dp[i-square] + 1)
+                dp[i] = min(dp[i], dp[i - square] + 1)
         return dp[-1]
 
 
@@ -55,8 +55,8 @@ class Solution:
 #             return False
 
 #         if n < 1: return 0
-#         square_nums = set([i * i for i in range(1, int(n**0.5) + 1)])
-#         for count in range(1, n+1):
+#         square_nums = set([i * i for i in range(1, int(n ** 0.5) + 1)])
+#         for count in range(1, n + 1):
 #             if is_divided_by(n, count):
 #                 return count
 
@@ -97,7 +97,7 @@ class Solution:
 #             return 4
 #         if self.isSquare(n):
 #             return 1
-#         for i in range(1, int(n**(0.5)) + 1):
-#             if self.isSquare(n - i*i):
+#         for i in range(1, int(n ** (0.5)) + 1):
+#             if self.isSquare(n - i * i):
 #                 return 2
 #         return 3
