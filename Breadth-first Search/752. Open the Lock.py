@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - bfs
+     - bfs
 3. Coding
 4. Tests
 """
