@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - flood fill, dfs or bfs
- - union find
+     - Flood fill, dfs or bfs
+     - Union-Find
 3. Coding
 4. Tests
 """
