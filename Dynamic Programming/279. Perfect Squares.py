@@ -2,6 +2,7 @@
 1. Clarification
 2. Possible solutions
      - Brute force + Recursion
+     - bfs
      - Dynamic programming
      - Greedy
      - Greedy + bfs
@@ -27,6 +28,27 @@
 #         if n < 1: return 0
 #         square_nums = [i ** 2 for i in range(1, int(math.sqrt(n)) + 1)]
 #         return minNumSquares(n)
+
+
+# T=O(n), S=O(n)
+# class Solution:
+#     def numSquares(self, n: int) -> int:
+#         if n < 2: return n
+#         square_nums = [i * i for i in range(1, int(n ** 0.5) + 1)]
+#         cnt = 0
+#         toCheck = {n}
+#         while toCheck:
+#             cnt += 1
+#             temp = set()
+#             for x in toCheck:
+#                 for y in square_nums:
+#                     if x == y:
+#                         return cnt
+#                     if x < y:
+#                         break
+#                     temp.add(x - y)
+#             toCheck = temp
+#         return cnt
 
 
 # T=O(n * n^1/2), S=O(n)
