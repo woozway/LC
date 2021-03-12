@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - using array
- - using linedlist
+     - Using Array
+     - Using Linedlist
 3. Coding
 4. Tests
 """
