@@ -68,9 +68,8 @@ class Solution:
 #         dp[-nums[0]] += 1
 #         for i in range(1, len(nums)):
 #             next = collections.Counter()
-#             for tmpSum in range(-1000, 1001):
-#                 if dp[tmpSum] > 0:
-#                     next[tmpSum + nums[i]] += dp[tmpSum]
-#                     next[tmpSum - nums[i]] += dp[tmpSum]
+#             for j in range(-1000, 1001):
+#                 next[j + nums[i]] += dp[j]
+#                 next[j - nums[i]] += dp[j]
 #             dp = next
 #         return dp[S]
