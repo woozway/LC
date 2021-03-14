@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - use 2 stacks to implement queue
+     - Use 2 stacks to implement queue
 3. Coding
 4. Tests
 """
