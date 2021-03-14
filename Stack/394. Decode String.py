@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - stack
-     - recursive
+     - Stack
+     - Recursive
 3. Coding
 4. Tests
 """
@@ -36,7 +36,7 @@ class Solution:
 #         if not s or len(s) == 0: return s
 #         result, position = self.dfs(0, s, 0, '')
 #         return result
-# 
+
 #     def dfs(self, position, s, prev_num, prev_str):
 #         while position < len(s):
 #             while s[position].isdigit():
