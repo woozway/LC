@@ -28,7 +28,8 @@
 #         self.dfs(idx + 1, tmpSum - self.nums[idx], S)
 
 
-# # T=O(n*sum), S=O(n*sum), sum=sum(nums)
+# # T=O(n*Sum), S=O(n*Sum), Sum=sum(nums)
+# # memo[i][j]: # of possible solutions using nums[i:] to get j
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
 #         if not nums or S > 1000: return 0
@@ -43,7 +44,7 @@
 #         return self.memo[i][tmpSum]
 
 
-# T=O(n*sum), S=O(n*sum)
+# T=O(n*Sum), S=O(n*Sum)
 # dp[i][j]: # of solutions using [0...i] elements to get sum j
 class Solution:
     def findTargetSumWays(self, nums: List[int], S: int) -> int:
@@ -58,7 +59,7 @@ class Solution:
         return dp[n - 1][S]
 
 
-# # T=O(n*sum), S=O(n)
+# # T=O(n*Sum), S=O(n)
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
 #         if not nums or S > 1000: return 0
