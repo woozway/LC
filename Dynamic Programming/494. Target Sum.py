@@ -13,7 +13,7 @@
 # # T=O(2^n), S=O(n), Time Limit Exceeded
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
-#         if not nums: return 0
+#         if not nums or S > 1000: return 0
 #         self.cnt = 0
 #         self.nums = nums
 #         self.dfs(0, 0, S)
@@ -31,7 +31,7 @@
 # # T=O(ln), S=O(ln), l refers to the range of tmpSum
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
-#         if not nums: return 0
+#         if not nums or S > 1000: return 0
 #         self.memo = {i: dict() for i in range(len(nums))}
 #         return self.dfs(nums, 0, 0, S)
 
@@ -62,15 +62,15 @@ class Solution:
 # # T=O(n*sum), S=O(n)
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
-#         if not nums: return 0
-#         dp = [0] * 2001
-#         dp[nums[0] + 1000] = 1
-#         dp[-nums[0] + 1000] += 1
+#         if not nums or S > 1000: return 0
+#         dp = collections.Counter()
+#         dp[nums[0]] += 1
+#         dp[-nums[0]] += 1
 #         for i in range(1, len(nums)):
-#             next = [0] * 2001
+#             next = collections.Counter()
 #             for tmpSum in range(-1000, 1001):
-#                 if dp[tmpSum + 1000] > 0:
-#                     next[tmpSum + nums[i] + 1000] += dp[tmpSum + 1000]
-#                     next[tmpSum - nums[i] + 1000] += dp[tmpSum + 1000]
+#                 if dp[tmpSum] > 0:
+#                     next[tmpSum + nums[i]] += dp[tmpSum]
+#                     next[tmpSum - nums[i]] += dp[tmpSum]
 #             dp = next
-#         return 0 if S > 1000 else dp[S + 1000]
+#         return dp[S]
