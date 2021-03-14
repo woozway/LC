@@ -19,16 +19,16 @@
 # T=O(n), S=O(n)
 class Solution:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
-        def inorder(root):
-            if not root: return
-            inorder(root.left)
-            res.append(root.val)
-            inorder(root.right)
+        if not root: return []
+        self.ret = []
+        self.dfs(root)
+        return self.ret
 
-        res = list()
-        if not root: return res
-        inorder(root)
-        return res
+    def dfs(self, root):
+        if not root: return
+        self.dfs(root.left)
+        self.ret.append(root.val)
+        self.dfs(root.right)
 
 
 # # T=O(n), S=O(n)
