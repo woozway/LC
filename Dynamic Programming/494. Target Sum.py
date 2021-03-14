@@ -33,15 +33,14 @@
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
 #         if not nums or S > 1000: return 0
-#         self.nums = nums
-#         self.memo = {i: dict() for i in range(len(self.nums))}
-#         return self.dfs(0, 0, S)
+#         self.memo = {i: dict() for i in range(len(nums))}
+#         return self.dfs(nums, 0, 0, S)
 
-#     def dfs(self, idx, tmpSum, S):
-#         if idx == len(self.nums): return 1 if tmpSum == S else 0
+#     def dfs(self, nums, idx, tmpSum, S):
+#         if idx == len(nums): return 1 if tmpSum == S else 0
 #         if tmpSum in self.memo[idx]: return self.memo[idx][tmpSum]
-#         self.memo[idx][tmpSum] = self.dfs(idx + 1, tmpSum + self.nums[idx], S) \
-#                                  + self.dfs(idx + 1, tmpSum - self.nums[idx], S)
+#         self.memo[idx][tmpSum] = self.dfs(nums, idx + 1, tmpSum + nums[idx], S) \
+#                                  + self.dfs(nums, idx + 1, tmpSum - nums[idx], S)
 #         return self.memo[idx][tmpSum]
 
 
