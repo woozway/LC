@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - monotonic stack
+     - Brute force
+     - Monotonic stack
 3. Coding
 4. Tests
 """
