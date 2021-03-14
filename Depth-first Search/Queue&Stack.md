@@ -1,7 +1,7 @@
 # Queue & Stack
 ---
 ## notes:
-- **leetcode 133. Clone Graph**, deep copy is the essence of Garbage Collection mechanism, remember to clone node first then dive into recursion, otherwise it might loop inside a graph
+- **leetcode 133. Clone Graph**, deep copy is the essence of Garbage Collection mechanism, remember to clone node first then dive into recursion, otherwise it might loop inside a graph. (since the depth of human thinking is quite limited, when implementing dfs, we need only focusing on one level of implementation and remember the outcome that you want you dfs to have, then leave the rest of things to system stack, it'll take care of that)
 ## bfs
 ```java
 // BFS_template I
