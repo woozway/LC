@@ -33,7 +33,7 @@ class Solution:
 # # T=O(n), S=O(n)
 # class Solution:
 #     def cloneGraph(self, node: 'Node') -> 'Node':
-#         if not node: return node
+#         if not node: return None
 #         visited = {}
 #         queue = collections.deque([node])
 #         visited[node] = Node(node.val)
