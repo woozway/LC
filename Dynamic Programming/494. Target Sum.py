@@ -29,19 +29,20 @@
 
 
 # # T=O(n*Sum), S=O(n*Sum), Sum=sum(nums)
-# # memo[i][j]: # of possible solutions using nums[i:] to get j
+# # memo[i][j]: # of possible solutions using nums[i:] and tmpSum j to get to S
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
 #         if not nums or S > 1000: return 0
-#         self.memo = {i: dict() for i in range(len(nums))}
-#         return self.dfs(nums, 0, 0, S)
+#         self.nums = nums
+#         self.memo = {i: dict() for i in range(len(self.nums))}
+#         return self.dfs(0, 0, S)
 
-#     def dfs(self, nums, i, tmpSum, S):
-#         if i == len(nums): return 1 if tmpSum == S else 0
-#         if tmpSum in self.memo[i]: return self.memo[i][tmpSum]
-#         self.memo[i][tmpSum] = self.dfs(nums, i + 1, tmpSum + nums[i], S) \
-#                                + self.dfs(nums, i + 1, tmpSum - nums[i], S)
-#         return self.memo[i][tmpSum]
+#     def dfs(self, idx, tmpSum, S):
+#         if idx == len(self.nums): return 1 if tmpSum == S else 0
+#         if tmpSum in self.memo[idx]: return self.memo[idx][tmpSum]
+#         self.memo[idx][tmpSum] = self.dfs(idx + 1, tmpSum + self.nums[idx], S) \
+#                                  + self.dfs(idx + 1, tmpSum - self.nums[idx], S)
+#         return self.memo[idx][tmpSum]
 
 
 # T=O(n*Sum), S=O(n*Sum)
