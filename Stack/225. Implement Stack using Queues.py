@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - use deque in python3
+     - Use deque in python3
 3. Coding
 4. Tests
 """
