@@ -19,13 +19,13 @@
 #         self.dfs(0, 0, S)
 #         return self.cnt
 
-#     def dfs(self, idx, tmpSum, target):
+#     def dfs(self, idx, tmpSum, S):
 #         if idx == len(self.nums):
-#             if tmpSum == target:
+#             if tmpSum == S:
 #                 self.cnt += 1
 #             return
-#         self.dfs(idx + 1, tmpSum + self.nums[idx], target)
-#         self.dfs(idx + 1, tmpSum - self.nums[idx], target)
+#         self.dfs(idx + 1, tmpSum + self.nums[idx], S)
+#         self.dfs(idx + 1, tmpSum - self.nums[idx], S)
 
 
 # # T=O(ln), S=O(ln), l refers to the range of tmpSum
