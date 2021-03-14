@@ -38,9 +38,9 @@
 
 #     def dfs(self, nums, idx, tmpSum, S):
 #         if idx == len(nums): return 1 if tmpSum == S else 0
-#         if tmpSum in self.memo[idx]: return self.memo[idx][tmpSum]
-#         self.memo[idx][tmpSum] = self.dfs(nums, idx + 1, tmpSum + nums[idx], S) \
-#                                  + self.dfs(nums, idx + 1, tmpSum - nums[idx], S)
+#         if tmpSum not in self.memo[idx]:
+#             self.memo[idx][tmpSum] = self.dfs(nums, idx + 1, tmpSum + nums[idx], S) \
+#                                      + self.dfs(nums, idx + 1, tmpSum - nums[idx], S)
 #         return self.memo[idx][tmpSum]
 
 
