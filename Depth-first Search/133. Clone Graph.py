@@ -35,13 +35,13 @@ class Solution:
 #     def cloneGraph(self, node: 'Node') -> 'Node':
 #         if not node: return None
 #         visited = {}
-#         queue = collections.deque([node])
+#         Q = collections.deque([node])
 #         visited[node] = Node(node.val)
-#         while queue:
-#             n = queue.popleft()
-#             for neighbor in n.neighbors:
-#                 if neighbor not in visited:
-#                     visited[neighbor] = Node(neighbor.val)
-#                     queue.append(neighbor)
-#                 visited[n].neighbors.append(visited[neighbor])
+#         while Q:
+#             n = Q.popleft()
+#             for nei in n.neighbors:
+#                 if nei not in visited:
+#                     Q.append(nei)
+#                     visited[nei] = Node(nei.val)
+#                 visited[n].neighbors.append(visited[nei])
 #         return visited[node]
