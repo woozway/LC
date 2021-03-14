@@ -22,7 +22,7 @@ class Solution:
         self.visited = {}
 
     def cloneGraph(self, node: 'Node') -> 'Node':
-        if not node: return node
+        if not node: return None
         if node in self.visited: return self.visited[node]
         clone_node = Node(node.val)
         self.visited[node] = clone_node
