@@ -28,7 +28,7 @@
 #         self.dfs(idx + 1, tmpSum - self.nums[idx], S)
 
 
-# # T=O(ln), S=O(ln), l refers to the range of tmpSum
+# # T=O(n*sum), S=O(n*sum), sum=sum(nums)
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
 #         if not nums or S > 1000: return 0
@@ -45,7 +45,6 @@
 
 # T=O(n*sum), S=O(n*sum)
 # dp[i][j]: # of solutions using [0...i] elements to get sum j
-# sum: sum(nums)
 class Solution:
     def findTargetSumWays(self, nums: List[int], S: int) -> int:
         if not nums or S > 1000: return 0
