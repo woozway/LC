@@ -16,42 +16,42 @@
 #         self.left = left
 #         self.right = right
 
-# T=O(n), S=O(n)
-class Solution:
-    def postorderTraversal(self, root: TreeNode) -> List[int]:
-        def postorder(root):
-            if not root: return
-            postorder(root.left)
-            postorder(root.right)
-            res.append(root.val)
-
-        res = list()
-        if not root: return res
-        postorder(root)
-        return res
-
-
 # # T=O(n), S=O(n)
 # class Solution:
 #     def postorderTraversal(self, root: TreeNode) -> List[int]:
-#         res = list()
-#         if not root: return res
-#         stack = []
-#         node = root
-#         prev = None
-#         while node or stack:
-#             while node:
-#                 stack.append(node)
-#                 node = node.left
-#             node = stack.pop()
-#             if not node.right or node.right == prev:
-#                 res.append(node.val)
-#                 prev = node
-#                 node = None
-#             else:
-#                 stack.append(node)
-#                 node = node.right
-#         return res
+#         if not root: return []
+#         self.ret = []
+#         self.dfs(root)
+#         return self.ret
+
+#     def dfs(self, root):
+#         if not root: return
+#         self.dfs(root.left)
+#         self.dfs(root.right)
+#         self.ret.append(root.val)
+
+
+# T=O(n), S=O(n)
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        res = list()
+        if not root: return res
+        stack = []
+        node = root
+        prev = None
+        while node or stack:
+            while node:
+                stack.append(node)
+                node = node.left
+            node = stack.pop()
+            if not node.right or node.right == prev:
+                res.append(node.val)
+                prev = node
+                node = None
+            else:
+                stack.append(node)
+                node = node.right
+        return res
 
 
 # # T=O(n), S=O(1)
