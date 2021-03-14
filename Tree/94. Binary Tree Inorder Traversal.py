@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - recursive
- - iterative
- - Morris traversal
+     - Recursive
+     - Iterative
+     - Morris traversal
 3. Coding
 4. Tests
 """
