@@ -46,17 +46,15 @@
 # T=O(ln), S=O(ln), dp[i][j]: # of solutions using [0...i] elements to get sum j
 class Solution:
     def findTargetSumWays(self, nums: List[int], S: int) -> int:
-        if not nums: return 0
+        if not nums or S > 1000: return 0
         n = len(nums)
-        dp = [[0] * 2001 for _ in range(n)]
-        dp[0][nums[0] + 1000] = 1
-        dp[0][-nums[0] + 1000] += 1
+        dp = {i: collections.Counter() for i in range(n)}
+        dp[0][nums[0]] += 1
+        dp[0][-nums[0]] += 1
         for i in range(1, n):
-            for tmpSum in range(-1000, 1001):
-                if dp[i - 1][tmpSum + 1000] > 0:
-                    dp[i][tmpSum + nums[i] + 1000] += dp[i - 1][tmpSum + 1000]
-                    dp[i][tmpSum - nums[i] + 1000] += dp[i - 1][tmpSum + 1000]
-        return 0 if S > 1000 else dp[n - 1][S + 1000]
+            for j in range(-1000, 1001):
+                dp[i][j] = dp[i - 1][j - nums[i]] + dp[i - 1][j + nums[i]]
+        return dp[n - 1][S]
 
 
 # # T=O(ln), S=O(n)
