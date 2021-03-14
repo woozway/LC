@@ -33,7 +33,6 @@
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
 #         if not nums: return 0
 #         self.memo = {i: dict() for i in range(len(nums))}
-#         self.count = 0
 #         return self.dfs(nums, 0, 0, S)
 
 #     def dfs(self, nums, i, tmpSum, S):
