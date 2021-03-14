@@ -16,36 +16,36 @@
 #         self.left = left
 #         self.right = right
 
-# T=O(n), S=O(n)
-class Solution:
-    def preorderTraversal(self, root: TreeNode) -> List[int]:
-        def preorder(root: TreeNode):
-            if not root: return
-            res.append(root.val)
-            preorder(root.left)
-            preorder(root.right)
-
-        res = list()
-        if not root: return res
-        preorder(root)
-        return res
-
-
 # # T=O(n), S=O(n)
 # class Solution:
 #     def preorderTraversal(self, root: TreeNode) -> List[int]:
-#         res = list()
-#         if not root: return res
-#         stack = []
-#         node = root
-#         while stack or node:
-#             while node:
-#                 res.append(node.val)
-#                 stack.append(node)
-#                 node = node.left
-#             node = stack.pop()
-#             node = node.right
-#         return res
+#         if not root: return []
+#         self.ret = []
+#         self.dfs(root)
+#         return self.ret
+
+#     def dfs(self, root):
+#         if not root: return
+#         self.ret.append(root.val)
+#         self.dfs(root.left)
+#         self.dfs(root.right)
+
+
+# T=O(n), S=O(n)
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        res = list()
+        if not root: return res
+        stack = []
+        node = root
+        while stack or node:
+            while node:
+                res.append(node.val)
+                stack.append(node)
+                node = node.left
+            node = stack.pop()
+            node = node.right
+        return res
 
 
 # # T=O(n), S=O(1)
