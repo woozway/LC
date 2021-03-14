@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - replace adjacent matched brackets
- - use stack to match brackets
+     - Replace adjacent matched brackets
+     - Use stack to match brackets
 3. Coding
 4. Tests
 """
