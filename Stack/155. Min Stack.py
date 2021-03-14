@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - naive
+     - Naive
 3. Coding
 4. Tests
 """
