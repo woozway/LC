@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - dfs
- - bfs
+     - dfs
+     - bfs
 3. Coding
 4. Tests
 """
