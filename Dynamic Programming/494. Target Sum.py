@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - Brute Force
-     - Recursion with Memoization
+     - Brute Force dfs
+     - dfs + Memoization
      - 2D Dynamic Programming
      - 1D Dynamic Programming
 3. Coding
@@ -34,15 +34,13 @@
 #         if not nums: return 0
 #         self.memo = {i: dict() for i in range(len(nums))}
 #         self.count = 0
-#         return self.calculate(nums, 0, 0, S)
+#         return self.dfs(nums, 0, 0, S)
 
-#     def calculate(self, nums, i, tmpSum, S):
-#         if i == len(nums):
-#             return 1 if tmpSum == S else 0
-#         if tmpSum in self.memo[i]:
-#             return self.memo[i][tmpSum]
-#         add = self.calculate(nums, i + 1, tmpSum + nums[i], S)
-#         sub = self.calculate(nums, i + 1, tmpSum - nums[i], S)
+#     def dfs(self, nums, i, tmpSum, S):
+#         if i == len(nums): return 1 if tmpSum == S else 0
+#         if tmpSum in self.memo[i]: return self.memo[i][tmpSum]
+#         add = self.dfs(nums, i + 1, tmpSum + nums[i], S)
+#         sub = self.dfs(nums, i + 1, tmpSum - nums[i], S)
 #         self.memo[i][tmpSum] = add + sub
 #         return self.memo[i][tmpSum]
 
