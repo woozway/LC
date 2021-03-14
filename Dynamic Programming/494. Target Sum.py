@@ -43,7 +43,7 @@
 #         return self.memo[i][tmpSum]
 
 
-# T=O(ln), S=O(ln)
+# T=O(ln), S=O(ln), dp[i][j]: # of solutions using [0...i] elements to get sum j
 class Solution:
     def findTargetSumWays(self, nums: List[int], S: int) -> int:
         if not nums: return 0
