@@ -39,13 +39,12 @@
 #     def calculate(self, nums, i, tmpSum, S):
 #         if i == len(nums):
 #             return 1 if tmpSum == S else 0
-#         else:
-#             if tmpSum in self.memo[i]:
-#                 return self.memo[i][tmpSum]
-#             add = self.calculate(nums, i + 1, tmpSum + nums[i], S)
-#             sub = self.calculate(nums, i + 1, tmpSum - nums[i], S)
-#             self.memo[i][tmpSum] = add + sub
+#         if tmpSum in self.memo[i]:
 #             return self.memo[i][tmpSum]
+#         add = self.calculate(nums, i + 1, tmpSum + nums[i], S)
+#         sub = self.calculate(nums, i + 1, tmpSum - nums[i], S)
+#         self.memo[i][tmpSum] = add + sub
+#         return self.memo[i][tmpSum]
 
 
 # T=O(ln), S=O(ln)
