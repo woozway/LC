@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - recursive
- - iterative
- - Morris traversal
+     - Recursive
+     - Iterative
+     - Morris traversal
 3. Coding
 4. Tests
 """
@@ -68,7 +68,7 @@ class Solution:
 #                 res[i], res[j] = res[j], res[i]
 #                 i += 1
 #                 j -= 1
-#
+
 #         res = list()
 #         if not root: return res
 #         p1 = root
