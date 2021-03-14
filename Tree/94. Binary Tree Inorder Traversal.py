@@ -16,36 +16,36 @@
 #         self.left = left
 #         self.right = right
 
-# T=O(n), S=O(n)
-class Solution:
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
-        if not root: return []
-        self.ret = []
-        self.dfs(root)
-        return self.ret
-
-    def dfs(self, root):
-        if not root: return
-        self.dfs(root.left)
-        self.ret.append(root.val)
-        self.dfs(root.right)
-
-
 # # T=O(n), S=O(n)
 # class Solution:
 #     def inorderTraversal(self, root: TreeNode) -> List[int]:
-#         res = list()
-#         if not root: return res
-#         stack = []
-#         node = root
-#         while stack or node:
-#             while node:
-#                 stack.append(node)
-#                 node = node.left
-#             node = stack.pop()
-#             res.append(node.val)
-#             node = node.right
-#         return res
+#         if not root: return []
+#         self.ret = []
+#         self.dfs(root)
+#         return self.ret
+
+#     def dfs(self, root):
+#         if not root: return
+#         self.dfs(root.left)
+#         self.ret.append(root.val)
+#         self.dfs(root.right)
+
+
+# T=O(n), S=O(n)
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        res = list()
+        if not root: return res
+        stack = []
+        node = root
+        while stack or node:
+            while node:
+                stack.append(node)
+                node = node.left
+            node = stack.pop()
+            res.append(node.val)
+            node = node.right
+        return res
 
 
 # # T=O(n), S=O(1)
