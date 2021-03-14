@@ -14,17 +14,18 @@
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
 #         if not nums: return 0
-#         self.count = 0
-#         self.calculate(nums, 0, 0, S)
-#         return self.count
-#
-#     def calculate(self, nums, i, tmpSum, S):
-#         if i == len(nums):
-#             if tmpSum == S:
-#                 self.count += 1
-#         else:
-#             self.calculate(nums, i + 1, tmpSum + nums[i], S)
-#             self.calculate(nums, i + 1, tmpSum - nums[i], S)
+#         self.cnt = 0
+#         self.nums = nums
+#         self.dfs(0, 0, S)
+#         return self.cnt
+
+#     def dfs(self, idx, tmpSum, target):
+#         if idx == len(self.nums):
+#             if tmpSum == target:
+#                 self.cnt += 1
+#             return
+#         self.dfs(idx + 1, tmpSum + self.nums[idx], target)
+#         self.dfs(idx + 1, tmpSum - self.nums[idx], target)
 
 
 # # T=O(ln), S=O(ln), l refers to the range of tmpSum
@@ -34,7 +35,7 @@
 #         self.memo = {i: dict() for i in range(len(nums))}
 #         self.count = 0
 #         return self.calculate(nums, 0, 0, S)
-# 
+
 #     def calculate(self, nums, i, tmpSum, S):
 #         if i == len(nums):
 #             return 1 if tmpSum == S else 0
