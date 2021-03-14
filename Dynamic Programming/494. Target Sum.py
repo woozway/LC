@@ -43,7 +43,9 @@
 #         return self.memo[i][tmpSum]
 
 
-# T=O(ln), S=O(ln), dp[i][j]: # of solutions using [0...i] elements to get sum j
+# T=O(n*sum), S=O(n*sum)
+# dp[i][j]: # of solutions using [0...i] elements to get sum j
+# sum: sum(nums)
 class Solution:
     def findTargetSumWays(self, nums: List[int], S: int) -> int:
         if not nums or S > 1000: return 0
@@ -57,7 +59,7 @@ class Solution:
         return dp[n - 1][S]
 
 
-# # T=O(ln), S=O(n)
+# # T=O(n*sum), S=O(n)
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
 #         if not nums: return 0
