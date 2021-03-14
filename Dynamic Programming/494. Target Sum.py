@@ -63,13 +63,13 @@ class Solution:
 # class Solution:
 #     def findTargetSumWays(self, nums: List[int], S: int) -> int:
 #         if not nums or S > 1000: return 0
-#         dp = collections.Counter()
+#         dp, next = (collections.Counter() for _ in range(2))
 #         dp[nums[0]] += 1
 #         dp[-nums[0]] += 1
 #         for i in range(1, len(nums)):
-#             next = collections.Counter()
+#             next.clear()
 #             for j in range(-1000, 1001):
 #                 next[j + nums[i]] += dp[j]
 #                 next[j - nums[i]] += dp[j]
-#             dp = next
+#             dp = next.copy()
 #         return dp[S]
