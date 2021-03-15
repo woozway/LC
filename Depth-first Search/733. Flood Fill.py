@@ -8,7 +8,7 @@
 """
 
 
-# T=O(RC), S=O(RC)
+# T=O(mn), S=O(mn)
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
         self.m, self.n = len(image), len(image[0])
