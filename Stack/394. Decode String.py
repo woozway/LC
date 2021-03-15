@@ -45,7 +45,7 @@ class Solution:
 #                 idx += 1
 #             if s[idx] == '[':
 #                 returned_str, ending_pos = self.dfs(idx + 1, s, 0, '')
-#                 prev_str = prev_str + returned_str*prev_num
+#                 prev_str += returned_str * prev_num
 #                 idx = ending_pos
 #                 prev_num = 0
 #             elif s[idx] == ']':
