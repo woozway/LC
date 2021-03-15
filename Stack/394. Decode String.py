@@ -35,22 +35,22 @@ class Solution:
 class Solution:
     def decodeString(self, s: str) -> str:
         if not s or len(s) == 0: return s
-        result, idx = self.dfs(0, s, 0, '')
-        return result
+        ret_str, idx = self.dfs(0, s, 0, '')
+        return ret_str
 
-    def dfs(self, idx, s, prev_num, prev_str):
+    def dfs(self, idx, s, pre_num, pre_str):
         while idx < len(s):
             while s[idx].isdigit():
-                prev_num = prev_num * 10 + int(s[idx])
+                pre_num = pre_num * 10 + int(s[idx])
                 idx += 1
             if s[idx] == '[':
-                returned_str, ending_pos = self.dfs(idx + 1, s, 0, '')
-                prev_str += returned_str * prev_num
-                idx = ending_pos
-                prev_num = 0
+                return_str, index = self.dfs(idx + 1, s, 0, '')
+                pre_str += return_str * pre_num
+                idx = index
+                pre_num = 0
             elif s[idx] == ']':
-                return prev_str, idx
+                return pre_str, idx
             else:
-                prev_str += s[idx]
+                pre_str += s[idx]
             idx += 1
-        return prev_str, idx
+        return pre_str, idx
