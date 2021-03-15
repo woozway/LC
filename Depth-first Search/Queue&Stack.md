@@ -2,9 +2,10 @@
 ---
 ## notes:
 - **leetcode 133. Clone Graph**
-  deep copy is the essence of Garbage Collection mechanism, remember to clone node first then dive into recursion, otherwise it might loop inside a graph. (since the depth of human thinking is quite limited, when implementing dfs, we need only focusing on one level of implementation and remember the outcome that you want you dfs to have, then leave the rest of things to system stack, it'll take care of that)
+   > deep copy is the essence of Garbage Collection mechanism, remember to clone node first then dive into recursion, otherwise it might loop inside a graph. (since the depth of human thinking is quite limited, when implementing dfs, we need only focusing on one level of implementation and remember the outcome that you want you dfs to have, then leave the rest of things to system stack, it'll take care of that)
 - **leetcode 394. Decode String**
-  technique to first store previous string in stack
+  1. technique to first store previous string in stack
+  2. master the resursive solution (note: don't forget to `pre_num = 0` since when you've done one [...]'s handling)
 ## bfs
 ```java
 // BFS_template I
