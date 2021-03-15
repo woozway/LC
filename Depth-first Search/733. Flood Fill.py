@@ -25,18 +25,28 @@ class Solution:
         return image
 
 
-# # T=O(RC), S=O(RC)
-# class Solution:
-#     def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
-#         currColor = image[sr][sc]
-#         if currColor == newColor: return image
-#         n, m = len(image), len(image[0])
-#         que = collections.deque([(sr, sc)])
-#         image[sr][sc] = newColor
-#         while que:
-#             x, y = que.popleft()
-#             for mx, my in [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]:
-#                 if 0 <= mx < n and 0 <= my < m and image[mx][my] == currColor:
-#                     que.append((mx, my))
-#                     image[mx][my] = newColor
-#         return image
+# # T=O(mn), S=O(mn)
+class Solution:
+    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
+        self.m, self.n, self.image = len(image), len(image[0]), image
+        if not (0 <= sr < self.m) or not (0 <= sc < self.n): return [[]]
+        if image[sr][sc] != newColor:
+            self.bfs(sr, sc, newColor)
+        return image
+
+    def bfs(self, sr, sc, newColor):
+        Q = collections.deque([(sr, sc)])
+        visited = set([(sr, sc)])
+        ori_color = self.image[sr][sc]
+        self.image[sr][sc] = newColor
+        dr = [-1, 1, 0, 0]
+        dc = [0, 0, -1, 1]
+        while Q:
+            r, c = Q.popleft()
+            for i in range(4):
+                nr, nc = r + dr[i], c + dc[i]
+                if 0 <= nr < self.m and 0 <= nc < self.n \
+                        and (nr, nc) not in visited and self.image[nr][nc] == ori_color:
+                    Q.append((nr, nc))
+                    visited.add((nr, nc))
+                    self.image[nr][nc] = newColor
