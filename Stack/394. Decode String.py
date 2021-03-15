@@ -12,22 +12,23 @@
 class Solution:
     def decodeString(self, s: str) -> str:
         if not s or len(s) == 0: return s
-        stack = []; curNum = 0; curString = ''
+        curNum, curStr = 0, ''
+        stackNum, stackStr = [], []
         for c in s:
             if c == '[':
-                stack.append(curString)
-                stack.append(curNum)
-                curString = ''
+                stackNum.append(curNum)
+                stackStr.append(curStr)
                 curNum = 0
+                curStr = ''
             elif c == ']':
-                num = stack.pop()
-                prevString = stack.pop()
-                curString = prevString + curString * num
+                num = stackNum.pop()
+                prevStr = stackStr.pop()
+                curStr = prevStr + num * curStr
             elif c.isdigit():
                 curNum = curNum * 10 + int(c)
             else:
-                curString += c
-        return curString
+                curStr += c
+        return curStr
 
 
 # # T=O(n), S=O(n)
