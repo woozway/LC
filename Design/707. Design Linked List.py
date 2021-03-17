@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - singly linked list
-     - doubly linked list
+     - Singly linked list
+     - Doubly linked list
 3. Coding
 4. Tests
 """
