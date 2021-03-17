@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - use set to check whether a node has been met before
- - fast & slow pointers
+     - Use set to check whether a node has been met before
+     - Fast & Slow pointers
 3. Coding
 4. Tests
 """
