@@ -29,7 +29,7 @@ class Solution:
         dummy = ListNode(0, head)
         length = getLength(head)
         cur = dummy
-        for i in range(1, length - n + 1):
+        for _ in range(1, length - n + 1):
             cur = cur.next
         cur.next = cur.next.next
         return dummy.next
@@ -45,7 +45,7 @@ class Solution:
         while cur:
             stack.append(cur)
             cur = cur.next
-        for i in range(n):
+        for _ in range(n):
             stack.pop()
         prev = stack[-1]
         prev.next = prev.next.next
@@ -58,7 +58,7 @@ class Solution:
         if not head: return None
         dummy = ListNode(0, head)
         first, second = head, dummy
-        for i in range(n):
+        for _ in range(n):
             first = first.next
         while first:
             first, second = first.next, second.next
