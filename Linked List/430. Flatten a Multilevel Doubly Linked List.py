@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - recursive dfs
-     - iterative dfs
+     - Recursive dfs
+     - Iterative dfs
 3. Coding
 4. Tests
 """
@@ -36,23 +36,23 @@ class Solution:
         return self.flatten_dfs(tail, tempNext)
 
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def flatten(self, head: 'Node') -> 'Node':
-#         if not head: return
-#         pseudoHead = Node(0, None, head, None)
-#         prev = pseudoHead
-#         stack = []
-#         stack.append(head)
-#         while stack:
-#             curr = stack.pop()
-#             prev.next = curr
-#             curr.prev = prev
-#             if curr.next:
-#                 stack.append(curr.next)
-#             if curr.child:
-#                 stack.append(curr.child)
-#                 curr.child = None
-#             prev = curr
-#         pseudoHead.next.prev = None
-#         return pseudoHead.next
+# T=O(n), S=O(n)
+class Solution:
+    def flatten(self, head: 'Node') -> 'Node':
+        if not head: return
+        pseudoHead = Node(0, None, head, None)
+        prev = pseudoHead
+        stack = []
+        stack.append(head)
+        while stack:
+            curr = stack.pop()
+            prev.next = curr
+            curr.prev = prev
+            if curr.next:
+                stack.append(curr.next)
+            if curr.child:
+                stack.append(curr.child)
+                curr.child = None
+            prev = curr
+        pseudoHead.next.prev = None
+        return pseudoHead.next
