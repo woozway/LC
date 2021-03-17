@@ -57,8 +57,7 @@ class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         if not head: return None
         dummy = ListNode(0, head)
-        first = head
-        second = dummy
+        first, second = head, dummy
         for i in range(n):
             first = first.next
         while first:
