@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - brute force
-     - hash table
-     - two pointers
+     - Brute force
+     - Hash table
+     - Two Pointers
 3. Coding
 4. Tests
 """
@@ -29,19 +29,19 @@
 #         return None
 
 
-# # T=O(n+m), S=O(m)
-# class Solution:
-#     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-#         if not headA or not headB: return None
-#         nodes_in_B = set()
-#         while headB is not None:
-#             nodes_in_B.add(headB)
-#             headB = headB.next
-#         while headA is not None:
-#             if headA in nodes_in_B:
-#                 return headA
-#             headA = headA.next
-#         return None
+# T=O(n+m), S=O(m)
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        if not headA or not headB: return None
+        nodes_in_B = set()
+        while headB is not None:
+            nodes_in_B.add(headB)
+            headB = headB.next
+        while headA is not None:
+            if headA in nodes_in_B:
+                return headA
+            headA = headA.next
+        return None
 
 
 # T=O(n+m), S=O(1)
