@@ -17,6 +17,7 @@
 # T=O(n), S=O(n)
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
+        if not head or not head.next: return False
         S = set()
         while head:
             if head in S:
@@ -29,6 +30,7 @@ class Solution:
 # T=O(n), S=O(1)
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
+        if not head or not head.next: return False
         slow = fast = head
         while slow and fast and fast.next:
             slow, fast = slow.next, fast.next.next
