@@ -1,7 +1,7 @@
 # Linked List notes
 ---
 ## Two Pointer Technique
-2. **leetcode 141. Linked List Cycle & leetcode 142. Linked List Cycle II**:
+1. **leetcode 141. Linked List Cycle & leetcode 142. Linked List Cycle II**:
    - S=O(1) to detect cycle in a singly linked list, use fast & slow pointers
     ```java
     // Initialize slow & fast pointers
@@ -20,6 +20,6 @@
     }
     return false;   // change return value to fit specific problem
     ```
-3. Tips:
+2. Tips:
    - Always examine if the node is null before you call the next field.
    - Carefully define the end conditions of your loop.
