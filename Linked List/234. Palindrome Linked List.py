@@ -44,29 +44,29 @@ class Solution:
 #         return recursively_check()
 
 
-# # T=O(n), S=O(1)
-# class Solution:
-#     def isPalindrome(self, head: ListNode) -> bool:
-#         if not head or not head.next: return True
-#         first_half_end = self.end_of_first_half(head)
-#         second_half_start = self.reverse_list(first_half_end.next)
-#         result = True
-#         first, second = head, second_half_start
-#         while result and second:
-#             if first.val != second.val:
-#                 result = False
-#             first, second = first.next, second.next
-#         first_half_end.next = self.reverse_list(second_half_start)
-#         return result
+# T=O(n), S=O(1)
+class Solution:
+    def isPalindrome(self, head: ListNode) -> bool:
+        if not head or not head.next: return True
+        first_half_end = self.end_of_first_half(head)
+        second_half_start = self.reverse_list(first_half_end.next)
+        result = True
+        first, second = head, second_half_start
+        while result and second:
+            if first.val != second.val:
+                result = False
+            first, second = first.next, second.next
+        first_half_end.next = self.reverse_list(second_half_start)
+        return result
 
-#     def end_of_first_half(self, head):
-#         fast, slow = head, head
-#         while fast.next and fast.next.next:
-#             fast, slow = fast.next.next, slow.next
-#         return slow
+    def end_of_first_half(self, head):
+        fast, slow = head, head
+        while fast.next and fast.next.next:
+            fast, slow = fast.next.next, slow.next
+        return slow
 
-#     def reverse_list(self, head):
-#         cur, prev = head, None
-#         while cur:
-#             cur.next, prev, cur = prev, cur, cur.next
-#         return prev
+    def reverse_list(self, head):
+        cur, prev = head, None
+        while cur:
+            cur.next, prev, cur = prev, cur, cur.next
+        return prev
