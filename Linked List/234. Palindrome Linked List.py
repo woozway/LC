@@ -18,7 +18,7 @@
 # T=O(n), S=O(n)
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        if not head: return True
+        if not head or not head.next: return True
         vals = []
         cur = head
         while cur is not None:
@@ -31,23 +31,23 @@ class Solution:
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
         self.front_pointer = head
-        def recursively_check(current_node=head):
-            if current_node is not None:
-                if not recursively_check(current_node.next):
+        def recursively_check(cur=head):
+            if cur is not None:
+                if not recursively_check(cur.next):
                     return False
-                if self.front_pointer.val != current_node.val:
+                if self.front_pointer.val != cur.val:
                     return False
                 self.front_pointer = self.front_pointer.next
             return True
 
-        if not head: return True
+        if not head or not head.next: return True
         return recursively_check()
 
 
 # # T=O(n), S=O(1)
 # class Solution:
 #     def isPalindrome(self, head: ListNode) -> bool:
-#         if head is None: return True
+#         if not head or not head.next: return True
 #         first_half_end = self.end_of_first_half(head)
 #         second_half_start = self.reverse_list(first_half_end.next)
 #         result = True
