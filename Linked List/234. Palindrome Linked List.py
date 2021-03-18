@@ -21,7 +21,7 @@ class Solution:
         if not head or not head.next: return True
         vals = []
         cur = head
-        while cur is not None:
+        while cur:
             vals.append(cur.val)
             cur = cur.next
         return vals == vals[::-1]
