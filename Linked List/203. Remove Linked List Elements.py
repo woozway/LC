@@ -17,13 +17,12 @@
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
         if not head: return None
-        sentinel = ListNode(0)
-        sentinel.next = head
-        prev, curr = sentinel, head
-        while curr:
-            if curr.val == val:
-                prev.next = curr.next
+        sentinel = ListNode(0, head)
+        prev, cur = sentinel, head
+        while cur:
+            if cur.val == val:
+                prev.next = cur.next
             else:
-                prev = curr
-            curr = curr.next
+                prev = cur
+            cur = cur.next
         return sentinel.next
