@@ -53,7 +53,7 @@ class Solution:
 #         result = True
 #         first_position = head
 #         second_position = second_half_start
-#         while result and second_position is not None:
+#         while result and second_position:
 #             if first_position.val != second_position.val:
 #                 result = False
 #             first_position = first_position.next
@@ -64,7 +64,7 @@ class Solution:
 #     def end_of_first_half(self, head):
 #         fast = head
 #         slow = head
-#         while fast.next is not None and fast.next.next is not None:
+#         while fast.next and fast.next.next:
 #             fast = fast.next.next
 #             slow = slow.next
 #         return slow
@@ -72,7 +72,7 @@ class Solution:
 #     def reverse_list(self, head):
 #         previous = None
 #         current = head
-#         while current is not None:
+#         while current:
 #             next_node = current.next
 #             current.next = previous
 #             previous = current
