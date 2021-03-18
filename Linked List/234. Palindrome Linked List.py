@@ -60,7 +60,7 @@ class Solution:
 #             second_position = second_position.next
 #         first_half_end.next = self.reverse_list(second_half_start)
 #         return result
-# 
+
 #     def end_of_first_half(self, head):
 #         fast = head
 #         slow = head
@@ -68,7 +68,7 @@ class Solution:
 #             fast = fast.next.next
 #             slow = slow.next
 #         return slow
-# 
+
 #     def reverse_list(self, head):
 #         previous = None
 #         current = head
