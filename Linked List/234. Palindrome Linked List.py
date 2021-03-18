@@ -62,19 +62,13 @@ class Solution:
 #         return result
 
 #     def end_of_first_half(self, head):
-#         fast = head
-#         slow = head
+#         fast, slow = head, head
 #         while fast.next and fast.next.next:
-#             fast = fast.next.next
-#             slow = slow.next
+#             fast, slow = fast.next.next, slow.next
 #         return slow
 
 #     def reverse_list(self, head):
-#         previous = None
-#         current = head
-#         while current:
-#             next_node = current.next
-#             current.next = previous
-#             previous = current
-#             current = next_node
-#         return previous
+#         cur, prev = head, None
+#         while cur:
+#             cur.next, prev, cur = prev, cur, cur.next
+#         return prev
