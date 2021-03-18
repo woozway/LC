@@ -23,3 +23,6 @@
 2. Tips:
    - Always examine if the node is null before you call the next field.
    - Carefully define the end conditions of your loop.
+   - Going through some test cases will save you time.
+   - Feel free to use several pointers at the same time.
+   - In many cases, you need to track the previous node of the current node.
