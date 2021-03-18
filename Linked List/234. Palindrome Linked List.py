@@ -51,13 +51,11 @@ class Solution:
 #         first_half_end = self.end_of_first_half(head)
 #         second_half_start = self.reverse_list(first_half_end.next)
 #         result = True
-#         first_position = head
-#         second_position = second_half_start
-#         while result and second_position:
-#             if first_position.val != second_position.val:
+#         first, second = head, second_half_start
+#         while result and second:
+#             if first.val != second.val:
 #                 result = False
-#             first_position = first_position.next
-#             second_position = second_position.next
+#             first, second = first.next, second.next
 #         first_half_end.next = self.reverse_list(second_half_start)
 #         return result
 
