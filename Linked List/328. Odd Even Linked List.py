@@ -2,6 +2,7 @@
 1. Clarification
 2. Possible solutions
      - Intuition
+     - Merge
 3. Coding
 4. Tests
 """
@@ -16,7 +17,7 @@
 # T=O(n), S=O(1)
 class Solution:
     def oddEvenList(self, head: ListNode) -> ListNode:
-        if not head: return None
+        if not head: return head
         odd, even = ListNode(0), ListNode(0)
         prevodd, preveven = odd, even
         cur, cnt = head, 1
@@ -35,3 +36,18 @@ class Solution:
         else:
             prevodd.next = even.next
         return odd.next
+
+
+# T=O(n), S=O(1)
+class Solution:
+    def oddEvenList(self, head: ListNode) -> ListNode:
+        if not head: return head
+        evenHead = head.next
+        odd, even = head, evenHead
+        while even and even.next:
+            odd.next = even.next
+            odd = odd.next
+            even.next = odd.next
+            even = even.next
+        odd.next = evenHead
+        return head
