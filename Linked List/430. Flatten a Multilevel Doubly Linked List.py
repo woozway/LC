@@ -1,6 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
+     - Preorder traversal
      - Recursive dfs
      - Iterative dfs
 3. Coding
@@ -16,6 +17,26 @@ class Node:
         self.next = next
         self.child = child
 """
+
+# T=O(n), S=O(n)
+class Solution:
+    def flatten(self, head: 'Node') -> 'Node':
+        if not head: return head
+        self.ans = []
+        self.dfs(head)
+        self.ans[0].child = None
+        for i in range(1, len(self.ans)):
+            self.ans[i - 1].next = self.ans[i]
+            self.ans[i].prev = self.ans[i - 1]
+            self.ans[i].child = None
+        return self.ans[0]
+
+    def dfs(self, node):
+        if node is None: return
+        self.ans.append(node)
+        self.dfs(node.child)
+        self.dfs(node.next)
+
 
 # T=O(n), S=O(n)
 class Solution:
