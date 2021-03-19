@@ -16,8 +16,7 @@
 # T=O(n), S=O(1)
 class Solution:
     def rotateRight(self, head: 'ListNode', k: 'int') -> 'ListNode':
-        if not head: return None
-        if not head.next: return head
+        if not head or not head.next: return head
         old_tail = head
         n = 1
         while old_tail.next:
