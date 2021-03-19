@@ -30,18 +30,18 @@ class Solution:
         return clone_node
 
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def cloneGraph(self, node: 'Node') -> 'Node':
-#         if not node: return None
-#         visited = {}
-#         Q = collections.deque([node])
-#         visited[node] = Node(node.val)
-#         while Q:
-#             n = Q.popleft()
-#             for nei in n.neighbors:
-#                 if nei not in visited:
-#                     Q.append(nei)
-#                     visited[nei] = Node(nei.val)
-#                 visited[n].neighbors.append(visited[nei])
-#         return visited[node]
+# T=O(n), S=O(n)
+class Solution:
+    def cloneGraph(self, node: 'Node') -> 'Node':
+        if not node: return None
+        visited = {}
+        Q = collections.deque([node])
+        visited[node] = Node(node.val)
+        while Q:
+            n = Q.popleft()
+            for nei in n.neighbors:
+                if nei not in visited:
+                    Q.append(nei)
+                    visited[nei] = Node(nei.val)
+                visited[n].neighbors.append(visited[nei])
+        return visited[node]
