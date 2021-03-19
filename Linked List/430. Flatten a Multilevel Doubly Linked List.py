@@ -22,18 +22,18 @@ class Solution:
     def flatten(self, head: 'Node') -> 'Node':
         if not head: return head
         pseudoHead = Node(None, None, head, None)
-        self.flatten_dfs(pseudoHead, head)
+        self.dfs(pseudoHead, head)
         pseudoHead.next.prev = None
         return pseudoHead.next
 
-    def flatten_dfs(self, prev, curr):
+    def dfs(self, prev, curr):
         if not curr: return prev
         curr.prev = prev
         prev.next = curr
         tempNext = curr.next
-        tail = self.flatten_dfs(curr, curr.child)
+        tail = self.dfs(curr, curr.child)
         curr.child = None
-        return self.flatten_dfs(tail, tempNext)
+        return self.dfs(tail, tempNext)
 
 
 # T=O(n), S=O(n)
@@ -42,8 +42,7 @@ class Solution:
         if not head: return
         pseudoHead = Node(0, None, head, None)
         prev = pseudoHead
-        stack = []
-        stack.append(head)
+        stack = [head]
         while stack:
             curr = stack.pop()
             prev.next = curr
