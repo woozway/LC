@@ -40,19 +40,18 @@ class Solution:
     def getClonedNode(self, node):
         if not node: return None
         if node in self.visited: return self.visited[node]
-        self.visited[node] = Node(node.val, None, None)
+        self.visited[node] = Node(node.val)
         return self.visited[node]
 
     def copyRandomList(self, head: 'Node') -> 'Node':
         if not head: return None
         old_node = head
-        new_node = Node(old_node.val, None, None)
+        new_node = Node(old_node.val)
         self.visited[old_node] = new_node
-        while old_node != None:
+        while old_node:
             new_node.random = self.getClonedNode(old_node.random)
             new_node.next = self.getClonedNode(old_node.next)
-            old_node = old_node.next
-            new_node = new_node.next
+            old_node, new_node = old_node.next, new_node.next
         return self.visited[head]
 
 
@@ -62,7 +61,7 @@ class Solution:
         if not head: return None
         ptr = head
         while ptr:
-            new_node = Node(ptr.val, None, None)
+            new_node = Node(ptr.val)
             new_node.next = ptr.next
             ptr.next = new_node
             ptr = new_node.next
