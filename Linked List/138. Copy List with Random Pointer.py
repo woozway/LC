@@ -23,7 +23,7 @@ class Solution:
         self.visitedHash = {}
 
     def copyRandomList(self, head: 'Node') -> 'Node':
-        if head == None: return head
+        if not head: return None
         if head in self.visitedHash: return self.visitedHash[head]
         node = Node(head.val, None, None)
         self.visitedHash[head] = node
@@ -38,16 +38,13 @@ class Solution:
         self.visited = {}
 
     def getClonedNode(self, node):
-        if node:
-            if node in self.visited:
-                return self.visited[node]
-            else:
-                self.visited[node] = Node(node.val, None, None)
-                return self.visited[node]
-        return None
+        if not node: return None
+        if node in self.visited: return self.visited[node]
+        self.visited[node] = Node(node.val, None, None)
+        return self.visited[node]
 
     def copyRandomList(self, head: 'Node') -> 'Node':
-        if not head: return head
+        if not head: return None
         old_node = head
         new_node = Node(old_node.val, None, None)
         self.visited[old_node] = new_node
@@ -62,7 +59,7 @@ class Solution:
 # T=O(n), S=O(1)
 class Solution:
     def copyRandomList(self, head: 'Node') -> 'Node':
-        if not head: return head
+        if not head: return None
         ptr = head
         while ptr:
             new_node = Node(ptr.val, None, None)
