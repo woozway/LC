@@ -82,22 +82,10 @@ class MyLinkedList:
         return curr.val
 
     def addAtHead(self, val: int) -> None:
-        pred, succ = self.head, self.head.next
-        self.size += 1
-        to_add = ListNode(val)
-        to_add.prev = pred
-        to_add.next = succ
-        pred.next = to_add
-        succ.prev = to_add
+        self.addAtIndex(0, val)
 
     def addAtTail(self, val: int) -> None:
-        succ, pred = self.tail, self.tail.prev
-        self.size += 1
-        to_add = ListNode(val)
-        to_add.prev = pred
-        to_add.next = succ
-        pred.next = to_add
-        succ.prev = to_add
+        self.addAtIndex(self.size, val)
 
     def addAtIndex(self, index: int, val: int) -> None:
         if index < 0 or index > self.size: return
