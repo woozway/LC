@@ -26,3 +26,5 @@
    - Going through some test cases will save you time.
    - Feel free to use several pointers at the same time.
    - In many cases, you need to track the previous node of the current node.
+3. a comparison of time complexity between the linked list and the array:
+   ![alt text](https://github.com/chopchap/leetcode/blob/main/images/comparison_of_time_complexity.png?raw=true)
