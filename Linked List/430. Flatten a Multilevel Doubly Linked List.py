@@ -21,7 +21,7 @@ class Node:
 class Solution:
     def flatten(self, head: 'Node') -> 'Node':
         if not head: return head
-        pseudoHead = Node(None, None, head, None)
+        pseudoHead = Node(0, None, head, None)
         self.dfs(pseudoHead, head)
         pseudoHead.next.prev = None
         return pseudoHead.next
