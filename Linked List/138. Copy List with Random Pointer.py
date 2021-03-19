@@ -49,8 +49,8 @@ class Solution:
         new_node = Node(old_node.val)
         self.visited[old_node] = new_node
         while old_node:
-            new_node.random = self.getClonedNode(old_node.random)
             new_node.next = self.getClonedNode(old_node.next)
+            new_node.random = self.getClonedNode(old_node.random)
             old_node, new_node = old_node.next, new_node.next
         return self.visited[head]
 
