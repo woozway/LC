@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - Backtrack
+     - dfs
      - Iterative v1
      - Iterative v2
 3. Coding
