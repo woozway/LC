@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - hash table
+     - Hash table
 3. Coding
 4. Tests
 """
