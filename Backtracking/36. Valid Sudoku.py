@@ -33,9 +33,9 @@ class Solution:
 # T=O(1), S=O(1)
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        rows = [{} for i in range(9)]
-        cols = [{} for i in range(9)]
-        boxes = [{} for i in range(9)]
+        rows = [{} for _ in range(9)]
+        cols = [{} for _ in range(9)]
+        boxes = [{} for _ in range(9)]
         for i in range(9):
             for j in range(9):
                 num = board[i][j]
