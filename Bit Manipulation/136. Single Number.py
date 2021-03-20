@@ -25,9 +25,7 @@
 # T=O(n), S=O(n)
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        hash_table = collections.defaultdict(int)
-        for i in nums:
-            hash_table[i] += 1
+        hash_table = collections.Counter(nums)
         for i in hash_table:
             if hash_table[i] == 1:
                 return i
