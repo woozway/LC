@@ -11,7 +11,7 @@
 # T=O(1), S=O(1)
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        if not board: return False
+        if not board or not board[0]: return False
         for i in range(len(board)):
             for j in range(len(board[0])):
                 if board[i][j] != '.':
@@ -33,6 +33,7 @@ class Solution:
 # T=O(1), S=O(1)
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
+        if not board or not board[0]: return False
         rows = [collections.Counter() for _ in range(9)]
         cols = [collections.Counter() for _ in range(9)]
         boxes = [collections.Counter() for _ in range(9)]
