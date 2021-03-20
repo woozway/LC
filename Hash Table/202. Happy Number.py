@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - hash set
-     - fast & slow pointers
-     - maths
+     - Hash set
+     - Fast & Slow pointers
+     - Maths
 3. Coding
 4. Tests
 """
