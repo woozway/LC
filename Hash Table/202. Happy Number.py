@@ -29,19 +29,20 @@ class Solution:
 # T=O(lgn), S=O(1), Floyd's cycle detection algo
 class Solution:
     def isHappy(self, n: int) -> bool:
-        def get_next(number):
+        def get_next(n):
             total_sum = 0
-            while number > 0:
-                number, digit = divmod(number, 10)
+            while n > 0:
+                n, digit = divmod(n, 10)
                 total_sum += digit ** 2
             return total_sum
-
-        slow = n
-        fast = get_next(n)
-        while fast != 1 and slow != fast:
+        
+        fast = slow = n
+        while slow != 1 and fast != 1 and get_next(fast) != 1:
             slow = get_next(slow)
             fast = get_next(get_next(fast))
-        return fast == 1
+            if slow == fast:
+                return False
+        return True
 
 
 # # T=O(lgn), S=O(1)
