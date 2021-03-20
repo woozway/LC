@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - mod + array
+     - Mod + Array
 3. Coding
 4. Tests
 """
