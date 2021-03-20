@@ -12,8 +12,8 @@
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         if not board or not board[0]: return False
-        for i in range(len(board)):
-            for j in range(len(board[0])):
+        for i in range(9):
+            for j in range(9):
                 if board[i][j] != '.':
                     c = board[i][j]
                     board[i][j] = '.'
@@ -23,7 +23,7 @@ class Solution:
         return True
 
     def isValid(self, board, row, col, c):
-        for i in range(len(board)):
+        for i in range(9):
             if board[row][i] == c: return False
             if board[i][col] == c: return False
             if board[3*(row//3) + i//3][3*(col//3) + i%3] == c: return False
