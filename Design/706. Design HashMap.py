@@ -18,16 +18,15 @@ class Bucket:
                 return v
         return -1
 
-    def update(self, key, value):
+    def update(self, key, val):
         found = False
         for i, kv in enumerate(self.bucket):
             if key == kv[0]:
-                self.bucket[i] = (key, value)
+                self.bucket[i] = (key, val)
                 found = True
                 break
-
         if not found:
-            self.bucket.append((key, value))
+            self.bucket.append((key, val))
 
     def remove(self, key):
         for i, kv in enumerate(self.bucket):
@@ -35,23 +34,23 @@ class Bucket:
                 del self.bucket[i]
 
 
-class MyHashMap(object):
+class MyHashMap:
 
     def __init__(self):
         self.key_space = 2069
         self.hash_table = [Bucket() for i in range(self.key_space)]
 
-    def put(self, key, value):
-        hash_key = key % self.key_space
-        self.hash_table[hash_key].update(key, value)
+    def put(self, key, val):
+        idx = key % self.key_space
+        self.hash_table[idx].update(key, val)
 
     def get(self, key):
-        hash_key = key % self.key_space
-        return self.hash_table[hash_key].get(key)
+        idx = key % self.key_space
+        return self.hash_table[idx].get(key)
 
     def remove(self, key):
-        hash_key = key % self.key_space
-        self.hash_table[hash_key].remove(key)
+        idx = key % self.key_space
+        self.hash_table[idx].remove(key)
 
 
 # Your MyHashMap object will be instantiated and called as such:
