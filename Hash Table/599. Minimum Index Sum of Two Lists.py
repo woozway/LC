@@ -48,15 +48,15 @@ class Solution:
         hashMap = {x: i for i, x in enumerate(list1)}
         ret = []
         min_sum = inf
-        for j in range(n2):
+        for j, y in enumerate(list2):
             if j > min_sum:
                 break
-            if list2[j] in hashMap:
-                Sum = j + hashMap[list2[j]]
+            if y in hashMap:
+                Sum = j + hashMap[y]
                 if Sum < min_sum:
                     ret.clear()
-                    ret.append(list2[j])
+                    ret.append(y)
                     min_sum = Sum
                 elif Sum == min_sum:
-                    ret.append(list2[j])
+                    ret.append(y)
         return ret
