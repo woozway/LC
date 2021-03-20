@@ -2,7 +2,7 @@
 1. Clarification
 2. Possible solutions
      - Hash set
-     - Fast & Slow pointers
+     - Fast & Slow pointers to detect cycle
      - Maths
 3. Coding
 4. Tests
