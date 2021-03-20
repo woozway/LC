@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - linked list
-     - binary search tree as bucket
+     - Linked list
+     - Binary search tree as bucket
 3. Coding
 4. Tests
 """
