@@ -3,6 +3,7 @@
 2. Possible solutions
      - Hash table v1
      - Hash table v2
+     - Pythonic
 3. Coding
 4. Tests
 """
@@ -37,3 +38,10 @@ class Solution:
                 return False
             d1[v], d2[w] = w, v
         return True
+
+
+# T=O(n), S=O(len(alphabet))
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s) != len(t): return False
+        return len(set(zip(s, t))) == len(set(s)) == len(set(t))
