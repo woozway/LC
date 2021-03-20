@@ -35,13 +35,13 @@ class Solution:
 #                 number, digit = divmod(number, 10)
 #                 total_sum += digit ** 2
 #             return total_sum
-# 
-#         slow_runner = n
-#         fast_runner = get_next(n)
-#         while fast_runner != 1 and slow_runner != fast_runner:
-#             slow_runner = get_next(slow_runner)
-#             fast_runner = get_next(get_next(fast_runner))
-#         return fast_runner == 1
+
+#         slow = n
+#         fast = get_next(n)
+#         while fast != 1 and slow != fast:
+#             slow = get_next(slow)
+#             fast = get_next(get_next(fast))
+#         return fast == 1
 
 
 # # T=O(lgn), S=O(1)
