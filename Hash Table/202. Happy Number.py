@@ -3,6 +3,7 @@
 2. Possible solutions
      - Hash set
      - Fast & Slow pointers to detect cycle
+       (same as leetcode 141. Linked List Cycle & 142. Linked List Cycle II)
      - Maths
 3. Coding
 4. Tests
