@@ -8,7 +8,7 @@
 """
 
 
-# T=O(nklgk), S=O(nk)
+# T=O(nklgk), S=O(nk), k=avg length of strs
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         ans = collections.defaultdict(list)
