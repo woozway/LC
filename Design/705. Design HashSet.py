@@ -9,7 +9,7 @@
 
 
 # T=O(n/k), S=O(k+m), k=len(buckets), m=# of already inserted number
-class MyHashSet(object):
+class MyHashSet:
 
     def __init__(self):
         self.keyRange = 769
