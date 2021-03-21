@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - dfs
-     - Unique Identifier or hashtable
+    - dfs
+    - Unique Identifier or hashtable
 3. Coding
 4. Tests
 """
@@ -20,7 +20,7 @@ class Solution:
     def findDuplicateSubtrees(self, root: TreeNode) -> List[TreeNode]:
         def collect(node):
             if not node: return '#'
-            serial = "{} {} {}".format(node.val, collect(node.left), collect(node.right))
+            serial = "{},{},{}".format(node.val, collect(node.left), collect(node.right))
             count[serial] += 1
             if count[serial] == 2:
                 ans.append(node)
