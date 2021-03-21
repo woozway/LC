@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - hash + grouping
+    - HashMap + grouping
 3. Coding
 4. Tests
 """
