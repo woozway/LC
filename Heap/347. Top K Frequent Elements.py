@@ -23,8 +23,8 @@ class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         if not nums or k < 1: return []
         bucket = [[] for _ in range(len(nums) + 1)]
-        count = collections.Counter(nums).items()  
-        for num, freq in count: bucket[freq].append(num) 
+        count = collections.Counter(nums).items()
+        for num, freq in count: bucket[freq].append(num)
         flat_list = list(itertools.chain(*bucket))
         return flat_list[::-1][:k]
 
