@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - heap
-     - Quickselect (Hoare's selection algorithm)
+    - Heap
+    - Quickselect (Hoare's selection algorithm)
 3. Coding
 4. Tests
 """
@@ -29,7 +29,7 @@ class Solution:
 #                     store_index += 1
 #             unique[right], unique[store_index] = unique[store_index], unique[right]
 #             return store_index
-# 
+
 #         def quickselect(left, right, k_smallest) -> None:
 #             if left == right: return
 #             pivot_index = random.randint(left, right)
@@ -40,7 +40,7 @@ class Solution:
 #                 quickselect(left, pivot_index - 1, k_smallest)
 #             else:
 #                 quickselect(pivot_index + 1, right, k_smallest)
-# 
+
 #         count = collections.Counter(nums)
 #         unique = list(count.keys())
 #         n = len(unique)
