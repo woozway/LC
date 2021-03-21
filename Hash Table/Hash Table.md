@@ -19,3 +19,4 @@
 ![design key takeaway6](https://github.com/chopchap/leetcode/blob/main/images/designKey_takeaways6.png?raw=true)
 ## n Sum problem
 - if a + b + c == 0, we can always take advantage of the fact: a + b = -c with HashMap, therefore reduce the time complexity down to O(len(nums)^(n-1))
+- e.g.: leetcode 454. 4Sum II; leetcode 18. 4Sum; leetcode 1. Two Sum; leetcode 15 3Sum etc.
