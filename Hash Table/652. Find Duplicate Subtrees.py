@@ -18,9 +18,9 @@
 # T=O(n^2), S=O(n^2)
 class Solution:
     def findDuplicateSubtrees(self, root: TreeNode) -> List[TreeNode]:
-        def collect(node):
+        def dfs(node):
             if not node: return '#'
-            serial = "{},{},{}".format(node.val, collect(node.left), collect(node.right))
+            serial = '{},{},{}'.format(node.val, dfs(node.left), dfs(node.right))
             count[serial] += 1
             if count[serial] == 2:
                 ans.append(node)
@@ -28,7 +28,7 @@ class Solution:
 
         count = collections.Counter()
         ans = []
-        collect(root)
+        dfs(root)
         return ans
 
 
