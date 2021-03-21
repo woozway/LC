@@ -19,10 +19,10 @@ class Solution:
                 curLen += 1
             else:
                 j = hashMap[c]
+                curLen = i - j
                 while start <= j:
                     del hashMap[s[start]]
                     start += 1
-                curLen = i - j
             hashMap[c] = i
             maxLen = max(maxLen, curLen)
         return maxLen
