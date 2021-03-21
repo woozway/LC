@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - brute force
-     - hash
+    - Brute force
+    - HashSet
 3. Coding
 4. Tests
 """
