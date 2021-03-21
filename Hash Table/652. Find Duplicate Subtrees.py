@@ -3,7 +3,7 @@
 2. Possible solutions
     - dfs
     - HashMap (unique identifier) v1
-    - HashMap + Pythonic
+    - HashMap + Pythonic v2
 3. Coding
 4. Tests
 """
