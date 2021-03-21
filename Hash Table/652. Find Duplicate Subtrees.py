@@ -2,7 +2,8 @@
 1. Clarification
 2. Possible solutions
     - dfs
-    - HashMap (unique identifier)
+    - HashMap (unique identifier) v1
+    - HashMap + Pythonic
 3. Coding
 4. Tests
 """
@@ -27,6 +28,28 @@ class Solution:
             return serial
 
         count = collections.Counter()
+        ans = []
+        dfs(root)
+        return ans
+
+
+# T=O(n), S=O(n)
+class Solution:
+    def findDuplicateSubtrees(self, root: TreeNode) -> List[TreeNode]:
+        def dfs(node):
+            if not node: return '#'
+            if node in hashMap: return hashMap[node]
+            leftSerial = dfs(node.left)
+            rightSerial = dfs(node.right)
+            serial = '{},{},{}'.format(node.val, leftSerial, rightSerial)
+            hashMap[node] = serial
+            count[serial] += 1
+            if count[serial] == 2:
+                ans.append(node)
+            return serial
+
+        count = collections.Counter()
+        hashMap = {}
         ans = []
         dfs(root)
         return ans
