@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - hash + dynamic array
+    - HashMap + Dynamic array
 3. Coding
 4. Tests
 """
