@@ -35,7 +35,7 @@ class Solution:
         window_left, ans = 0, 0
         for i, c in enumerate(s):
             if c in hashMap:
-                window_left = max(hashMap[c], window_left)
+                window_left = max(hashMap[c] + 1, window_left)
             ans = max(ans, i - window_left + 1)
-            hashMap[c] = i + 1
+            hashMap[c] = i
         return ans
