@@ -39,9 +39,7 @@ class Solution:
         def dfs(node):
             if not node: return '#'
             if node in hashMap: return hashMap[node]
-            leftSerial = dfs(node.left)
-            rightSerial = dfs(node.right)
-            serial = '{},{},{}'.format(node.val, leftSerial, rightSerial)
+            serial = '{},{},{}'.format(node.val, dfs(node.left), dfs(node.right))
             hashMap[node] = serial
             count[serial] += 1
             if count[serial] == 2:
