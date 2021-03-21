@@ -8,7 +8,7 @@
 
 
 # T=O(1), S=O(n)
-class RandomizedSet():
+class RandomizedSet:
 
     def __init__(self):
         self.dict = {}
