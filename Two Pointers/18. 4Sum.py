@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - sort and find
+    - Brute force
+    - Sort and find
 3. Coding
 4. Tests
 """
