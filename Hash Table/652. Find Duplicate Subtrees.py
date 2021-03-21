@@ -2,7 +2,7 @@
 1. Clarification
 2. Possible solutions
     - dfs
-    - Unique Identifier or hashtable
+    - HashMap (unique identifier)
 3. Coding
 4. Tests
 """
