@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - Recursive
-     - Iterative
-     - Morris traversal
+    - Recursive
+    - Iterative
+    - Morris traversal
 3. Coding
 4. Tests
 """
@@ -16,19 +16,19 @@
 #         self.left = left
 #         self.right = right
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def postorderTraversal(self, root: TreeNode) -> List[int]:
-#         if not root: return []
-#         self.ret = []
-#         self.dfs(root)
-#         return self.ret
+# T=O(n), S=O(n)
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        if not root: return []
+        self.ret = []
+        self.dfs(root)
+        return self.ret
 
-#     def dfs(self, root):
-#         if not root: return
-#         self.dfs(root.left)
-#         self.dfs(root.right)
-#         self.ret.append(root.val)
+    def dfs(self, root):
+        if not root: return
+        self.dfs(root.left)
+        self.dfs(root.right)
+        self.ret.append(root.val)
 
 
 # T=O(n), S=O(n)
