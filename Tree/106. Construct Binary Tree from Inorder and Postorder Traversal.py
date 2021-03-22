@@ -1,7 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-    - Recursive, top-down
+    - Recursive, top-down v1
+    - Recursive, top-down v2
     - Iterative
 3. Coding
 4. Tests
@@ -31,7 +32,26 @@ class Solution:
         val2idx = {val: idx for idx, val in enumerate(inorder)}
         return helper(0, len(inorder) - 1)
 
-       
+
+# T=O(n), S=O(n)
+class Solution:
+    def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
+        def helper(in_left, in_right, post_left, post_right):
+            if in_left > in_right: return None
+            rootVal = postorder[post_right]
+            node = TreeNode(rootVal)
+            in_idx = val2idx[rootVal]
+            leftCnt = in_idx - in_left
+            node.left = helper(in_left, in_idx - 1, post_left, post_left + leftCnt - 1)
+            node.right = helper(in_idx + 1, in_right, post_left + leftCnt, post_right - 1)
+            return node
+
+        if not inorder or not postorder or len(inorder) != len(postorder): return None
+        val2idx = {val: idx for idx, val in enumerate(inorder)}
+        n = len(inorder)
+        return helper(0, n - 1, 0, n - 1)
+
+
 # T=O(n), S=O(n)
 class Solution:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
