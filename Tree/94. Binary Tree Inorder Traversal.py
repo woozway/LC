@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - Recursive
-     - Iterative
-     - Morris traversal
+    - Recursive
+    - Iterative
+    - Morris traversal
 3. Coding
 4. Tests
 """
@@ -16,19 +16,19 @@
 #         self.left = left
 #         self.right = right
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def inorderTraversal(self, root: TreeNode) -> List[int]:
-#         if not root: return []
-#         self.ret = []
-#         self.dfs(root)
-#         return self.ret
+# T=O(n), S=O(n)
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        if not root: return []
+        self.ret = []
+        self.dfs(root)
+        return self.ret
 
-#     def dfs(self, root):
-#         if not root: return
-#         self.dfs(root.left)
-#         self.ret.append(root.val)
-#         self.dfs(root.right)
+    def dfs(self, root):
+        if not root: return
+        self.dfs(root.left)
+        self.ret.append(root.val)
+        self.dfs(root.right)
 
 
 # T=O(n), S=O(n)
