@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - bfs
- - use those next pointers already established
+    - bfs
+    - Use those next pointers already established
 3. Coding
 4. Tests
 """
@@ -35,21 +35,21 @@ class Solution:
         return root
 
 
-# # T=O(n), S=O(1)
-# class Solution:
-#     def connect(self, root: 'Node') -> 'Node':
-#         if not root: return root
-#         tail = dummy = Node(0)
-#         node = root
-#         while node:
-#             tail.next = node.left
-#             if tail.next:
-#                 tail = tail.next
-#             tail.next = node.right
-#             if tail.next:
-#                 tail = tail.next
-#             node = node.next
-#             if not node:
-#                 tail = dummy
-#                 node = dummy.next
-#         return root
+# T=O(n), S=O(1)
+class Solution:
+    def connect(self, root: 'Node') -> 'Node':
+        if not root: return root
+        tail = dummy = Node(0)
+        node = root
+        while node:
+            tail.next = node.left
+            if tail.next:
+                tail = tail.next
+            tail.next = node.right
+            if tail.next:
+                tail = tail.next
+            node = node.next
+            if not node:
+                tail = dummy
+                node = dummy.next
+        return root
