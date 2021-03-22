@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - recursively
- - iteratively
+    - Recursively
+    - Iteratively
 3. Coding
 4. Tests
 """
@@ -27,24 +27,24 @@ class Solution:
         return check(root, root)
 
        
-# # T=O(n), S=O(n)
-# class Solution:
-#     def isSymmetric(self, root: TreeNode) -> bool:
-#         if not root: return True
-#         q = collections.deque()
-#         q.append(root)
-#         q.append(root)
-#         while q:
-#             u = q.popleft()
-#             v = q.popleft()
-#             if not u and not v:
-#                 continue
-#             if not u or not v:
-#                 return False
-#             if u.val != v.val:
-#                 return False
-#             q.append(u.left)
-#             q.append(v.right)
-#             q.append(u.right)
-#             q.append(v.left)
-#         return True
+# T=O(n), S=O(n)
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if not root: return True
+        q = collections.deque()
+        q.append(root)
+        q.append(root)
+        while q:
+            u = q.popleft()
+            v = q.popleft()
+            if not u and not v:
+                continue
+            if not u or not v:
+                return False
+            if u.val != v.val:
+                return False
+            q.append(u.left)
+            q.append(v.right)
+            q.append(u.right)
+            q.append(v.left)
+        return True
