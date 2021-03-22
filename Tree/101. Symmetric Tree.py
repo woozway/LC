@@ -24,7 +24,7 @@ class Solution:
             return p.val == q.val and check(p.right, q.left) and check(p.left, q.right)
 
         if not root: return True
-        return check(root, root)
+        return check(root.left, root.right)
 
        
 # T=O(n), S=O(n)
