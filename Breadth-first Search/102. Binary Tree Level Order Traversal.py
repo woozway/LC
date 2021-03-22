@@ -20,16 +20,17 @@ class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
         if not root: return []
         ret = []
-        queue = collections.deque()
-        queue.append(root)
-        while queue:
-            level_size = len(queue)
+        Q = collections.deque([root])
+        while Q:
+            sz = len(Q)
             current_level = []
-            for _ in range(level_size):
-                node = queue.popleft()
+            for _ in range(sz):
+                node = Q.popleft()
                 current_level.append(node.val)
-                if node.left: queue.append(node.left)
-                if node.right: queue.append(node.right)
+                if node.left:
+                    Q.append(node.left)
+                if node.right:
+                    Q.append(node.right)
             ret.append(current_level)
         return ret
 
