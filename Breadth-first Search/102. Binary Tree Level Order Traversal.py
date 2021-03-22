@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - bfs, batch processing
- - dfs
+    - bfs, batch processing
+    - dfs
 3. Coding
 4. Tests
 """
@@ -34,18 +34,18 @@ class Solution:
         return ret
 
        
-# # T=O(n), S=O(n)
-# class Solution:
-#     def levelOrder(self, root: TreeNode) -> List[List[int]]:
-#         if not root: return []
-#         self.result = []
-#         self._dfs(root, 0)
-#         return self.result
+# T=O(n), S=O(n)
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        if not root: return []
+        self.result = []
+        self._dfs(root, 0)
+        return self.result
 
-#     def _dfs(self, node, level):
-#         if not node: return
-#         if len(self.result) < level + 1:
-#             self.result.append([])
-#         self.result[level].append(node.val)
-#         self._dfs(node.left, level + 1)
-#         self._dfs(node.right, level + 1)
+    def _dfs(self, node, level):
+        if not node: return
+        if len(self.result) < level + 1:
+            self.result.append([])
+        self.result[level].append(node.val)
+        self._dfs(node.left, level + 1)
+        self._dfs(node.right, level + 1)
