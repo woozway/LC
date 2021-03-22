@@ -3,7 +3,13 @@
 2. Possible solutions
     - Recursive, top-down v1
     - Recursive, top-down v2
-    - Iterative
+    - Iterative: if you reverse inorder traversal sequence of a tree,
+                 (which is [root.left, root, root.right]), you get 
+                 reversed inorder traversal sequence, (which is 
+                 [root.right, root, root.left]); if you reverse postorder 
+                 traversal seq (which is [root.left, root.right, root]), 
+                 you'll get reversed preorder trav seq of that tree, (
+                 which is [root, root.right, root.left])
 3. Coding
 4. Tests
 """
