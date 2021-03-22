@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - bfs
- - use those next pointers already established
+    - bfs
+    - Use those next pointers already established
 3. Coding
 4. Tests
 """
