@@ -31,7 +31,7 @@ class Solution:
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
         if not root: return True
-        Q = collections.deque([root, root])
+        Q = collections.deque([root.left, root.right])
         while Q:
             u = Q.popleft()
             v = Q.popleft()
