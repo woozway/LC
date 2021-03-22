@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - dfs
- - bfs
+    - dfs
+    - bfs
 3. Coding
 4. Tests
 """
@@ -23,23 +23,23 @@ class Solution:
         return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val)
 
 
-# # T=O(n), S=O(h)
-# class Solution:
-#     def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
-#         if not root: return False
-#         que_node = collections.deque([root])
-#         que_val = collections.deque([root.val])
-#         while que_node:
-#             now = que_node.popleft()
-#             temp = que_val.popleft()
-#             if not now.left and not now.right:
-#                 if temp == targetSum:
-#                     return True
-#                 continue
-#             if now.left:
-#                 que_node.append(now.left)
-#                 que_val.append(now.left.val + temp)
-#             if now.right:
-#                 que_node.append(now.right)
-#                 que_val.append(now.right.val + temp)
-#         return False
+# T=O(n), S=O(h)
+class Solution:
+    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
+        if not root: return False
+        Q_node = collections.deque([root])
+        Q_val = collections.deque([root.val])
+        while Q_node:
+            node = Q_node.popleft()
+            Sum = Q_val.popleft()
+            if not node.left and not node.right:
+                if Sum == targetSum:
+                    return True
+                continue
+            if node.left:
+                Q_node.append(node.left)
+                Q_val.append(node.left.val + Sum)
+            if node.right:
+                Q_node.append(node.right)
+                Q_val.append(node.right.val + Sum)
+        return False
