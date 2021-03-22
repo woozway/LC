@@ -41,8 +41,5 @@ class Solution:
                 return False
             if u.val != v.val:
                 return False
-            Q.append(u.left)
-            Q.append(v.right)
-            Q.append(u.right)
-            Q.append(v.left)
+            [Q.append(x) for x in (u.left, v.right, u.right, v.left)]
         return True
