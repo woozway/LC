@@ -31,18 +31,18 @@ class Solution:
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
         if not root: return True
-        q = collections.deque([root, root])
-        while q:
-            u = q.popleft()
-            v = q.popleft()
+        Q = collections.deque([root, root])
+        while Q:
+            u = Q.popleft()
+            v = Q.popleft()
             if not u and not v:
                 continue
             if not u or not v:
                 return False
             if u.val != v.val:
                 return False
-            q.append(u.left)
-            q.append(v.right)
-            q.append(u.right)
-            q.append(v.left)
+            Q.append(u.left)
+            Q.append(v.right)
+            Q.append(u.right)
+            Q.append(v.left)
         return True
