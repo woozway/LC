@@ -38,7 +38,7 @@ class Solution:
         if not root: return res
         stack = []
         node = root
-        while stack or node:
+        while node or stack:
             while node:
                 stack.append(node)
                 node = node.left
