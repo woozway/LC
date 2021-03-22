@@ -18,19 +18,19 @@
 # T=O(n), S=O(n)
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
-        def helper(preorder_left, preorder_right, inorder_left, inorder_right):
-            if preorder_left > preorder_right: return None
-            preorder_root = preorder_left
-            inorder_root = index[preorder[preorder_root]]
-            root = TreeNode(preorder[preorder_root])
-            size_left_subtree = inorder_root - inorder_left
-            root.left = helper(preorder_left + 1, preorder_left + size_left_subtree, inorder_left, inorder_root - 1)
-            root.right = helper(preorder_left + size_left_subtree + 1, preorder_right, inorder_root + 1, inorder_right)
-            return root
+        def helper(in_left, in_right, pre_left, pre_right):
+            if in_left > in_right: return None
+            rootVal = preorder[pre_left]
+            node = TreeNode(rootVal)
+            in_idx = val2idx[rootVal]
+            leftCnt = in_idx - in_left
+            node.left = helper(in_left, in_idx - 1, pre_left + 1, pre_left + 1 + leftCnt - 1)
+            node.right = helper(in_idx + 1, in_right, pre_left + leftCnt + 1, pre_right)
+            return node
 
         if not preorder or not inorder or len(preorder) != len(inorder): return None
         n = len(preorder)
-        index = {element: i for i, element in enumerate(inorder)}
+        val2idx = {val: idx for idx, val in enumerate(inorder)}
         return helper(0, n - 1, 0, n - 1)
 
 
