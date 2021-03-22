@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-    - dfs
+    - dfs, top-down
     - bfs
 3. Coding
 4. Tests
