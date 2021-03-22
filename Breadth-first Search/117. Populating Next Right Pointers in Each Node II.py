@@ -39,7 +39,7 @@ class Solution:
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root: return root
-        tail = dummy = Node(0)
+        tail = dummy = Node()
         node = root
         while node:
             tail.next = node.left
