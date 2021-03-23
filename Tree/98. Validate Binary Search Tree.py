@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - check whether inorder sequence is increasing
- - recursion, max(left subtree) < root && min(right substree) > root
+    - Check whether inorder sequence is increasing
+    - Recursion, max(left subtree) < root && min(right substree) > root
 3. Coding
 4. Tests
 """
@@ -29,13 +29,13 @@ class Solution:
         return self.isValid(root.right)
 
        
-# # T=O(n), S=O(n)
-# class Solution:
-#     def isValidBST(self, root: TreeNode) -> bool:
-#         return self.isValid(root, None, None)
+# T=O(n), S=O(n)
+class Solution:
+    def isValidBST(self, root: TreeNode) -> bool:
+        return self.isValid(root, None, None)
 
-#     def isValid(self, root, minn, maxn):
-#         if root is None: return True
-#         if minn is not None and root.val <= minn: return False
-#         if maxn is not None and root.val >= maxn: return False
-#         return self.isValid(root.left, minn, root.val) and self.isValid(root.right, root.val, maxn)
+    def isValid(self, root, minn, maxn):
+        if root is None: return True
+        if minn is not None and root.val <= minn: return False
+        if maxn is not None and root.val >= maxn: return False
+        return self.isValid(root.left, minn, root.val) and self.isValid(root.right, root.val, maxn)
