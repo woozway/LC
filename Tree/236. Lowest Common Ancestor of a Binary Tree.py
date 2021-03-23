@@ -28,8 +28,7 @@ class Solution:
         if root is None: return
         tmppath.append(root)
         if root == node:
-            for tnode in tmppath:
-                path.append(tnode)
+            path.extend(tmppath)
             tmppath.pop()
             return
         self.findpath(path, tmppath, root.left, node)
@@ -40,7 +39,8 @@ class Solution:
         S = set(self.p2)
         ans = None
         for p in self.p1:
-            if p in S: ans = p
+            if p in S:
+                ans = p
         return ans
 
 
