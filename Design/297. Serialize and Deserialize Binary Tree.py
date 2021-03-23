@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - recursive preorder
+    - Recursive preorder
 3. Coding
 4. Tests
 """
