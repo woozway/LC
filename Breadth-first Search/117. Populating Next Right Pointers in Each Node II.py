@@ -35,7 +35,7 @@ class Solution:
         return root
 
 
-# T=O(n), S=O(1)
+# T=O(n), S=O(1), tail: tail node of next layer of the cur node
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root: return root
