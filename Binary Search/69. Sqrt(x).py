@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - exp and log
- - binary search I
- - Newton's method
+    - Exp and Log
+    - Binary Search I
+    - Newton's method
 3. Coding
 4. Tests
 """
@@ -33,15 +33,15 @@ class Solution:
         return ans
 
 
-# # T=O(lgx), S=O(1)
-# class Solution:
-#     def mySqrt(self, x: int) -> int:
-#         if x < 0: return -1
-#         if x == 0: return 0
-#         C, x0 = float(x), float(x)
-#         while True:
-#             xi = 0.5 * (x0 + C / x0)
-#             if abs(x0 - xi) < 1e-7:
-#                 break
-#             x0 = xi
-#         return int(x0)
+# T=O(lgx), S=O(1)
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        if x < 0: return -1
+        if x == 0: return 0
+        C, x0 = float(x), float(x)
+        while True:
+            xi = 0.5 * (x0 + C / x0)
+            if abs(x0 - xi) < 1e-7:
+                break
+            x0 = xi
+        return int(x0)
