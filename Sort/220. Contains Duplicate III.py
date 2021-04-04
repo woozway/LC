@@ -2,7 +2,7 @@
 1. Clarification
 2. Possible solutions
     - Brute force
-    - Binary search tree
+    - Binary search tree + Sliding window
     - Bucket sort
 3. Coding
 4. Tests
