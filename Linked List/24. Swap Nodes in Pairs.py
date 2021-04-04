@@ -18,7 +18,7 @@
 # T=O(n), S=O(1)
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
-        if head is None or head.next is None: return head
+        if not head or not head.next: return head
         p = head
         while p and p.next:
             tmp = p.next.next
@@ -30,6 +30,7 @@ class Solution:
 # T=O(n), S=O(1)
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
+        if not head or not head.next: return head
         pre, pre.next = self, head
         while pre.next and pre.next.next:
             a, b = pre.next, pre.next.next
