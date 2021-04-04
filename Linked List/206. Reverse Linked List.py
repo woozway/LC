@@ -17,7 +17,7 @@
 # T=O(n), S=O(1)
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        if head is None or head.next is None: return head
+        if not head or not head.next: return head
         cur, prev = head, None
         while cur:
             cur.next, prev, cur = prev, cur, cur.next
@@ -27,7 +27,7 @@ class Solution:
 # T=O(n), S=O(n)
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        if head is None or head.next is None: return head
+        if not head or not head.next: return head
         p = self.reverseList(head.next)
         head.next.next, head.next = head, None
         return p
