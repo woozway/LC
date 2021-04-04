@@ -33,7 +33,7 @@ class Solution:
             if i > k: sList.remove(nums[i - k - 1])
             pos1 = SortedList.bisect_left(sList, nums[i] - t)
             pos2 = SortedList.bisect_right(sList, nums[i] + t)
-            if pos1 != pos2 and pos1 != len(sList): return True
+            if pos1 != pos2: return True
             sList.add(nums[i])
         return False
 
