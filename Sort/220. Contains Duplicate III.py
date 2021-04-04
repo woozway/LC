@@ -26,9 +26,11 @@ import sortedcontainers
 
 class Solution:
     def containsNearbyAlmostDuplicate(self, nums, k, t):
+        n = len(nums)
+        if n < 2 or t < 0 or k < 0: return False
         sList = sortedcontainers.SortedList()
-        for i in range(len(nums)):
-            if i > k: sList.remove(nums[i-k-1])   
+        for i in range(n):
+            if i > k: sList.remove(nums[i - k - 1])   
             pos1 = sortedcontainers.SortedList.bisect_left(sList, nums[i] - t)
             pos2 = sortedcontainers.SortedList.bisect_right(sList, nums[i] + t)
             if pos1 != pos2 and pos1 != len(sList):
