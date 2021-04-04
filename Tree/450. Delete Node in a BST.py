@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - recursive
+    - Recursive
 3. Coding
 4. Tests
 """
