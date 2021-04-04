@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - Iteratively
-     - Recursively
+    - Iteratively
+    - Recursively
 3. Coding
 4. Tests
 """
