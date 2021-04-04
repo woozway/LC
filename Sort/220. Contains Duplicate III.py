@@ -15,7 +15,7 @@
 #         n = len(nums)
 #         if n < 2 or t < 0 or k < 0: return False
 #         for i in range(n):
-#             for j in range(i+1, n):
+#             for j in range(i + 1, n):
 #                 if abs(nums[i] - nums[j]) <= t and abs(j - i) <= k:
 #                     return True
 #         return False
