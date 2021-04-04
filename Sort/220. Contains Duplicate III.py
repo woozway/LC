@@ -30,11 +30,10 @@ class Solution:
         if n < 2 or t < 0 or k < 0: return False
         sList = SortedList()
         for i in range(n):
-            if i > k: sList.remove(nums[i - k - 1])   
+            if i > k: sList.remove(nums[i - k - 1])
             pos1 = SortedList.bisect_left(sList, nums[i] - t)
             pos2 = SortedList.bisect_right(sList, nums[i] + t)
-            if pos1 != pos2 and pos1 != len(sList):
-                return True
+            if pos1 != pos2 and pos1 != len(sList): return True
             sList.add(nums[i])
         return False
 
