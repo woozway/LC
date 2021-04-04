@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - swap values in adjacent nodes
-     - only nodes themselves may be changed
-     - recursion
+    - Swap values in adjacent nodes
+    - Only nodes themselves may be changed
+    - Recursion
 3. Coding
 4. Tests
 """
@@ -15,16 +15,16 @@
 #         self.val = val
 #         self.next = next
 
-# # T=O(n), S=O(1)
-# class Solution:
-#     def swapPairs(self, head: ListNode) -> ListNode:
-#         if head is None or head.next is None: return head
-#         p = head
-#         while p and p.next:
-#             tmp = p.next.next
-#             p.val, p.next.val = p.next.val, p.val
-#             p = tmp
-#         return head
+# T=O(n), S=O(1)
+class Solution:
+    def swapPairs(self, head: ListNode) -> ListNode:
+        if head is None or head.next is None: return head
+        p = head
+        while p and p.next:
+            tmp = p.next.next
+            p.val, p.next.val = p.next.val, p.val
+            p = tmp
+        return head
 
 
 # T=O(n), S=O(1)
@@ -38,11 +38,11 @@ class Solution:
         return self.next
 
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def swapPairs(self, head: ListNode) -> ListNode:
-#         if not head or not head.next: return head
-#         newHead = head.next
-#         head.next = self.swapPairs(newHead.next)
-#         newHead.next = head
-#         return newHead
+# T=O(n), S=O(n)
+class Solution:
+    def swapPairs(self, head: ListNode) -> ListNode:
+        if not head or not head.next: return head
+        newHead = head.next
+        head.next = self.swapPairs(newHead.next)
+        newHead.next = head
+        return newHead
