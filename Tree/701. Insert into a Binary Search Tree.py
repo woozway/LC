@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - recursive
- - iterative
+    - Recursive
+    - Iterative
 3. Coding
 4. Tests
 """
@@ -24,22 +24,22 @@ class Solution:
         return root
 
 
-# # T=O(h), S=O(1)
-# class Solution:
-#     def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
-#         if not root: return TreeNode(val)
-#         node = root
-#         while node:
-#             if val < node.val:
-#                 if not node.left:
-#                     node.left = TreeNode(val)
-#                     break
-#                 else:
-#                     node = node.left
-#             else:
-#                 if not node.right:
-#                     node.right = TreeNode(val)
-#                     break
-#                 else:
-#                     node = node.right
-#         return root
+# T=O(h), S=O(1)
+class Solution:
+    def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
+        if not root: return TreeNode(val)
+        node = root
+        while node:
+            if val < node.val:
+                if not node.left:
+                    node.left = TreeNode(val)
+                    break
+                else:
+                    node = node.left
+            else:
+                if not node.right:
+                    node.right = TreeNode(val)
+                    break
+                else:
+                    node = node.right
+        return root
