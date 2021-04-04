@@ -29,8 +29,7 @@ class Solution:
             rightHeight = height(root.right)
             if leftHeight == -1 or rightHeight == -1 or abs(leftHeight - rightHeight) > 1:
                 return -1
-            else:
-                return max(leftHeight, rightHeight) + 1
+            return max(leftHeight, rightHeight) + 1
 
         if not root: return True
         return height(root) >= 0
