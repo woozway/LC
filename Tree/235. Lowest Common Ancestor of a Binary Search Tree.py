@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - recursive
- - iterative
+    - Recursive
+    - Iterative
 3. Coding
 4. Tests
 """
@@ -15,14 +15,14 @@
 #         self.left = None
 #         self.right = None
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-#         if p.val < root.val > q.val:
-#             return self.lowestCommonAncestor(root.left, p, q)
-#         if p.val > root.val < q.val:
-#             return self.lowestCommonAncestor(root.right, p, q)
-#         return root
+# T=O(n), S=O(n)
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if p.val < root.val > q.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        if p.val > root.val < q.val:
+            return self.lowestCommonAncestor(root.right, p, q)
+        return root
 
 
 # T=O(n), S=O(1)
