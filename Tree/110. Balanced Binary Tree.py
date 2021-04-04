@@ -11,7 +11,7 @@
 # T=O(n^2), S=O(n)
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
-        def height(root: TreeNode) -> int:
+        def height(root) -> int:
             if not root: return 0
             return max(height(root.left), height(root.right)) + 1
 
@@ -23,7 +23,7 @@ class Solution:
 # T=O(n), S=O(n)
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
-        def height(root: TreeNode) -> int:
+        def height(root) -> int:
             if not root: return 0
             leftHeight = height(root.left)
             rightHeight = height(root.right)
