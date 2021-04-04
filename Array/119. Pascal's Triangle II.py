@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - dynamic programming v1
-     - dp v2
+    - dynamic programming v1
+    - dp v2
 3. Coding
 4. Tests
 """
@@ -22,11 +22,11 @@ class Solution:
         return triangle[rowIndex]
        
 
-# # T=O(rowIndex), S=O(1)
-# class Solution:
-#     def getRow(self, rowIndex: int) -> List[int]:
-#         if rowIndex < 0: return []
-#         row = [1] + [0] * rowIndex
-#         for i in range(1, rowIndex + 1):
-#             row[i] = row[i - 1] * (rowIndex - i + 1) // i
-#         return row
+# T=O(rowIndex), S=O(1)
+class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        if rowIndex < 0: return []
+        row = [1] + [0] * rowIndex
+        for i in range(1, rowIndex + 1):
+            row[i] = row[i - 1] * (rowIndex - i + 1) // i
+        return row
