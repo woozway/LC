@@ -1,23 +1,23 @@
 """
 1. Clarification
 2. Possible solutions
-     - Recursion
-     - Two Pointers
+    - Recursion
+    - Two Pointers
 3. Coding
 4. Tests
 """
 
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def reverseString(self, s: List[str]) -> None:
-#         def helper(left, right):
-#             if left < right:
-#                 s[left], s[right] = s[right], s[left]
-#                 helper(left + 1, right - 1)
+# T=O(n), S=O(n)
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        def helper(left, right):
+            if left < right:
+                s[left], s[right] = s[right], s[left]
+                helper(left + 1, right - 1)
 
-#         if not s: return
-#         helper(0, len(s) - 1)
+        if not s: return
+        helper(0, len(s) - 1)
 
 
 # T=O(n), S=O(1)
