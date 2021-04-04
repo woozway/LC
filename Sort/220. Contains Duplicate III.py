@@ -25,28 +25,15 @@
 import sortedcontainers
 
 class Solution:
-    def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
-        def floor(n, bst):
-            le = bst.bisect_right(n) - 1
-            return bst[le] if le >= 0 else None
-
-        def ceiling(n, bst):
-            ge = bst.bisect_right(n)
-            return bst[ge] if ge < len(bst) else None
-
-        n = len(nums)
-        if n < 2 or t < 0 or k < 0: return False
-        bst = sortedcontainers.SortedList()
-        for i, n in enumerate(nums):
-            le = floor(n, bst)
-            if le is not None and n <= le + t:
+    def containsNearbyAlmostDuplicate(self, nums, k, t):
+        sList = sortedcontainers.SortedList()
+        for i in range(len(nums)):
+            if i > k: sList.remove(nums[i-k-1])   
+            pos1 = sortedcontainers.SortedList.bisect_left(sList, nums[i] - t)
+            pos2 = sortedcontainers.SortedList.bisect_right(sList, nums[i] + t)
+            if pos1 != pos2 and pos1 != len(sList):
                 return True
-            ge = ceiling(n, bst)
-            if ge is not None and ge <= n + t:
-                return True
-            bst.add(n)
-            if len(bst) > k:
-                bst.remove(nums[i - k])
+            sList.add(nums[i])
         return False
 
 
@@ -55,13 +42,16 @@ class Solution:
     def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
         n = len(nums)
         if n < 2 or t < 0 or k < 0: return False
-        buckets = {}
-        for i, v in enumerate(nums):
-            bucketNum, offset = (v // t, 1) if t else (v, 0)
-            for idx in range(bucketNum - offset, bucketNum + offset + 1):
-                if idx in buckets and abs(buckets[idx] - nums[i]) <= t:
-                    return True
-            buckets[bucketNum] = nums[i]
-            if len(buckets) > k:
-                del buckets[nums[i - k] // t if t else nums[i - k]]
+        d = {}
+        w = t + 1
+        for i in range(n):
+            m = nums[i] // w
+            if m in d:
+                return True
+            if m - 1 in d and abs(nums[i] - d[m - 1]) < w:
+                return True
+            if m + 1 in d and abs(nums[i] - d[m + 1]) < w:
+                return True
+            d[m] = nums[i]
+            if i >= k: del d[nums[i - k] // w]
         return False
