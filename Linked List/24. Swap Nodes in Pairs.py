@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-    - Swap values in adjacent nodes
+    - Swap values in adjacent nodes (cheat a little bit)
     - Only nodes themselves may be changed
     - Recursion
 3. Coding
