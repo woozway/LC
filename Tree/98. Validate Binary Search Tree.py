@@ -33,9 +33,9 @@ class Solution:
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
         return self.isValid(root, None, None)
-
+    
     def isValid(self, root, minn, maxn):
-        if root is None: return True
-        if minn is not None and root.val <= minn: return False
-        if maxn is not None and root.val >= maxn: return False
-        return self.isValid(root.left, minn, root.val) and self.isValid(root.right, root.val, maxn)
+        if not root: return True
+        if minn and minn.val >= root.val: return False
+        if maxn and maxn.val <= root.val: return False
+        return self.isValid(root.left, minn, root) and self.isValid(root.right, root, maxn)
