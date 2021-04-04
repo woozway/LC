@@ -3,7 +3,7 @@
 2. Possible solutions
     - Find common node leave-to-root (not likely node with parent pointer)
     - Since vals are unique, find path1 & path2, then output the last common node
-    - Recursive, bottom-up
+    - Recursive, bottom-up (can be used in BST too)
 3. Coding
 4. Tests
 """
