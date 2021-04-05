@@ -47,6 +47,6 @@
         - For the recursion algorithms that follow the above pattern, one can apply the master theorem to calculate their time complexity.
         - T(n) = a * T(n/b) + f(n)
         - where `f(n)` is the time complexity that it takes to divide the problems into subproblems and also to combine the results from the subproblems. We can further represent `f(n)` as `O(n^d)` and d >= 0
-        - according to the relationship among a,b,d:
+        - according to the relationship among a, b, d:
         ![master theorem formula](https://github.com/chopchap/leetcode/blob/main/images/Master%20theorem%20formula.png?raw=true)
         - The conditions for each case correspond to the intuition of whether the work to split problems and combine results (i.e. f(n)) outweighs the work of subproblems (i.e. a * T(n/b)).
