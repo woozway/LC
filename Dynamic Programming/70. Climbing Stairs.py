@@ -1,10 +1,10 @@
 """
 1. Clarification
 2. Possible solutions
-     - recursion, naive fibonacci
-     - memoization
-     - dynamic programming
-     - Fibonacci Formula
+    - Recursion, naive fibonacci
+    - Memoization
+    - Dynamic programming
+    - Fibonacci Formula
 3. Coding
 4. Tests
 """
@@ -16,16 +16,16 @@
 #         return self.climbStairs(n - 1) + self.climbStairs(n - 2)
 
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def __init__(self):
-#         self.memo = {}
-#
-#     def climbStairs(self, n: int) -> int:
-#         if n <= 2: return n
-#         if self.memo.get(n, 0) == 0:
-#             self.memo[n] = self.climbStairs(n - 1) + self.climbStairs(n - 2)
-#         return self.memo[n]
+# T=O(n), S=O(n)
+class Solution:
+    def __init__(self):
+        self.memo = {}
+
+    def climbStairs(self, n: int) -> int:
+        if n <= 2: return n
+        if self.memo.get(n, 0) == 0:
+            self.memo[n] = self.climbStairs(n - 1) + self.climbStairs(n - 2)
+        return self.memo[n]
 
 
 # T=O(n), S=O(1)
