@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-    - Simple backtracking + naive dfs
+    - Simple backtracking
     - Backtracking + preprocessing + handle blanks with minimun optional number
     - Advanced data structure: DancingLinks
 3. Coding
@@ -9,13 +9,13 @@
 """
 
 
-# simple backtracking + naive dfs
+# simple backtracking
 class Solution:
     def solveSudoku(self, board: List[List[str]]) -> None:
         if not board: return
-        self.dfs(board)
+        self.backtrack(board)
 
-    def dfs(self, board):
+    def backtrack(self, board):
         for i in range(len(board)):
             for j in range(len(board[0])):
                 if board[i][j] != '.':
@@ -23,7 +23,7 @@ class Solution:
                 for c in '123456789':
                     if self.isValid(board, i, j, c):
                         board[i][j] = c
-                        if self.dfs(board):
+                        if self.backtrack(board):
                             return True
                         board[i][j] = '.'
                 return False

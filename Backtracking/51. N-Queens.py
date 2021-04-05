@@ -1,8 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - brute force
-     - backtracking
+    - Backtracking
 3. Coding
 4. Tests
 """
@@ -14,10 +13,10 @@ class Solution:
         if n < 1: return []
         self.result = []
         self.cols = set(); self.pie = set(); self.na = set()
-        self.dfs(n, 0, [])
+        self.backtrack(n, 0, [])
         return self._generate_result(n)
 
-    def dfs(self, n, row, cur_list):
+    def backtrack(self, n, row, cur_list):
         if row >= n:
             self.result.append(cur_list)
             return
@@ -27,7 +26,7 @@ class Solution:
             self.cols.add(col)
             self.pie.add(row + col)
             self.na.add(row - col)
-            self.dfs(n, row + 1, cur_list + [col])
+            self.backtrack(n, row + 1, cur_list + [col])
             self.cols.remove(col)
             self.pie.remove(row + col)
             self.na.remove(row - col)

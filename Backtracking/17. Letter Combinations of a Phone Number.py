@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - backtracking
+    - Backtracking
 3. Coding
 4. Tests
 """
