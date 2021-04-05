@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - backtracking
-     - pythonic
+    - Backtracking
+    - Python library function
 3. Coding
 4. Tests
 """
@@ -26,8 +26,8 @@ class Solution:
         return res
 
 
-# # T=O(n*n!), S=O(n)
-# class Solution:
-#     def permute(self, nums: List[int]) -> List[List[int]]:
-#         if not nums: return []
-#         return list(itertools.permutations(nums))
+# T=O(n*n!), S=O(n)
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        if not nums: return []
+        return list(itertools.permutations(nums))
