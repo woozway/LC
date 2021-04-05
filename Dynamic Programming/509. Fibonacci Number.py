@@ -25,7 +25,7 @@ class Solution:
         if n <= 1: return n
         return self.memoize(n)
 
-    def memoize(self, n: int) -> {}:
+    def memoize(self, n):
         cache = {0: 0, 1: 1}
         for i in range(2, n + 1):
             cache[i] = cache[i - 1] + cache[i - 2]
@@ -39,7 +39,7 @@ class Solution:
         self.cache = {0: 0, 1: 1}
         return self.memoize(n)
 
-    def memoize(self, n: int) -> {}:
+    def memoize(self, n):
         if n in self.cache.keys(): return self.cache[n]
         self.cache[n] = self.memoize(n - 1) + self.memoize(n - 2)
         return self.memoize(n)
@@ -65,7 +65,7 @@ class Solution:
 #         self.matrix_power(A, n - 1)
 #         return A[0][0]
 
-#     def matrix_power(self, A: list, n: int):
+#     def matrix_power(self, A, n):
 #         if n <= 1: return A
 #         self.matrix_power(A, n // 2)
 #         self.multiply(A, A)
@@ -73,7 +73,7 @@ class Solution:
 #         if n % 2 != 0:
 #             self.multiply(A, B)
 
-#     def multiply(self, A: list, B: list):
+#     def multiply(self, A, B):
 #         x = A[0][0] * B[0][0] + A[0][1] * B[1][0]
 #         y = A[0][0] * B[0][1] + A[0][1] * B[1][1]
 #         z = A[1][0] * B[0][0] + A[1][1] * B[1][0]
