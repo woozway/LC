@@ -76,3 +76,7 @@
       - The backtracking should happen at the level of the iteration within the recursion.
       - Unlike brute-force search, in backtracking algorithms we are often able to determine if a partial solution candidate is worth exploring further (i.e. `is_valid(next_candidate)`), which allows us to prune the search zones. This is also known as the constraint.
       - There are two symmetric functions that allow us to mark the decision (place(candidate)) and revert the decision (remove(candidate)).
+3. Divde and Conquer VS. Backtracking
+   - Often the case, the divide-and-conquer problem has a _**sole**_ solution, while the backtracking problem has unknown number of solutions.
+   - Each step in the divide-and-conquer problem is indispensable to build the final solution, while many steps in backtracking problem might not be useful to build the solution, but serve as atttempts to search for the potential solutions.
+   - When building the solution in the divide-and-conquer algorithm, we have a clear and predefined path, though there might be several different manners to build the path. While in the backtracking problems, one does not know in advance the exact path (or how many steps) to the solution.
