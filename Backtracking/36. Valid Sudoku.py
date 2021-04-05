@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - Simple backtracking + naive dfs
-     - One iteration
+    - Simple backtracking
+    - One iteration
 3. Coding
 4. Tests
 """
