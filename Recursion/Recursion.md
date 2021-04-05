@@ -11,3 +11,42 @@
 1. When in doubt, write down the recurrence relationship.
 2. Whenever possible, apply memoization. (optimize the time complexity)
 3. When stack overflows, tail recursion might come to help. (optimize the space complexity)
+## Paradigms that are often applied together with the recursion:
+1. divide-and-conquer (D&C)
+   - D&C algorithm is that we break the problem down into **two or more subproblems** rather than a single smaller subproblem. The latter recursive algorithm sometimes is called **decrease and conquer** instead, such as Binary Search.
+   - general three steps:
+     1. **Devide**: Divide the problem S into a set of subproblems: {S1, S2, ... Sn} where n >= 2
+     2. **Conquer**: Solve each subproblem recursively. 
+     3. **Combine**: Combine the results of each subproblem.
+   - D&C template:
+   ```python
+    def divide_and_conquer( S ):
+        # (1). Divide the problem into a set of subproblems.
+        [S1, S2, ... Sn] = divide(S)
+
+        # (2). Solve the subproblem recursively,
+        #   obtain the results of subproblems as [R1, R2... Rn].
+        rets = [divide_and_conquer(Si) for Si in [S1, S2, ... Sn]]
+        [R1, R2,... Rn] = rets
+
+        # (3). combine the results from the subproblems.
+        #   and return the combined result.
+        return combine([R1, R2,... Rn])
+   ```
+   - Master Theorem (or Master Method, it does not apply to all recursion algorithms):
+        ```python
+        def dac( n ):
+            if n < k:  // k: some constant
+            Solve "n" directly without recursion
+            else:
+            [1]. divide the problem "n" into "b" subproblems of equal size.
+            - then the size of each subproblem would be "n/b"
+            [2]. call the function "dac()" recursively "a" times on the subproblems
+            [3]. combine the results from the subproblems
+        ```
+        - For the recursion algorithms that follow the above pattern, one can apply the master theorem to calculate their time complexity.
+        - T(n) = a * T(n/b) + f(n)
+        - where `f(n)` is the time complexity that it takes to divide the problems into subproblems and also to combine the results from the subproblems. We can further represent `f(n)` as `O(n^d)` and d >= 0
+        - according to the relationship among a, b, d:
+        ![master theorem formula](https://github.com/chopchap/leetcode/blob/main/images/Master%20theorem%20formula.png?raw=true)
+        - The conditions for each case correspond to the intuition of whether the work to split problems and combine results (i.e. f(n)) outweighs the work of subproblems (i.e. a * T(n/b)).
