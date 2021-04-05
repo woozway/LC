@@ -22,20 +22,20 @@ class Solution:
         self.tmp = []
         self.ans = []
 
-    def combine(self, n: int, k: int) -> List[List[int]]:
-        if n < 1 or k < 1: return [[]]
-        self.dfs(1, n, k)
-        return self.ans
-
-    def dfs(self, cur, n, k):
+    def backtrack(self, cur, n, k):
         if len(self.tmp) + (n - cur + 1) < k: return
         if len(self.tmp) == k:
             self.ans.append(self.tmp[:])
             return
         self.tmp.append(cur)
-        self.dfs(cur + 1, n, k)
+        self.backtrack(cur + 1, n, k)
         self.tmp.pop()
-        self.dfs(cur + 1, n, k)
+        self.backtrack(cur + 1, n, k)
+
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        if n < 1 or k < 1: return [[]]
+        self.backtrack(1, n, k)
+        return self.ans
 
 
 # T=O((n, k)*k), S=O(k)
