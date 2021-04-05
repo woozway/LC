@@ -8,7 +8,7 @@
 """
 
 
-# T=O(rowIndex^2), S=O(1)
+# T=O(rowIndex^2), S=O(rowIndex^2)
 class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
         if rowIndex < 0: return []
@@ -22,7 +22,7 @@ class Solution:
         return triangle[rowIndex]
        
 
-# T=O(rowIndex), S=O(1)
+# T=O(rowIndex), S=O(rowIndex)
 class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
         if rowIndex < 0: return []
