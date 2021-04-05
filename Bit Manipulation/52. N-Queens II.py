@@ -1,35 +1,37 @@
 """
 1. Clarification
 2. Possible solutions
- - backtracking
- - bit manipulation
+    - Backtracking
+    - Bit manipulation
 3. Coding
 4. Tests
 """
 
-# # T=O(n!), S=O(n)
-# class Solution:
-#     def totalNQueens(self, n: int) -> int:
-#         if n < 1: return 0
-#         self.count = 0
-#         self.cols = set(); self.pie = set(); self.na = set()
-#         self.dfs(n, 0, [])
-#         return self.count
-# 
-#     def dfs(self, n, row, cur_list):
-#         if row >= n:
-#             self.count += 1
-#             return
-#         for col in range(n):
-#             if col in self.cols or row + col in self.pie or row - col in self.na:
-#                 continue
-#             self.cols.add(col)
-#             self.pie.add(row + col)
-#             self.na.add(row - col)
-#             self.dfs(n, row + 1, cur_list + [col])
-#             self.cols.remove(col)
-#             self.pie.remove(row + col)
-#             self.na.remove(row - col)
+
+# T=O(n!), S=O(n)
+class Solution:
+    def totalNQueens(self, n: int) -> int:
+        if n < 1: return 0
+        self.count = 0
+        self.cols = set(); self.pie = set(); self.na = set()
+        self.dfs(n, 0, [])
+        return self.count
+
+    def dfs(self, n, row, cur_list):
+        if row >= n:
+            self.count += 1
+            return
+        for col in range(n):
+            if col in self.cols or row + col in self.pie or row - col in self.na:
+                continue
+            self.cols.add(col)
+            self.pie.add(row + col)
+            self.na.add(row - col)
+            self.dfs(n, row + 1, cur_list + [col])
+            self.cols.remove(col)
+            self.pie.remove(row + col)
+            self.na.remove(row - col)
+
 
 # T=O(n!), S=O(n)
 class Solution:
