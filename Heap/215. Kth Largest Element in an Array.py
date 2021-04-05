@@ -45,8 +45,9 @@ class Solution:
 
     def quickSelect(self, nums, l, r, idx):
         q = self.partition(nums, l, r)
-        if q == idx: return nums[q]
-        if q < idx:
+        if q == idx:
+            return nums[q]
+        elif q < idx:
             return self.quickSelect(nums, q + 1, r, idx)
         else:
             return self.quickSelect(nums, l, q - 1, idx)
