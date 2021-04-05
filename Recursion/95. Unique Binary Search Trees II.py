@@ -17,19 +17,19 @@
 # T=O(4^n/(n^1/2)), S=O(4^n/(n^1/2))
 class Solution:
     def generateTrees(self, n: int) -> List[TreeNode]:
-        def dfs(start, end):
-            if start > end: return [None, ]
-            allTrees = []
-            for i in range(start, end + 1):
-                leftTrees = dfs(start, i - 1)
-                rightTrees = dfs(i + 1, end)
-                for l in leftTrees:
-                    for r in rightTrees:
-                        currTree = TreeNode(i)
-                        currTree.left = l
-                        currTree.right = r
-                        allTrees.append(currTree)
-            return allTrees
-        
         if n < 1: return []
-        return dfs(1, n)
+        return self.dfs(1, n)
+    
+    def dfs(self, start, end):
+        if start > end: return [None, ]
+        allTree = []
+        for i in range(start, end + 1):
+            leftTree = self.dfs(start, i - 1)
+            rightTree = self.dfs(i + 1, end)
+            for l in leftTree:
+                for r in rightTree:
+                    node = TreeNode(i)
+                    node.left = l
+                    node.right = r
+                    allTree.append(node)
+        return allTree
