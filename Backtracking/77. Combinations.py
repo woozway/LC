@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-    - Pythonic
+    - Python built-in
     - Backtracking or recursive
     - Non-recursive
 3. Coding
