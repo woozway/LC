@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - simple backtracking + naive dfs
-     - backtracking + preprocessing + handle blank with minimun optional number
-     - advanced data structure: DancingLinks
+    - Simple backtracking + naive dfs
+    - Backtracking + preprocessing + handle blanks with minimun optional number
+    - Advanced data structure: DancingLinks
 3. Coding
 4. Tests
 """
