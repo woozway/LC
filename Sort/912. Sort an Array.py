@@ -35,7 +35,7 @@ class Solution:
         return nums
 
 
-# # T=O(nlgn), S=O(1)
+# T=O(nlgn), S=O(1)
 class Solution:
     def max_heapify(self, heap, root, heap_len):
         p = root
