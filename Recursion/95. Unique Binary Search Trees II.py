@@ -17,12 +17,12 @@
 # T=O(4^n/(n^1/2)), S=O(4^n/(n^1/2))
 class Solution:
     def generateTrees(self, n: int) -> List[TreeNode]:
-        def generateTrees(start, end):
+        def dfs(start, end):
             if start > end: return [None, ]
             allTrees = []
             for i in range(start, end + 1):
-                leftTrees = generateTrees(start, i - 1)
-                rightTrees = generateTrees(i + 1, end)
+                leftTrees = dfs(start, i - 1)
+                rightTrees = dfs(i + 1, end)
                 for l in leftTrees:
                     for r in rightTrees:
                         currTree = TreeNode(i)
@@ -32,4 +32,4 @@ class Solution:
             return allTrees
         
         if n < 1: return []
-        return generateTrees(1, n)
+        return dfs(1, n)
