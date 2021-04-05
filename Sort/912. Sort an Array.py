@@ -3,7 +3,8 @@
 2. Possible solutions
     - Quicksort
     - Heapsort
-    - Mergesort
+    - Mergesort, top-down, recursive
+    - Mergesort, bottom-up, iterative
 3. Coding
 4. Tests
 """
@@ -24,7 +25,7 @@ class Solution:
         return i
 
     def randomized_quicksort(self, nums, l, r):
-        if r - l <= 0: return
+        if l >= r: return
         mid = self.randomized_partition(nums, l, r)
         self.randomized_quicksort(nums, l, mid - 1)
         self.randomized_quicksort(nums, mid + 1, r)
@@ -35,7 +36,7 @@ class Solution:
         return nums
 
 
-# # T=O(nlgn), S=O(1)
+# T=O(nlgn), S=O(1)
 class Solution:
     def max_heapify(self, heap, root, heap_len):
         p = root
@@ -88,4 +89,54 @@ class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
         if not nums: return []
         self.merge_sort(nums, 0, len(nums) - 1)
+        return nums
+
+
+# T=O(nlgn), S=O(n)
+class Solution:
+    def merge(self, nums, tmp, l, r, rightEnd):
+        leftEnd = r - 1
+        idx = l
+        while l <= leftEnd and r <= rightEnd:
+            if nums[l] <= nums[r]:
+                tmp[idx] = nums[l]
+                idx += 1
+                l += 1
+            else:
+                tmp[idx] = nums[r]
+                idx += 1
+                r += 1
+        while l <= leftEnd:
+            tmp[idx] = nums[l]
+            idx += 1
+            l += 1
+        while r <= rightEnd:
+            tmp[idx] = nums[r]
+            idx += 1
+            r += 1
+    
+    def merge_pass(self, nums, tmp, n, length_):
+        i = 0
+        while i <= n - 2 * length_:
+            self.merge(nums, tmp, i, i + length_, i + 2 * length_ - 1)
+            i += 2 * length_
+        if i + length_ < n:
+            self.merge(nums, tmp, i, i + length_, n - 1)
+        else:
+            for j in range(i, n):
+                tmp[j] = nums[j]
+        
+    def merge_sort(self, nums):
+        n = len(nums)
+        length_ = 1
+        tmp = [None] * n
+        while length_ < n:
+            self.merge_pass(nums, tmp, n, length_)
+            length_ *= 2
+            self.merge_pass(tmp, nums, n, length_)
+            length_ *= 2
+
+    def sortArray(self, nums: List[int]) -> List[int]:
+        if not nums: return []
+        self.merge_sort(nums)
         return nums
