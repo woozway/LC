@@ -44,8 +44,7 @@ class Solution:
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         if not root: return 0
-        Q = collections.deque()
-        Q.append(root)
+        Q = collections.deque([root])
         ret = 0
         while Q:
             level_size = len(Q)
