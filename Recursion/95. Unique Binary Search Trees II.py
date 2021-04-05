@@ -18,8 +18,7 @@
 class Solution:
     def generateTrees(self, n: int) -> List[TreeNode]:
         def generateTrees(start, end):
-            if start > end:
-                return [None, ]
+            if start > end: return [None, ]
             allTrees = []
             for i in range(start, end + 1):
                 leftTrees = generateTrees(start, i - 1)
@@ -31,4 +30,6 @@ class Solution:
                         currTree.right = r
                         allTrees.append(currTree)
             return allTrees
-        return generateTrees(1, n) if n else []
+        
+        if n < 1: return []
+        return generateTrees(1, n)
