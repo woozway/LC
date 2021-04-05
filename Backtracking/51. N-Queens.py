@@ -1,7 +1,6 @@
 """
 1. Clarification
 2. Possible solutions
-    - Brute force
     - Backtracking
 3. Coding
 4. Tests
