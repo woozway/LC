@@ -15,13 +15,16 @@ class Solution:
                              '5': 'jkl', '6': 'mno', '7': 'pqrs',
                              '8': 'tuv', '9': 'wxyz'}
         self.ans = []
-        self.backtrack(digits, 0, '')
+        self.tmp = []
+        self.backtrack(digits, 0)
         return self.ans
 
-    def backtrack(self, digits, idx, tmp):
+    def backtrack(self, digits, idx):
         if idx == len(digits):
-            self.ans.append(tmp)
+            self.ans.append(''.join(self.tmp))
             return
         s = self.digit2alpha[digits[idx]]
         for c in s:
-            self.backtrack(digits, idx + 1, tmp + c)
+            self.tmp.append(c)
+            self.backtrack(digits, idx + 1)
+            self.tmp.pop()
