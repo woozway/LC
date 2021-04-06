@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - Python built-in set intersection
-     - Set
+    - Python built-in set intersection
+    - Set
 3. Coding
 4. Tests
 """
