@@ -60,3 +60,34 @@
     - Termination: `left == right`
     - Searching Left: `right = mid`
     - Searching Right: `left = mid + 1`
+- template III:
+    ```python
+    def binarySearch(nums, target):
+        if len(nums) == 0:
+            return -1
+
+        left, right = 0, len(nums) - 1
+        while left + 1 < right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] < target:
+                left = mid
+            else:
+                right = mid
+
+        # Post-processing:
+        # End Condition: left + 1 == right
+        if nums[left] == target: return left
+        if nums[right] == target: return right
+        return -1
+    ```
+  - Key Attributes:
+    - Search Condition needs to access element's immediate left and right neighbors
+    - Gurantees Search Space is _**at least 3**_ in size at each step
+    - Post-processing required. Loop/Recursion ends when you have 2 elements left.
+  - Distinguishing Syntax:
+    - Initial Condition: `left = 0, right = length - 1`
+    - Termination: `left + 1 == right`
+    - Searching Left: `right = mid`
+    - Searching Right: `left = mid`
