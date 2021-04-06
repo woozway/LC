@@ -2,6 +2,7 @@
 1. Clarification
 2. Possible solutions
     - Divide and Conquer
+    - Heap
 3. Coding
 4. Tests
 """
@@ -53,3 +54,18 @@ class Solution:
         append_skyline(p_l, left, n_l, left_y, curr_y)
         append_skyline(p_r, right, n_r, right_y, curr_y)
         return output
+
+
+# T=O(nlgn), S=O(n)
+class Solution:
+    def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
+        events = sorted([(L, -H, R) for L, R, H in buildings] + list({(R, 0, None) for _, R, _ in buildings}))
+        res, maxHeap = [[0, 0]], [(0, inf)]
+        for x, negH, R in events:
+            while x >= maxHeap[0][1]:
+                heapq.heappop(maxHeap)
+            if negH:
+                heapq.heappush(maxHeap, (negH, R))
+            if res[-1][1] != -maxHeap[0][0]:
+                res += [x, -maxHeap[0][0]],
+        return res[1:]
