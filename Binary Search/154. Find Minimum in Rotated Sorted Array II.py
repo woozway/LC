@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
- - binary search
+    - Binary search II
 3. Coding
 4. Tests
 """
@@ -11,13 +11,13 @@
 class Solution:
     def findMin(self, nums: List[int]) -> int:
         if not nums: return int(-inf)
-        low, high = 0, len(nums) - 1
-        while low < high:
-            pivot = low + (high - low) // 2
-            if nums[pivot] < nums[high]:
-                high = pivot
-            elif nums[pivot] > nums[high]:
-                low = pivot + 1
+        lo, hi = 0, len(nums) - 1
+        while lo < hi:
+            mid = (lo + hi) // 2
+            if nums[mid] < nums[hi]:
+                hi = mid
+            elif nums[mid] > nums[hi]:
+                lo = mid + 1
             else:
-                high -= 1
-        return nums[low]
+                hi -= 1
+        return nums[lo]
