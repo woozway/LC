@@ -13,19 +13,19 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         self.n = n
         self.ans = []
-        self.backtrack([])
+        self.brute([])
         return self.ans
 
-    def backtrack(self, A):
+    def brute(self, A):
         if len(A) == 2 * self.n:
             if self.valid(A):
                 self.ans.append(''.join(A))
         else:
             A.append('(')
-            self.backtrack(A)
+            self.brute(A)
             A.pop()
             A.append(')')
-            self.backtrack(A)
+            self.brute(A)
             A.pop()
 
     def valid(self, A):
