@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - binary search I
- - ternary search
+    - Brute force
+    - Binary search I
+    - Ternary search
 3. Coding
 4. Tests
 """
@@ -41,24 +41,24 @@ class Solution:
         return 0
 
 
-# # T=O(lgn), S=O(1)
-# class Solution:
-#     def guessNumber(self, n: int) -> int:
-#         if n < 1: return 0
-#         left, right = 1, n
-#         while left <= right:
-#             mid1 = left + (right - left) // 3
-#             mid2 = right - (right - left) // 3
-#             res1 = guess(mid1)
-#             res2 = guess(mid2)
-#             if res1 == 0:
-#                 return mid1
-#             if res2 == 0:
-#                 return mid2
-#             elif res1 < 0:
-#                 right = mid1 - 1
-#             elif res2 > 0:
-#                 left = mid2 + 1
-#             else:
-#                 left, right = mid1 + 1, mid2 - 1
-#         return 0
+# T=O(lgn), S=O(1)
+class Solution:
+    def guessNumber(self, n: int) -> int:
+        if n < 1: return 0
+        left, right = 1, n
+        while left <= right:
+            mid1 = left + (right - left) // 3
+            mid2 = right - (right - left) // 3
+            res1 = guess(mid1)
+            res2 = guess(mid2)
+            if res1 == 0:
+                return mid1
+            if res2 == 0:
+                return mid2
+            elif res1 < 0:
+                right = mid1 - 1
+            elif res2 > 0:
+                left = mid2 + 1
+            else:
+                left, right = mid1 + 1, mid2 - 1
+        return 0
