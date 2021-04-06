@@ -2,7 +2,7 @@
 1. Clarification
 2. Possible solutions
     - Dynamic programming
-    - Binary search + Greedy
+    - Binary search II + Greedy
 3. Coding
 4. Tests
 """
