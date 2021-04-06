@@ -34,7 +34,7 @@
         if len(nums) == 0:
             return -1
 
-        left, right = 0, len(nums)
+        left, right = 0, len(nums) - 1
         while left < right:
             mid = (left + right) // 2
             if nums[mid] == target:
@@ -46,7 +46,7 @@
 
         # Post-processing:
         # End Condition: left == right
-        if left != len(nums) and nums[left] == target:
+        if nums[left] == target:
             return left
         return -1
   ```
@@ -55,7 +55,7 @@
     - Gurantees Search Space is _**at least 2**_ in size at each step
     - Post-processing required. Loop/Recursion ends when you have 1 element left. Need to assess if the remaining element meets the condition.
   - Distinguishing Syntax:
-    - Initial Condition: `left = 0, right = length`
+    - Initial Condition: `left = 0, right = length - 1`
     - Termination: `left == right`
     - Searching Left: `right = mid`
     - Searching Right: `left = mid + 1`
