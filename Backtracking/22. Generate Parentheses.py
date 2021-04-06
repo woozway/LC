@@ -40,13 +40,13 @@ class Solution:
 # T=O(4^n/sqrt(n)), S=O(n)
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        self.list = []
+        self.lst = []
         self.backtrack(0, 0, n, '')
-        return self.list
+        return self.lst
 
     def backtrack(self, left, right, n, result):
         if left == n and right == n:
-            self.list.append(result)
+            self.lst.append(result)
             return
         if left < n:
             self.backtrack(left + 1, right, n, result + '(')
