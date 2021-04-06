@@ -3,8 +3,8 @@
 2. Possible solutions
     - Brute force
     - Heap
-    - Binary Search + Prefix Sum
-    - Binary Search + Sliding Window
+    - Binary Search II + Prefix Sum
+    - Binary Search II + Sliding Window
 3. Coding
 4. Tests
 """
