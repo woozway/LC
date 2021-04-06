@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - D&C
+    - Divide and Conquer
 3. Coding
 4. Tests
 """

@@ -11,23 +11,23 @@
 # T=O(n*n!), S=O(n)
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        def backtrack(first=0):
-            if first == n:
-                res.append(nums[:])
-            for i in range(first, n):
-                nums[first], nums[i] = nums[i], nums[first]
-                backtrack(first + 1)
-                nums[first], nums[i] = nums[i], nums[first]
+        if not nums: return [[]]
+        self.ans = []
+        self.backtrack(nums, 0)
+        return self.ans
 
-        if not nums: return []
-        n = len(nums)
-        res = []
-        backtrack()
-        return res
+    def backtrack(self, nums, idx):
+        if idx == len(nums):
+            self.ans.append(nums[:])
+            return
+        for i in range(idx, len(nums)):
+            nums[i], nums[idx] = nums[idx], nums[i]
+            self.backtrack(nums, idx + 1)
+            nums[i], nums[idx] = nums[idx], nums[i]
 
 
 # T=O(n*n!), S=O(n)
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        if not nums: return []
+        if not nums: return [[]]
         return list(itertools.permutations(nums))
