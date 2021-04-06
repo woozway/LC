@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - Python built-in
-     - HashMap
-     - Sort + Two pointers
+    - Python utility
+    - HashMap
+    - Sort + Two pointers
 3. Coding
 4. Tests
 """
