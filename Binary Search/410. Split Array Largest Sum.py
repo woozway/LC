@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - dynamic programming
- - binary search + greedy
+    - Dynamic programming
+    - Binary search + Greedy
 3. Coding
 4. Tests
 """
