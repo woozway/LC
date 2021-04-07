@@ -28,7 +28,7 @@
     - Termination: `left > right`
     - Searching Left: `right = mid - 1`
     - Searching Right: `left = mid + 1`
-- template II:
+- template II (most often used):
   ```python
     def binarySearch(nums, target):
         if len(nums) == 0:
