@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - naive dfs
-     - trie + dfs + backtracking
+    - Naive dfs
+    - Trie + dfs + Backtracking
 3. Coding
 4. Tests
 """
