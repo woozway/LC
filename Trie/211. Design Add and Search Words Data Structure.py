@@ -12,32 +12,31 @@
 class WordDictionary:
 
     def __init__(self):
-        self.d = {}
+        self.root = {}
+        self.end_of_word = '#'
 
     def addWord(self, word: str) -> None:
-        t = self.d
-        for c in word:
-            if c not in t:
-                t[c] = {}
-            t = t[c]
-        t['end'] = True
+        node = self.root
+        for char in word:
+            node = node.setdefault(char, {})
+        node[self.end_of_word] = self.end_of_word
 
     def search(self, word: str) -> bool:
         cut = False
-        def dfs(td, s):
+        def dfs(trie, s):
             nonlocal cut
             if cut:
                 return True
-            t = td
+            t = trie
             for i, c in enumerate(s):
                 if c == '.':
-                    return any(dfs(t[j], s[i + 1: ]) for j in t if j != 'end')
+                    return any(dfs(t[j], s[i + 1: ]) for j in t if j != self.end_of_word)
                 if c not in t:
                     return False
                 t = t[c]
-            cut = 'end' in t
+            cut = self.end_of_word in t
             return cut
-        return dfs(self.d, word)
+        return dfs(self.root, word)
 
 
 # T=O(n), S=O(n)
