@@ -2,7 +2,7 @@
 1. Clarification
 2. Possible solutions
     - Naive dfs
-    - Trie + dfs + Backtracking
+    - Trie + Backtracking
 3. Coding
 4. Tests
 """
