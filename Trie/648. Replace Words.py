@@ -35,5 +35,5 @@ class Solution:
         trie = Trie()
         END = True
         for root in dictionary:
-            reduce(dict.__getitem__, root, trie)[END] = root
+            functools.reduce(dict.__getitem__, root, trie)[END] = root
         return ' '.join(map(replace, sentence.split()))
