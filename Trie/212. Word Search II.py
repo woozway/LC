@@ -1,14 +1,14 @@
 """
 1. Clarification
 2. Possible solutions
-     - naive dfs
-     - trie + dfs + backtracking
+    - Naive dfs
+    - Trie + Backtracking
 3. Coding
 4. Tests
 """
 
 
-# trie + dfs + backtracking
+# trie + backtracking
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
@@ -27,10 +27,10 @@ class Solution:
         for i in range(len(board)):
             for j in range(len(board[0])):
                 if board[i][j] in root:
-                    self.dfs(board, i, j, '', root)
+                    self.backtrack(board, i, j, '', root)
         return list(self.result)
 
-    def dfs(self, board, row, col, cur_word, cur_dict):
+    def backtrack(self, board, row, col, cur_word, cur_dict):
         cur_word += board[row][col]
         cur_dict = cur_dict[board[row][col]]
         if END_OF_WORD in cur_dict:
@@ -40,5 +40,5 @@ class Solution:
         for i in range(4):
             x, y = row + dx[i], col + dy[i]
             if 0 <= x < m and 0 <= y < n and board[x][y] != '@' and board[x][y] in cur_dict:
-                self.dfs(board, x, y, cur_word, cur_dict)
+                self.backtrack(board, x, y, cur_word, cur_dict)
         board[row][col] = tmp
