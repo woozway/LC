@@ -1,6 +1,7 @@
-# Binary Tree
+# Tree
 ---
-## solve Tree Problems Recursively
+## Binary Tree
+### solve Tree Problems Recursively
 - "Top-down" Solution
   - "top-down" means that in each recursive call, we will visit the node first to come up with some values, and pass these values to its children when calling the function recursively. So the "top-down" solution can be considered as a kind of preorder traversal.
     ```java
@@ -26,3 +27,6 @@
   - Or, you can think of the problem in this way:
     - for a node in a tree, if you know the answer of its children, can you calculate the answer of that node?
   - If the answer is yes, solving the problem recursively using a bottom up approach might be a good idea.
+## N-ary Tree
+### traversal
+- Note that here is no standard definition for in-order traversal in n-ary trees. It probably only makes sense for binary trees.
