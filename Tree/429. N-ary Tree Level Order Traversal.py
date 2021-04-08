@@ -24,7 +24,7 @@ class Solution:
         Q = collections.deque([root])
         while Q:
             sz, tmp = len(Q), []
-            for i in range(sz):
+            for _ in range(sz):
                 node = Q.popleft()
                 tmp.append(node.val)
                 Q.extend(node.children)
