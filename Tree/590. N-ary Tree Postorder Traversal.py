@@ -38,7 +38,6 @@ class Solution:
         stack, res = [root, ], []
         while stack:
             root = stack.pop()
-            if root is not None:
-                res.append(root.val)
+            res.append(root.val)
             stack.extend(root.children)
         return res[::-1]
