@@ -40,6 +40,5 @@ class Solution:
             root = stack.pop()
             if root is not None:
                 res.append(root.val)
-            for child in root.children:
-                stack.append(child)
+            stack.extend(root.children)
         return res[::-1]
