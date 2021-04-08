@@ -8,7 +8,7 @@
 """
 
 
-# T=O(sigma(wi^2)), S=O(n)
+# T=O(sigma(wi^2)), S=O(n), wi=len(i-th word)
 class Solution:
     def replaceWords(self, dictionary: List[str], sentence: str) -> str:
         def replace(word):
