@@ -17,7 +17,7 @@
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         if not l1 or not l2: return None
-        dummyHead = ListNode(0)
+        dummyHead = ListNode()
         p, q = l1, l2
         curr = dummyHead
         carry = 0
