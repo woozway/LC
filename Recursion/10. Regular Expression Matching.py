@@ -9,7 +9,9 @@
 """
 
 
-# T=O((T+P)*2^(T+P/2)), S=O(T^2 + P^2), T=len(s), P=len(p)
+# T=O((T+P)*2^(T+P/2)), S=O(T^2 + P^2) required 
+# but O((T+P)*2^(T+P/2)) since we're using python3
+# T=len(s), P=len(p)
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         if not p: return not s
