@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-    - Brute force
-    - Backtracking
+    - Backtracking brute force
+    - Backtracking improved
 3. Coding
 4. Tests
 """
@@ -13,19 +13,19 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         self.n = n
         self.ans = []
-        self.brute([])
+        self.backtrack([])
         return self.ans
 
-    def brute(self, A):
+    def backtrack(self, A):
         if len(A) == 2 * self.n:
             if self.valid(A):
                 self.ans.append(''.join(A))
         else:
             A.append('(')
-            self.brute(A)
+            self.backtrack(A)
             A.pop()
             A.append(')')
-            self.brute(A)
+            self.backtrack(A)
             A.pop()
 
     def valid(self, A):
