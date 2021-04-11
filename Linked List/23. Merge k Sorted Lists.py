@@ -19,7 +19,7 @@
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         self.nodes = []
-        head = point = ListNode(0)
+        head = point = ListNode()
         for l in lists:
             while l:
                 self.nodes.append(l.val)
