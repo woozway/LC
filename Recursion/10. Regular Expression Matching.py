@@ -20,7 +20,7 @@ class Solution:
             return first_match and self.isMatch(s[1:], p[1:])
 
 
-# T=O(T*P), S=O(T*P)
+# T=O(T*P), S=O(T*P), dp[i][j]: does s[i:] match p[j:]
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         if not p: return not s
