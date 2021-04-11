@@ -39,7 +39,7 @@ class Solution:
                     d[-v-x] = 1
                 else:
                     res.add((v, -v-x, x))
-        return map(list, res)
+        return list(map(list, res))
 
 
 # T=O(n^2), S=O(1)
