@@ -11,7 +11,7 @@
 # T=O(n*n!), S=O(n)
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        if not nums: return [[]]
+        if not nums: return []
         self.ans = []
         self.backtrack(nums, 0)
         return self.ans
@@ -29,5 +29,5 @@ class Solution:
 # T=O(n*n!), S=O(n)
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        if not nums: return [[]]
+        if not nums: return []
         return list(itertools.permutations(nums))
