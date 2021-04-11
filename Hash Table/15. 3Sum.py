@@ -12,6 +12,7 @@
 # # T=O(n^3), S=O(1), Time Limit Exceeded
 # class Solution:
 #     def threeSum(self, nums: List[int]) -> List[List[int]]:
+#         if len(nums) < 3: return []
 #         nums.sort()
 #         res = set()
 #         n = len(nums)
@@ -44,6 +45,7 @@ class Solution:
 # T=O(n^2), S=O(1)
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+        if len(nums) < 3: return []
         nums.sort()
         res = []
         n = len(nums)
