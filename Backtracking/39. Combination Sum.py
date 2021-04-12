@@ -11,8 +11,7 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         if not candidates or target < 1: return []
-        ans = []
-        tmp = []
+        ans, tmp = [], []
         def backtrack(idx, Sum):
             if idx >= len(candidates) or Sum >= target:
                 if Sum == target:
