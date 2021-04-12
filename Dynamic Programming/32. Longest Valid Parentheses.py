@@ -9,7 +9,7 @@
 """
 
 
-# T=O(n), S=O(n)
+# T=O(n), S=O(n), dp[i]: longest len with the i-th char as the end
 class Solution:
     def longestValidParentheses(self, s: str) -> int:
         if not s: return 0
