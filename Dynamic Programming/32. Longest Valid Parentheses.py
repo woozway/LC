@@ -50,8 +50,8 @@ class Solution:
         if not s: return 0
         left, right = 0, 0
         maxlen = 0
-        for i in range(len(s)):
-            if s[i] == '(':
+        for ch in s:
+            if ch == '(':
                 left += 1
             else:
                 right += 1
@@ -60,8 +60,8 @@ class Solution:
             elif right > left:
                 left = right = 0
         left = right = 0
-        for i in range(len(s) - 1, -1, -1):
-            if s[i] == '(':
+        for ch in s[::-1]:
+            if ch == '(':
                 left += 1
             else:
                 right += 1
