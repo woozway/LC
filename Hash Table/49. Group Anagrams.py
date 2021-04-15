@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - Sort
-     - Categorized by Count
+    - Sort
+    - Categorized by Count
 3. Coding
 4. Tests
 """
