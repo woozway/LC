@@ -24,11 +24,11 @@ class Solution:
 # T=O(n), S=O(lgn)
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        def divide_and_conquer(nums, l, r):
-            if l == r: return (nums[l], nums[l], nums[l], nums[l])
-            mid = (l + r) >> 1
-            a1, m1, b1, s1 = divide_and_conquer(nums, l, mid)
-            a2, m2, b2, s2 = divide_and_conquer(nums, mid + 1, r)
+        def divide_and_conquer(nums, left, right):
+            if left == right: return (nums[left], nums[left], nums[left], nums[left])
+            mid = (left + right) >> 1
+            a1, m1, b1, s1 = divide_and_conquer(nums, left, mid)
+            a2, m2, b2, s2 = divide_and_conquer(nums, mid + 1, right)
             a = max(a1, s1 + a2)
             b = max(b2, s2 + b1)
             m = max(m1, m2, b1 + a2)
