@@ -8,6 +8,7 @@
 
 
 # T=O(m*n), S=O(m*n), m,n are the len of A,B
+# dp[i][j]: Longest Common Sequence ends with A[i] and B[j], index starts from 1
 class Solution:
     def maxUncrossedLines(self, A: List[int], B: List[int]) -> int:
         if not A or not B: return 0
