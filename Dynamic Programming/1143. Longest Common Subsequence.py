@@ -8,6 +8,7 @@
 
 
 # T=O(m*n), S=O(m*n), m,n are the len of text1,text2
+# see also leetcode 1035 & 718
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         if not text1 or not text2: return 0

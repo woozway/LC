@@ -8,6 +8,7 @@
 
 
 # T=O(m*n), S=O(m*n), m,n are the len of num1,nums2
+# see also leetcode 1035 & 718
 class Solution:
     def findLength(self, nums1: List[int], nums2: List[int]) -> int:
         if not nums1 or not nums2: return 0
