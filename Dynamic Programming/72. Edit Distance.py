@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force, bfs (better) or dfs
- - dp
+    - Brute force, bfs (better) or dfs
+    - Dynamic programming
 3. Coding
 4. Tests
 """
