@@ -1,25 +1,25 @@
 """
 1. Clarification
 2. Possible solutions
-     - Brute insert 0
-     - Two pointers
+    - Brute force, insert 0
+    - Two pointers
 3. Coding
 4. Tests
 """
 
 
-# # T=O(n^2), S=O(1)
-# class Solution:
-#     def duplicateZeros(self, arr: List[int]) -> None:
-#         if not arr: return
-#         n, i = len(arr), 0
-#         while i < n:
-#             if arr[i] != 0:
-#                 i += 1
-#             else:
-#                 for j in range(n - 2, i - 1, -1):
-#                     arr[j + 1] = arr[j]
-#                 i += 2
+# T=O(n^2), S=O(1)
+class Solution:
+    def duplicateZeros(self, arr: List[int]) -> None:
+        if not arr: return
+        n, i = len(arr), 0
+        while i < n:
+            if arr[i] != 0:
+                i += 1
+            else:
+                for j in range(n - 2, i - 1, -1):
+                    arr[j + 1] = arr[j]
+                i += 2
 
 
 # T=O(n), S=O(1)
