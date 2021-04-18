@@ -1,11 +1,11 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force
- - hashMap
- - sort
- - divide and conquer
- - Boyer-Moore algo
+    - Brute force
+    - HashMap
+    - Sorting
+    - Divide and Conquer
+    - Boyer-Moore algo
 3. Coding
 4. Tests
 """
@@ -24,30 +24,30 @@
 #                         return nums[i]
 
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def majorityElement(self, nums: List[int]) -> int:
-#         n = len(nums)
-#         hashMap = collections.Counter(nums)
-#         for k, v in hashMap.items():
-#             if v > n // 2:
-#                 return k
+# T=O(n), S=O(n)
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        hashMap = collections.Counter(nums)
+        for k, v in hashMap.items():
+            if v > n // 2:
+                return k
 
 
-# # T=O(nlgn), S=O(1)
-# class Solution:
-#     def majorityElement(self, nums: List[int]) -> int:
-#         nums.sort()
-#         n, pre, cnt = len(nums), nums[0], 1
-#         nums.append('#')
-#         for x in nums[1:]:
-#             if x == pre:
-#                 cnt += 1
-#             else:
-#                 if cnt > n // 2:
-#                     return pre
-#                 cnt = 1
-#             pre = x
+# T=O(nlgn), S=O(1)
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        nums.sort()
+        n, pre, cnt = len(nums), nums[0], 1
+        nums.append('#')
+        for x in nums[1:]:
+            if x == pre:
+                cnt += 1
+            else:
+                if cnt > n // 2:
+                    return pre
+                cnt = 1
+            pre = x
 
 
 # T=O(nlgn), S=O(lgn)
