@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - Dynamic programming v1
-     - Dynamic programming v2
+    - Dynamic programming v1
+    - Dynamic programming v2
 3. Coding
 4. Tests
 """
@@ -19,15 +19,15 @@ class Solution:
         return ans
 
 
-# # T=O(n^2), S=O(1)
-# class Solution:
-#     def generate(self, numRows: int) -> List[List[int]]:
-#         if numRows <= 0: return []
-#         triangle = []
-#         for row_num in range(numRows):
-#             row = [None for _ in range(row_num + 1)]
-#             row[0], row[-1] = 1, 1
-#             for j in range(1, len(row) - 1):
-#                 row[j] = triangle[row_num - 1][j - 1] + triangle[row_num - 1][j]
-#             triangle.append(row)
-#         return triangle
+# T=O(n^2), S=O(1)
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        if numRows <= 0: return []
+        triangle = []
+        for row_num in range(numRows):
+            row = [None for _ in range(row_num + 1)]
+            row[0], row[-1] = 1, 1
+            for j in range(1, len(row) - 1):
+                row[j] = triangle[row_num - 1][j - 1] + triangle[row_num - 1][j]
+            triangle.append(row)
+        return triangle
