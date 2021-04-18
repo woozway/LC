@@ -4,7 +4,7 @@
     - Sorting
     - One pointer
     - Two pointers v1
-    - Two pinters v2
+    - Two pointers v2
 3. Coding
 4. Tests
 """
