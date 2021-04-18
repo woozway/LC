@@ -1,20 +1,64 @@
+"""
+1. Clarification
+2. Possible solutions
+    - Sorting
+    - One pointer
+    - Two pointers v1
+    - Two pinters v2
+3. Coding
+4. Tests
+"""
+
+
+# T=O(nlgn), S=O(n)
 class Solution:
-  def sortColors(self, nums: List[int]) -> None:
-    """
-    invariant: [0...lt] as 0's, [gt...len(nums)-1] as 2's
-    without using the library's sort function
-    with a one-pass algorithm using only O(1) constant space
-    """
-    lt = -1
-    gt = len(nums)
-    i = 0
-    while i < gt:
-      if nums[i] == 0:
-        lt += 1
-        nums[lt], nums[i] = nums[i], nums[lt]
-        i += 1
-      elif nums[i] == 2:
-        gt -= 1
-        nums[gt], nums[i] = nums[i], nums[gt]
-      else:
-        i += 1
+    def sortColors(self, nums: List[int]) -> None:
+        nums.sort()
+
+
+# T=O(n), S=O(1)
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        n = len(nums)
+        ptr = 0
+        for i in range(n):
+            if nums[i] == 0:
+                nums[i], nums[ptr] = nums[ptr], nums[i]
+                ptr += 1
+        for i in range(ptr, n):
+            if nums[i] == 1:
+                nums[i], nums[ptr] = nums[ptr], nums[i]
+                ptr += 1
+
+
+# T=O(n), S=O(1)
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        n = len(nums)
+        p0 = p1 = 0
+        for i in range(n):
+            if nums[i] == 1:
+                nums[i], nums[p1] = nums[p1], nums[i]
+                p1 += 1
+            elif nums[i] == 0:
+                nums[i], nums[p0] = nums[p0], nums[i]
+                if p0 < p1:
+                    nums[i], nums[p1] = nums[p1], nums[i]
+                p0 += 1
+                p1 += 1
+
+
+# T=O(n), S=O(1)
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        n = len(nums)
+        p0, p2 = 0, n - 1
+        i = 0
+        while i <= p2:
+            while i <= p2 and nums[i] == 2:
+                nums[i], nums[p2] = nums[p2], nums[i]
+                p2 -= 1
+            if nums[i] == 0:
+                nums[i], nums[p0] = nums[p0], nums[i]
+                p0 += 1
+            i += 1
