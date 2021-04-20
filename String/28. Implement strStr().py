@@ -55,6 +55,7 @@ class Solution:
 #         L, n = len(needle), len(haystack)
 #         if L == 0: return 0
 #         if L > n: return -1
+#         if L == n and haystack != needle: return -1
 #         a = 26
 #         modulus = 2 ** 31
 #         h_to_int = lambda i: ord(haystack[i]) - ord('a')
