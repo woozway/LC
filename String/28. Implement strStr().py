@@ -4,6 +4,7 @@
     - Python built-in
     - Brute force
     - Two pointers
+    - KMP
     - Rabin Karp
 3. Coding
 4. Tests
@@ -46,6 +47,31 @@ class Solution:
             if curr_len == L:
                 return pn - L
             pn = pn - curr_len + 1
+        return -1
+
+
+# T=O(n+l), S=O(l)
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        L, n = len(needle), len(haystack)
+        if L == 0: return 0
+        if L > n or (L == n and haystack != needle): return -1
+        pi = [0] * L
+        j = 0
+        for i in range(1, L):
+            while j > 0 and needle[i] != needle[j]:
+                j = pi[j - 1]
+            if needle[i] == needle[j]:
+                j += 1
+            pi[i] = j
+        j = 0
+        for i in range(n):
+            while j > 0 and haystack[i] != needle[j]:
+                j = pi[j - 1]
+            if haystack[i] == needle[j]:
+                j += 1
+            if j == L:
+                return i - L + 1
         return -1
 
 
