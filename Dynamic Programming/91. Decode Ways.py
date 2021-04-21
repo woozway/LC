@@ -7,7 +7,7 @@
 """
 
 
-# T=O(n), S=O(n)
+# T=O(n), S=O(n), dp[i]: # of decode ways of pre i char of s
 class Solution:
     def numDecodings(self, s: str) -> int:
         if not s or s[0] == '0': return 0
