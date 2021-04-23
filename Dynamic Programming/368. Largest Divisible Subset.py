@@ -17,7 +17,7 @@
 #         nums.sort()
 #         self.backtrack(nums, 0)
 #         return self.ans
-#
+
 #     def backtrack(self, nums, idx):
 #         if idx == len(nums):
 #             if len(self.tmp) > len(self.ans):
@@ -36,11 +36,11 @@
 class Solution:
     def largestDivisibleSubset(self, nums: List[int]) -> List[int]:
         if not nums or len(nums) == 1: return nums
-        n = len(nums)
         nums.sort()
-        dp = [[i] for i in nums]
+        n = len(nums)
+        dp = [[num] for num in nums]
         for i in range(1, n):
             for j in range(i - 1, -1, -1):
                 if nums[i] % nums[j] == 0:
-                    dp[i] = max(dp[j] + [nums[i]], dp[i], key=len)
+                    dp[i] = max(dp[i], dp[j] + [nums[i]], key=len)
         return max(dp, key=len)
