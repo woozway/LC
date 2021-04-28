@@ -10,15 +10,15 @@
 """
 
 
-# T=O(c), S=O(1)
-class Solution:
-    def judgeSquareSum(self, c: int) -> bool:
-        sqrt = int(c ** 0.5)
-        for i in range(sqrt + 1):
-            for j in range(sqrt + 1):
-                if i * i + j * j == c:
-                    return True
-        return False
+# # T=O(c), S=O(1), Time Limit Exceeded
+# class Solution:
+#     def judgeSquareSum(self, c: int) -> bool:
+#         sqrt = int(c ** 0.5)
+#         for i in range(sqrt + 1):
+#             for j in range(sqrt + 1):
+#                 if i * i + j * j == c:
+#                     return True
+#         return False
 
 
 # T=O(c^1/2 * lgc), S=O(1)
