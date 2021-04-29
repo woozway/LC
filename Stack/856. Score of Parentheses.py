@@ -21,7 +21,7 @@ class Solution:
                         ans += 1
                     else:
                         ans += 2 * recursive(i + 1, k)
-                    i = k+1
+                    i = k + 1
             return ans
 
         return recursive(0, len(S))
