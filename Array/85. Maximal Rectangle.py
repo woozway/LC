@@ -27,7 +27,7 @@ class Solution:
                 width = left[i][j]
                 area = width
                 for k in range(i - 1, -1, -1):
-                    width = min(width, left[k][j]);
+                    width = min(width, left[k][j])
                     area = max(area, (i - k + 1) * width)
                 ret = max(ret, area)
         return ret
