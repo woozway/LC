@@ -1,22 +1,22 @@
 """
 1. Clarification
 2. Possible solutions
- - one pass
- - dynamic programming
+    - One pass
+    - Dynamic programming
 3. Coding
 4. Tests
 """
 
 
-# # T=O(n), S=O(1)
-# class Solution:
-#     def maxProfit(self, prices: List[int]) -> int:
-#         minPrice = inf
-#         maxProf = 0
-#         for price in prices:
-#             maxProf = max(price - minPrice, maxProf)
-#             minPrice = min(price, minPrice)
-#         return maxProf
+# T=O(n), S=O(1)
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        minPrice = inf
+        maxProf = 0
+        for price in prices:
+            maxProf = max(price - minPrice, maxProf)
+            minPrice = min(price, minPrice)
+        return maxProf
 
 
 # T=O(n), S=O(n)
