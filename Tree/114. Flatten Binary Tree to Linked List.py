@@ -81,6 +81,5 @@ class Solution:
                 while predecessor.right:
                     predecessor = predecessor.right
                 predecessor.right = curr.right
-                curr.left = None
-                curr.right = nxt
+                curr.left, curr.right = None, nxt
             curr = curr.right
