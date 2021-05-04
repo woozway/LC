@@ -9,7 +9,7 @@
 """
 
 
-# # T=O(2^m * n), S=O(), Time Limit Exceeded
+# # T=O(m * 2^n), S=O(1), Time Limit Exceeded
 # class Solution:
 #     def minCost(self, houses: List[int], cost: List[List[int]], m: int, n: int, target: int) -> int:
 #         if m < 1 or n < 1: return -1
