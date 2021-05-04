@@ -9,35 +9,35 @@
 """
 
 
-# T=O(2^m * n), S=O(), Time Limit Exceeded
-class Solution:
-    def minCost(self, houses: List[int], cost: List[List[int]], m: int, n: int, target: int) -> int:
-        if m < 1 or n < 1: return -1
-        minCost = math.inf
-        def backtrack(idx, blockCnt, tmpCost):
-            nonlocal minCost
-            if idx == m:
-                if blockCnt == target and tmpCost < minCost:
-                    minCost = tmpCost
-                return
-            if blockCnt > target or tmpCost > minCost:
-                return
-            if houses[idx] > 0:
-                if idx == 0 or houses[idx] != houses[idx-1]:
-                    backtrack(idx + 1, blockCnt + 1, tmpCost)
-                else:
-                    backtrack(idx + 1, blockCnt, tmpCost)
-            else:
-                for j in range(n):
-                    houses[idx] = j + 1
-                    if idx == 0 or houses[idx] != houses[idx-1]:
-                        backtrack(idx + 1, blockCnt + 1, tmpCost + cost[idx][j])
-                    else:
-                        backtrack(idx + 1, blockCnt, tmpCost + cost[idx][j])
-                    houses[idx] = 0
+# # T=O(2^m * n), S=O(), Time Limit Exceeded
+# class Solution:
+#     def minCost(self, houses: List[int], cost: List[List[int]], m: int, n: int, target: int) -> int:
+#         if m < 1 or n < 1: return -1
+#         minCost = math.inf
+#         def backtrack(idx, blockCnt, tmpCost):
+#             nonlocal minCost
+#             if idx == m:
+#                 if blockCnt == target and tmpCost < minCost:
+#                     minCost = tmpCost
+#                 return
+#             if blockCnt > target or tmpCost > minCost:
+#                 return
+#             if houses[idx] > 0:
+#                 if idx == 0 or houses[idx] != houses[idx-1]:
+#                     backtrack(idx + 1, blockCnt + 1, tmpCost)
+#                 else:
+#                     backtrack(idx + 1, blockCnt, tmpCost)
+#             else:
+#                 for j in range(n):
+#                     houses[idx] = j + 1
+#                     if idx == 0 or houses[idx] != houses[idx-1]:
+#                         backtrack(idx + 1, blockCnt + 1, tmpCost + cost[idx][j])
+#                     else:
+#                         backtrack(idx + 1, blockCnt, tmpCost + cost[idx][j])
+#                     houses[idx] = 0
 
-        backtrack(0, 0, 0)
-        return -1 if minCost == math.inf else minCost
+#         backtrack(0, 0, 0)
+#         return -1 if minCost == math.inf else minCost
 
 
 # T=O(m*n^2*target), S=O(m*n*target)
