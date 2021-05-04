@@ -43,6 +43,7 @@
 # T=O(m*n^2*target), S=O(m*n*target)
 class Solution:
     def minCost(self, houses: List[int], cost: List[List[int]], m: int, n: int, target: int) -> int:
+        if m < 1 or n < 1: return -1
         houses = [c - 1 for c in houses]
         dp = [[[math.inf] * target for _ in range(n)] for _ in range(m)]
         for i in range(m):
@@ -75,6 +76,7 @@ class Entry:
 
 class Solution:
     def minCost(self, houses: List[int], cost: List[List[int]], m: int, n: int, target: int) -> int:
+        if m < 1 or n < 1: return -1
         houses = [c - 1 for c in houses]
         dp = [[[math.inf] * target for _ in range(n)] for _ in range(m)]
         best = [[Entry() for _ in range(target)] for _ in range(m)]
