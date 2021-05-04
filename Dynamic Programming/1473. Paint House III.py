@@ -108,6 +108,7 @@ class Solution:
 
 
 # T=O(m*n^2*target), S=O(m*n*target)
+# dp maps (i, t, p) -> the minimum cost to paint houses i <= h < m with t neighborhoods, where house[i-1] is color p
 class Solution:
     def minCost(self, houses: List[int], cost: List[List[int]], m: int, n: int, target: int) -> int:
         if m < 1 or n < 1: return -1
