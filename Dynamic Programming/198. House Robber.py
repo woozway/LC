@@ -24,7 +24,7 @@ class Solution:
         return dp[n - 1]
 
 
-# T=O(n), S=O(1)
+# T=O(n), S=O(1), see leetcode 740.
 class Solution:
     def rob(self, nums: List[int]) -> int:
         if not nums:
