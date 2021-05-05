@@ -8,7 +8,7 @@
 """
 
 
-# T=O(n+m), S=O(m), m=max(nums)
+# T=O(n+m), S=O(m), m=max(nums), see leetcode 198.
 class Solution:
     def deleteAndEarn(self, nums: List[int]) -> int:
         maxVal = max(nums)
