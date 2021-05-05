@@ -8,7 +8,7 @@
 """
 
 
-# T=O(n+m), S=O(m)
+# T=O(n+m), S=O(m), m=max(nums)
 class Solution:
     def deleteAndEarn(self, nums: List[int]) -> int:
         maxVal = max(nums)
