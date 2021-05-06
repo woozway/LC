@@ -6,6 +6,7 @@
 4. Tests
 """
 
+
 # T=O(n), S=O(n)
 class Solution:
     def decode(self, encoded: List[int], first: int) -> List[int]:
