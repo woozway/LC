@@ -25,8 +25,7 @@ class Solution:
                 return 0
             leftGain = max(maxGain(node.left), 0)
             rightGain = max(maxGain(node.right), 0)
-            priceNewpath = node.val + leftGain + rightGain
-            self.maxSum = max(self.maxSum, priceNewpath)
+            self.maxSum = max(self.maxSum, node.val + leftGain + rightGain)
             return node.val + max(leftGain, rightGain)
 
         maxGain(root)
