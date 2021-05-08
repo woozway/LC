@@ -20,7 +20,7 @@ class Solution:
                 if self.backtrack(jobs, workloads, idx + 1, limit):
                     return True
                 workloads[i] -= cur
-            if workloads[i] == 0 or workloads[i] + cur == limit:
+            if workloads[i] == 0:
                 break
         return False
 
