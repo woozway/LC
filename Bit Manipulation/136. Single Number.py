@@ -1,25 +1,25 @@
 """
 1. Clarification
 2. Possible solutions
-     - List operation
-     - Hash table
-     - Maths
-     - Bit Manipulation
+    - List operation
+    - Hash table
+    - Maths
+    - Bit Manipulation
 3. Coding
 4. Tests
 """
 
 
-# # T=O(n^2), S=O(n)
-# class Solution:
-#     def singleNumber(self, nums: List[int]) -> int:
-#         no_duplicate_list = []
-#         for i in nums:
-#             if i not in no_duplicate_list:
-#                 no_duplicate_list.append(i)
-#             else:
-#                 no_duplicate_list.remove(i)
-#         return no_duplicate_list.pop()
+# T=O(n^2), S=O(n)
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        no_duplicate_list = []
+        for i in nums:
+            if i not in no_duplicate_list:
+                no_duplicate_list.append(i)
+            else:
+                no_duplicate_list.remove(i)
+        return no_duplicate_list.pop()
 
 
 # T=O(n), S=O(n)
