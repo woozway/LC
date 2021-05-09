@@ -8,7 +8,7 @@
 """
 
 
-# # T=O(n*m), S=O(n), Time Limit Exceeded
+# # T=O(n^2 * k), S=O(n), Time Limit Exceeded
 # class Solution:
 #     def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
 #         n = len(bloomDay)
