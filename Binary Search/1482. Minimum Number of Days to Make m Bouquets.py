@@ -47,7 +47,7 @@ class Solution:
         def canMake(days: int) -> bool:
             bouquets = flowers = 0
             for i, bloom in enumerate(bloomDay):
-                if bloomDay[i] <= days:
+                if bloom <= days:
                     flowers += 1
                     if flowers == k:
                         bouquets += 1
@@ -58,11 +58,11 @@ class Solution:
                     flowers = 0
             return bouquets == m
 
-        low, high = 1, max(bloomDay)
-        while low < high:
-            days = (low + high) // 2
-            if canMake(days):
-                high = days
+        lo, hi = 1, max(bloomDay)
+        while lo < hi:
+            mid = (lo + hi) >> 1
+            if canMake(mid):
+                hi = mid
             else:
-                low = days + 1
-        return low
+                lo = mid + 1
+        return lo
