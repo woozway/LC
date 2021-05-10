@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - Use set to check whether a node has been met before
-     - Fast & Slow pointers: a = c + (n-1)*(b+c)
+    - Use set to check whether a node has been met before
+    - Fast & Slow pointers: a = c + (n-1)*(b+c)
 3. Coding
 4. Tests
 """
