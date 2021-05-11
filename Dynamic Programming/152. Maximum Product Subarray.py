@@ -1,8 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force, recursion
- - dynamic programming
+    - Brute force, recursion
+    - Dynamic programming v1
+    - Dynamic programming v2
 3. Coding
 4. Tests
 """
@@ -22,15 +23,14 @@ class Solution:
         return res
 
 
-# # T=O(n), S=O(1), dynamic programming
-# class Solution:
-#     def maxProduct(self, nums: List[int]) -> int:
-#         if nums is None: return 0
-#         res, curMax, curMin = nums[0], nums[0], nums[0]
-#         for i in range(1, len(nums)):
-#             num = nums[i]
-#             curMax, curMin = curMax * num, curMin * num
-#             curMin, curMax = min(curMax, curMin, num), max(curMax, curMin, num)
-#             # print(curMin, curMax)
-#             res = curMax if curMax > res else res
-#         return res
+# T=O(n), S=O(1), dynamic programming
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        if nums is None: return 0
+        res, curMax, curMin = nums[0], nums[0], nums[0]
+        for i in range(1, len(nums)):
+            num = nums[i]
+            curMax, curMin = curMax * num, curMin * num
+            curMin, curMax = min(curMax, curMin, num), max(curMax, curMin, num)
+            res = curMax if curMax > res else res
+        return res
