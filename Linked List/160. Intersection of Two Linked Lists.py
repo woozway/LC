@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - Brute force
-     - Hash table
-     - Two Pointers
+    - Brute force
+    - Hash table
+    - Two Pointers
 3. Coding
 4. Tests
 """
