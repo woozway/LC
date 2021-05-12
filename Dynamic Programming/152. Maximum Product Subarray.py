@@ -1,15 +1,25 @@
 """
 1. Clarification
 2. Possible solutions
-    - Brute force, recursion
     - Dynamic programming v1
     - Dynamic programming v2
+    - Dynamic programming v3
 3. Coding
 4. Tests
 """
 
 
-# T=O(n), S=O(1), dynamic programming
+# T=O(n), S=O(n)
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        maxF, minF = nums[:], nums[:]
+        for i in range(1, len(nums)):
+            maxF[i] = max(maxF[i-1] * nums[i], nums[i], minF[i-1] * nums[i])
+            minF[i] = min(minF[i-1] * nums[i], nums[i], maxF[i-1] * nums[i])
+        return max(maxF)
+
+
+# T=O(n), S=O(1)
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         if nums is None: return 0
@@ -23,7 +33,7 @@ class Solution:
         return res
 
 
-# T=O(n), S=O(1), dynamic programming
+# T=O(n), S=O(1)
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         if nums is None: return 0
