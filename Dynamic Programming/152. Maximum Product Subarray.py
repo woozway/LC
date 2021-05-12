@@ -12,11 +12,11 @@
 # T=O(n), S=O(n)
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        maxF, minF = nums[:], nums[:]
+        maxList, minList = nums[:], nums[:]
         for i in range(1, len(nums)):
-            maxF[i] = max(maxF[i-1] * nums[i], nums[i], minF[i-1] * nums[i])
-            minF[i] = min(minF[i-1] * nums[i], nums[i], maxF[i-1] * nums[i])
-        return max(maxF)
+            maxList[i] = max(maxList[i-1] * nums[i], nums[i], minList[i-1] * nums[i])
+            minList[i] = min(maxList[i-1] * nums[i], nums[i], minList[i-1] * nums[i])
+        return max(maxList)
 
 
 # T=O(n), S=O(1)
