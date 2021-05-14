@@ -32,8 +32,7 @@ class Solution:
                             maxSide = max(maxSide, k + 1)
                         else:
                             break
-        maxSquare = maxSide * maxSide
-        return maxSquare
+        return maxSide * maxSide
 
 
 # T=O(mn), S=O(mn), see also leetcode 1277
@@ -53,5 +52,4 @@ class Solution:
                     else:
                         dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1
                     maxSide = max(maxSide, dp[i][j])
-        maxSquare = maxSide * maxSide
-        return maxSquare
+        return maxSide * maxSide
