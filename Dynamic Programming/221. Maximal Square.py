@@ -36,7 +36,8 @@ class Solution:
         return maxSquare
 
 
-# T=O(mn), S=O(mn), dp[i][j]: maximum sideLen with i, j as the right-down index of a square
+# T=O(mn), S=O(mn), see also leetcode 1277
+# dp[i][j]: maximum sideLen with i, j as the right-down index of a square
 class Solution:
     def maximalSquare(self, matrix: List[List[str]]) -> int:
         if len(matrix) == 0 or len(matrix[0]) == 0:
