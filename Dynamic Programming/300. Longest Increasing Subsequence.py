@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force, recursion
- - dp
- - binary search
+    - Brute force + Recursion
+    - dp
+    - Binary Search
 3. Coding
 4. Tests
 """
@@ -24,14 +24,14 @@ class Solution:
         return res
 
 
-# # T=O(nlgn), S=O(n), binary search
-# class Solution:
-#     def lengthOfLIS(self, nums: List[int]) -> int:
-#         lis = []
-#         for i in range(len(nums)):
-#             p = bisect.bisect_left(lis, nums[i])
-#             if p == len(lis):
-#                 lis.append(nums[i])
-#             else:
-#                 lis[p] = nums[i]
-#         return len(lis)
+# T=O(nlgn), S=O(n), binary search
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        lis = []
+        for i in range(len(nums)):
+            p = bisect.bisect_left(lis, nums[i])
+            if p == len(lis):
+                lis.append(nums[i])
+            else:
+                lis[p] = nums[i]
+        return len(lis)
