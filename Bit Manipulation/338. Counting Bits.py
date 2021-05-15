@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - bit manipulation
-     - dynamic programming
+    - Bit manipulation
+    - Dynamic programming
 3. Coding
 4. Tests
 """
@@ -24,10 +24,10 @@ class Solution:
         return rst
 
     
-# # T=O(n), S=O(n)
-# class Solution:
-#     def countBits(self, num: int) -> List[int]:
-#         dp = [0] * (num + 1)
-#         for i in range(1, num + 1):
-#             dp[i] = dp[i & (i - 1)] + 1
-#         return dp
+# T=O(n), S=O(n)
+class Solution:
+    def countBits(self, num: int) -> List[int]:
+        dp = [0] * (num + 1)
+        for i in range(1, num + 1):
+            dp[i] = dp[i & (i - 1)] + 1
+        return dp
