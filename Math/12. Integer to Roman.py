@@ -8,7 +8,7 @@
 """
 
 
-# T=O(1), S=O(1)
+# T=O(1), S=O(1), see also leetcode 13.
 class Solution:
 
     VALUE_SYMBOLS = [
