@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
- - brute force, recursion
- - dp
+    - Brute force, recursion
+    - dp
 3. Coding
 4. Tests
 """
