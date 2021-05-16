@@ -11,10 +11,6 @@
 # T=O(2^n), S=O(n)
 class Solution:
     def __init__(self):
-        self.valid_expressions = None
-        self.min_removed = None
-
-    def reset(self):
         self.valid_expressions = set()
         self.min_removed = math.inf
 
@@ -43,7 +39,6 @@ class Solution:
                 expr.pop()
 
     def removeInvalidParentheses(self, s: str) -> List[str]:
-        self.reset()
         self.remaining(s, 0, 0, 0, [], 0)
         return list(self.valid_expressions)
 
