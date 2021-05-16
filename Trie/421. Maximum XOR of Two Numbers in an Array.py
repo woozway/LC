@@ -1,7 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-    - Hash
+    - Hash v1
+    - Hash v2
     - Trie
 3. Coding
 4. Tests
