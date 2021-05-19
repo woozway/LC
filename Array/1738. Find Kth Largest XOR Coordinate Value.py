@@ -18,7 +18,6 @@ class Solution:
             for j in range(1, n + 1):
                 pre[i][j] = pre[i - 1][j] ^ pre[i][j - 1] ^ pre[i - 1][j - 1] ^ matrix[i - 1][j - 1]
                 results.append(pre[i][j])
-
         results.sort(reverse=True)
         return results[k - 1]
 
