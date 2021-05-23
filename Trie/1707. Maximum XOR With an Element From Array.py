@@ -9,28 +9,23 @@
 """
 
 
-#
 class Solution:
     def maximizeXor(self, nums: List[int], queries: List[List[int]]) -> List[int]:
         nums = sorted(list(set(nums)))
         n = len(nums)
         ans = list()
         for x, m in queries:
-            print('m=', m)
             index = bisect.bisect_left(nums, m)
             if index == 0 and nums[0] != m:
                 ans.append(-1)
-            elif index == n:
-                maxans = -1
-                for j in range(n):
-                    maxans = max(maxans, nums[j]^x)
-                ans.append(maxans)
             else:
-                maxans = -1
-                if nums[index] <= m:
-                    limit = index+1
+                if index == n:
+                    limit = n
+                elif nums[index] <= m:
+                    limit = index + 1
                 else:
                     limit = index
+                maxans = -1
                 for j in range(limit):
                     maxans = max(maxans, nums[j]^x)
                 ans.append(maxans)
