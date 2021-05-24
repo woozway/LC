@@ -7,7 +7,7 @@
 """
 
 
-# T=O(n^3), S=O(n^2)
+# T=O(n^3), S=O(n^2), dp[i][j]: # min ops to finish string in range [i..j]
 class Solution:
     def strangePrinter(self, s: str) -> int:
         n = len(s)
@@ -16,7 +16,7 @@ class Solution:
             dp[i][i] = 1
             for j in range(i + 1, n):
                 if s[i] == s[j]:
-                    dp[i][j] = dp[i][j-1]
+                    dp[i][j] = dp[i][j - 1]
                 else:
                     minn = math.inf
                     for k in range(i, j):
