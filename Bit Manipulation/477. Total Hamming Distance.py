@@ -8,14 +8,14 @@
 """
 
 
-# T=O(n^2), S=O(1)
-class Solution:
-    def totalHammingDistance(self, nums: List[int]) -> int:
-        n, ans = len(nums), 0
-        for i in range(n):
-            for j in range(i + 1, n):
-                ans += bin(nums[i] ^ nums[j]).count('1')
-        return ans
+# # T=O(n^2), S=O(1), Time Limit Exceeded
+# class Solution:
+#     def totalHammingDistance(self, nums: List[int]) -> int:
+#         n, ans = len(nums), 0
+#         for i in range(n):
+#             for j in range(i + 1, n):
+#                 ans += bin(nums[i] ^ nums[j]).count('1')
+#         return ans
 
 
 # T=O(n*L), S=O(1)
