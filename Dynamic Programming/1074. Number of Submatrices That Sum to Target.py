@@ -7,7 +7,7 @@
 """
 
 
-# T=O(m^2 * n), S=O(n)
+# T=O(m^2 * n), S=O(n), see also leetcode 560
 class Solution:
     def numSubmatrixSumTarget(self, matrix: List[List[int]], target: int) -> int:
         def subarraySum(nums: List[int], k: int) -> int:
