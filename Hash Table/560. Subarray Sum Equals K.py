@@ -29,7 +29,6 @@ class Solution:
         count, pre = 0, 0
         for num in nums:
             pre += num
-            if hashMap[pre - k]:
-                count += hashMap[pre - k]
+            count += hashMap[pre - k]
             hashMap[pre] += 1
         return count
