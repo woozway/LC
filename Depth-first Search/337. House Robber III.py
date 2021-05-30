@@ -19,7 +19,7 @@ class Solution:
             right = helper(node.right)
             rob = node.val + left[1] + right[1]
             not_rob = max(left) + max(right)
-            return [rob, not_rob]
+            return rob, not_rob
 
         return max(helper(root))
 
