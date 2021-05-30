@@ -19,16 +19,16 @@
 # T=O(n), S=O(n)
 class Solution:
     def rob(self, root: TreeNode) -> int:
-        def helper(node):
+        def dfs(node):
             if not node:
                 return 0, 0
-            left = helper(node.left)
-            right = helper(node.right)
+            left = dfs(node.left)
+            right = dfs(node.right)
             rob = node.val + left[1] + right[1]
             not_rob = max(left) + max(right)
             return rob, not_rob
-
-        return max(helper(root))
+        
+        return max(dfs(root))
 
 
 # T=O(n), S=O(n)
