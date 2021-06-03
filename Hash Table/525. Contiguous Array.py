@@ -10,10 +10,8 @@
 # T=O(n), S=O(n)
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        mp = dict()
-        maxLength, counter = 0, 0
-        mp[counter] = -1
-        n = len(nums)
+        mp = {0: -1}
+        maxLength, counter, n = 0, 0, len(nums)
         for i in range(n):
             if nums[i] == 1:
                 counter += 1
