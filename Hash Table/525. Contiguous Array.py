@@ -11,15 +11,15 @@
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
         mp = {0: -1}
-        maxLength, counter, n = 0, 0, len(nums)
+        count, maxLen, n = 0, 0, len(nums)
         for i in range(n):
-            if nums[i] == 1:
-                counter += 1
+            if nums[i] == 0:
+                count -= 1
             else:
-                counter -= 1
-            if counter in mp:
-                prevIndex = mp[counter]
-                maxLength = max(maxLength, i - prevIndex)
+                count += 1
+            if count in mp:
+                prevIndex = mp[count]
+                maxLen = max(maxLen, i - prevIndex)
             else:
-                mp[counter] = i
-        return maxLength
+                mp[count] = i
+        return maxLen
