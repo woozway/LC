@@ -39,7 +39,7 @@ class Solution:
 class Solution:
     def pathSum(self, root: TreeNode, targetSum: int) -> int:
         self.cnt = 0
-        self.cache = {0: 1}
+        self.cache = collections.Counter({0: 1})
         self.dfs(root, targetSum, 0)
         return self.cnt
 
@@ -47,8 +47,8 @@ class Solution:
         if root is None: return
         currPathSum += root.val
         oldPathSum = currPathSum - target
-        self.cnt += self.cache.get(oldPathSum, 0)
-        self.cache[currPathSum] = self.cache.get(currPathSum, 0) + 1
+        self.cnt += self.cache[oldPathSum]
+        self.cache[currPathSum] += 1
         self.dfs(root.left, target, currPathSum)
         self.dfs(root.right, target, currPathSum)
         self.cache[currPathSum] -= 1
