@@ -8,28 +8,24 @@
 """
 
 
-# T=O(n*target), S=O(n*target)
+# T=O(n*target), S=O(n*target), dp[i][j]: select item(s) from [0..i] to reach value j
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         n = len(nums)
-        if n < 2:
-            return False
+        if n < 2: return False
         total = sum(nums)
+        if total & 1: return False
         maxNum = max(nums)
-        if total & 1:
-            return False
         target = total // 2
-        if maxNum > target:
-            return False
+        if maxNum > target: return False
         dp = [[0] * (target + 1) for _ in range(n)]
         for i in range(n):
             dp[i][0] = True
         dp[0][nums[0]] = True
         for i in range(1, n):
-            num = nums[i]
             for j in range(1, target + 1):
-                if j >= num:
-                    dp[i][j] = dp[i - 1][j] | dp[i - 1][j - num]
+                if j >= nums[i]:
+                    dp[i][j] = dp[i - 1][j] | dp[i - 1][j - nums[i]]
                 else:
                     dp[i][j] = dp[i - 1][j]
         return dp[n - 1][target]
