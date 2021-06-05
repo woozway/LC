@@ -38,16 +38,16 @@ class Solution:
 # T=O(n), S=O(n)
 class Solution:
     def pathSum(self, root: TreeNode, targetSum: int) -> int:
-        self.result = 0
+        self.cnt = 0
         self.cache = {0: 1}
         self.dfs(root, targetSum, 0)
-        return self.result
+        return self.cnt
 
     def dfs(self, root, target, currPathSum):
         if root is None: return
         currPathSum += root.val
         oldPathSum = currPathSum - target
-        self.result += self.cache.get(oldPathSum, 0)
+        self.cnt += self.cache.get(oldPathSum, 0)
         self.cache[currPathSum] = self.cache.get(currPathSum, 0) + 1
         self.dfs(root.left, target, currPathSum)
         self.dfs(root.right, target, currPathSum)
