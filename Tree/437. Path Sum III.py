@@ -39,16 +39,16 @@ class Solution:
 class Solution:
     def pathSum(self, root: TreeNode, targetSum: int) -> int:
         self.result = 0
-        cache = {0: 1}
-        self.dfs(root, targetSum, 0, cache)
+        self.cache = {0: 1}
+        self.dfs(root, targetSum, 0)
         return self.result
 
-    def dfs(self, root, target, currPathSum, cache):
+    def dfs(self, root, target, currPathSum):
         if root is None: return
         currPathSum += root.val
         oldPathSum = currPathSum - target
-        self.result += cache.get(oldPathSum, 0)
-        cache[currPathSum] = cache.get(currPathSum, 0) + 1
-        self.dfs(root.left, target, currPathSum, cache)
-        self.dfs(root.right, target, currPathSum, cache)
-        cache[currPathSum] -= 1
+        self.result += self.cache.get(oldPathSum, 0)
+        self.cache[currPathSum] = self.cache.get(currPathSum, 0) + 1
+        self.dfs(root.left, target, currPathSum)
+        self.dfs(root.right, target, currPathSum)
+        self.cache[currPathSum] -= 1
