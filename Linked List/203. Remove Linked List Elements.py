@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-     - Make a sentinel
+    - Make a sentinel
 3. Coding
 4. Tests
 """
