@@ -13,8 +13,8 @@
 class Solution:
     def getZerosOnes(self, s):
         zerosOnes = [0] * 2
-        for i in range(len(s)):
-            zerosOnes[ord(s[i]) - ord('0')] += 1
+        for ch in s:
+            zerosOnes[ord(ch) - ord('0')] += 1
         return zerosOnes
 
     def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
@@ -35,8 +35,8 @@ class Solution:
 class Solution:
     def getZerosOnes(self, s):
         zerosOnes = [0] * 2
-        for i in range(len(s)):
-            zerosOnes[ord(s[i]) - ord('0')] += 1
+        for ch in s:
+            zerosOnes[ord(ch) - ord('0')] += 1
         return zerosOnes
 
     def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
