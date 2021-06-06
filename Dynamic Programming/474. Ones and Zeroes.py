@@ -9,7 +9,7 @@
 
 
 # T=O(lmn + L), S=O(lmn)
-# dp[i][j][k]: max # of strings with 0 j times and 1 k times in index range [0..i]
+# dp[i][j][k]: max # of strings with 0 j times and 1 k times for previous i strings
 class Solution:
     def getZerosOnes(self, s):
         zerosOnes = [0] * 2
