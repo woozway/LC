@@ -13,6 +13,7 @@ class Solution:
         MOD = 10**9 + 7
         cur = [[0] * (n + 1) for _ in range(minProfit + 1)]
         cur[0][0] = 1
+        
         for p0, g0 in zip(profit, group):
             cur2 = [row[:] for row in cur]
             for p1 in range(minProfit + 1):
@@ -22,4 +23,5 @@ class Solution:
                     cur2[p2][g2] += cur[p1][g1]
                     cur2[p2][g2] %= MOD
             cur = cur2
+            
         return sum(cur[-1]) % MOD
