@@ -8,7 +8,7 @@
 """
 
 
-# T=O(n*sum), S=O(m*n)
+# T=O(n*sum), S=O(m*n), dp[i+1][j]: can stones[:i+1] get weight j?
 class Solution:
     def lastStoneWeightII(self, stones: List[int]) -> int:
         total = sum(stones)
