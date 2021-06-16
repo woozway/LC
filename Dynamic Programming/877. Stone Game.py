@@ -8,7 +8,7 @@
 """
 
 
-# T=O(n^2), S=O(n^2)
+# T=O(n^2), S=O(n^2), dp[i][j]: max diff between plays with piles[i..j] inclusive left
 class Solution:
     def stoneGame(self, piles: List[int]) -> bool:
         n = len(piles)
