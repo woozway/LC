@@ -9,7 +9,7 @@
 """
 
 
-# Time Limit Exceeded
+# # T=O(n^3), S=O(1), Time Limit Exceeded
 # class Solution:
 #     def countSubstrings(self, s: str) -> int:
 #         ans = 0
