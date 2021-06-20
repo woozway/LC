@@ -1,18 +1,23 @@
+"""
+1. Clarification
+2. Possible solutions
+    - Greedy
+3. Coding
+4. Tests
+"""
+
+
+# T=O(n), S=O(len(alphabet))
 class Solution:
-  def partitionLabels(self, S: str) -> List[int]:
-    """
-    record the farthest dist of char in S,
-    init left&right to indicate a group, traverse S, 
-    if dist[ch]>right, update right
-    """
-    dic = {}
-    for i, ch in enumerate(S):
-      dic[ch] = i
-    left, right = 0, dic[S[0]]
-    res = []
-    for i, ch in enumerate(S):
-      right = max(right, dic[ch])
-      if i >= right:
-        res.append(right - left + 1)
-        left = right + 1 
-    return res
+    def partitionLabels(self, s: str) -> List[int]:
+        dic = {}
+        for i, ch in enumerate(s):
+            dic[ch] = i
+        left, right = 0, dic[s[0]]
+        res = []
+        for i, ch in enumerate(s):
+            right = max(right, dic[ch])
+            if i >= right:
+                res.append(right - left + 1)
+                left = right + 1
+        return res
