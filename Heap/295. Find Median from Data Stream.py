@@ -7,6 +7,7 @@
 """
 
 
+# T=O(lgn), S=O(n)
 import heapq
 
 class MedianFinder:
