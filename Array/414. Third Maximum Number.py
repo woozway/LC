@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - Sort
-     - One Pass
+    - Sort
+    - One Pass
 3. Coding
 4. Tests
 """
