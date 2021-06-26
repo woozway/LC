@@ -8,15 +8,15 @@
 """
 
 
-# # T=O(nlgn), S=O(n)
-# class Solution:
-#     def thirdMax(self, nums: List[int]) -> int:
-#         if not nums: return -inf
-#         n = len(nums)
-#         distinct = set(nums)
-#         sz = len(distinct)
-#         ordered = sorted(distinct)
-#         return ordered[-1] if sz < 3 else ordered[-3]
+# T=O(nlgn), S=O(n)
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        if not nums: return -inf
+        n = len(nums)
+        distinct = set(nums)
+        sz = len(distinct)
+        ordered = sorted(distinct)
+        return ordered[-1] if sz < 3 else ordered[-3]
 
 
 # T=O(n), S=O(1)
