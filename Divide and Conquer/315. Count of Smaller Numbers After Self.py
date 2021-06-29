@@ -61,9 +61,6 @@ class Solution:
 from bisect import bisect_left
 
 class Solution:
-    def __init__(self):
-        self.c, self.a = list(), list()
-
     def init(self, length):
         self.c = [0] * length
 
