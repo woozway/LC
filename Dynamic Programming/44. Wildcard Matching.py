@@ -9,7 +9,7 @@
 """
 
 
-# # T=O(2^n), S=O(2^n)
+# # T=O((m+n)*2^(m+n/2)), S=O(m^2 + n^2)
 # class Solution:
 #     def isMatch(self, s: str, p: str) -> bool:
 #         if not s and not p:
