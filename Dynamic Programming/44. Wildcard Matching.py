@@ -29,7 +29,7 @@
 #                 return False
 
 
-# T=O(m*n), S=O(m*n)
+# T=O(m*n), S=O(m*n), see leetcode 10. also
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         m, n = len(s), len(p)
