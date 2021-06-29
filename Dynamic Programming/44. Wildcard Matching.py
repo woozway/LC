@@ -30,6 +30,7 @@
 
 
 # T=O(m*n), S=O(m*n), see leetcode 10. also
+# dp[i][j]: whether pre i chars in s can match up with pre j chars in p
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         m, n = len(s), len(p)
