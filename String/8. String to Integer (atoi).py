@@ -17,10 +17,10 @@ class Automaton:
         self.sign = 1
         self.ans = 0
         self.table = {
-            'start': ['start', 'signed', 'in_number', 'end'],
-            'signed': ['end', 'end', 'in_number', 'end'],
+            'start'    : ['start', 'signed', 'in_number', 'end'],
+            'signed'   : ['end', 'end', 'in_number', 'end'],
             'in_number': ['end', 'end', 'in_number', 'end'],
-            'end': ['end', 'end', 'end', 'end'],
+            'end'      : ['end', 'end', 'end', 'end'],
         }
 
     def get_col(self, c):
