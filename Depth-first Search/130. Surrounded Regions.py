@@ -39,11 +39,12 @@ class Solution:
 
 
 # T=O(n*m), S=O(n*m)
+from collections import deque
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
         if not board: return
         n, m = len(board), len(board[0])
-        que = collections.deque()
+        que = deque()
         for i in range(n):
             if board[i][0] == "O":
                 que.append((i, 0))
