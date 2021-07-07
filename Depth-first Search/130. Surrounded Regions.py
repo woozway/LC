@@ -26,7 +26,7 @@ class Solution:
             dfs(i, 0)
             dfs(i, m - 1)
 
-        for i in range(m - 1):
+        for i in range(1, m - 1):
             dfs(0, i)
             dfs(n - 1, i)
 
