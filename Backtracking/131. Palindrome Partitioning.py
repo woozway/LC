@@ -8,7 +8,7 @@
 """
 
 
-# T=O(n * 2^n), S=O(n^2)
+# T=O(n * 2^n), S=O(n^2), dp[i][j]: whether s[i..j] is a palindrome?
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
         n = len(s)
