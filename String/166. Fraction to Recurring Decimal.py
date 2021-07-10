@@ -12,23 +12,23 @@ class Solution:
     def fractionToDecimal(self, numerator: int, denominator: int) -> str:
         if numerator == 0:
             return "0"
-        fraction = ""
+        fraction = list()
         if (numerator < 0) ^ (denominator < 0):
-            fraction += "-"
+            fraction.append("-")
         numerator, denominator = abs(numerator), abs(denominator)
-        fraction += str(numerator // denominator)
-        remainder = numerator % denominator
-        if remainder == 0:
-            return fraction
-        fraction += "."
+        q, r = divmod(numerator, denominator)
+        fraction.append(str(q))
+        if r == 0:
+            return "".join(fraction)
+        fraction.append(".")
         hashMap = dict()
-        while remainder:
-            if remainder in hashMap:
-                index = hashMap[remainder]
-                fraction = fraction[:index] + "(" + fraction[index:] + ")"
+        while r:
+            if r in hashMap:
+                idx = hashMap[r]
+                fraction = fraction[:idx] + ["("] + fraction[idx:] + [")"]
                 break
-            hashMap[remainder] = len(fraction)
-            remainder *= 10
-            fraction += str(remainder // denominator)
-            remainder %= denominator
-        return fraction
+            hashMap[r] = len(fraction)
+            r *= 10
+            q, r = divmod(r, denominator)
+            fraction.append(str(q))
+        return "".join(fraction)
