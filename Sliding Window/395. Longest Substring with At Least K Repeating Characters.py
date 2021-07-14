@@ -9,30 +9,30 @@
 """
 
 
-# T=O(n^2), S=O(1)
-from collections import Counter
-class Solution:
-    def longestSubstring(self, s: str, k: int) -> int:
-        n = len(s)
-        if n == 0 or n < k:
-            return 0
-        ret = 0
-        for start in range(n):
-            countMap = Counter()
-            for end in range(start, n):
-                countMap[ord(s[end]) - ord('a')] += 1
-                if self.isValid(s, start, end, k, countMap):
-                    ret = max(ret, end - start + 1)
-        return ret
+# # T=O(n^2), S=O(1), Time Limit Exceeded
+# from collections import Counter
+# class Solution:
+#     def longestSubstring(self, s: str, k: int) -> int:
+#         n = len(s)
+#         if n == 0 or n < k:
+#             return 0
+#         ret = 0
+#         for start in range(n):
+#             countMap = Counter()
+#             for end in range(start, n):
+#                 countMap[ord(s[end]) - ord('a')] += 1
+#                 if self.isValid(s, start, end, k, countMap):
+#                     ret = max(ret, end - start + 1)
+#         return ret
 
-    def isValid(self, s, start, end, k, countMap):
-        countLetters, countAtLeastK = 0, 0
-        for i in range(26):
-            if countMap[i] > 0:
-                countLetters += 1
-            if countMap[i] >= k:
-                countAtLeastK += 1
-        return countAtLeastK == countLetters
+#     def isValid(self, s, start, end, k, countMap):
+#         countLetters, countAtLeastK = 0, 0
+#         for i in range(26):
+#             if countMap[i] > 0:
+#                 countLetters += 1
+#             if countMap[i] >= k:
+#                 countAtLeastK += 1
+#         return countAtLeastK == countLetters
 
 
 # T=O(n^2), S=O(n)
