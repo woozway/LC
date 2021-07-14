@@ -7,7 +7,7 @@
 """
 
 
-# T=O(n), S=O(1)
+# T=O(1), S=O(1)
 class Solution:
     def getSum(self, a: int, b: int) -> int:
         mask = 0xffffffff
