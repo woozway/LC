@@ -2,7 +2,7 @@
 1. Clarification
 2. Possible solutions
     - Sorting
-    - Median
+    - Median, QuickSort
 3. Coding
 4. Tests
 """
