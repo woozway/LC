@@ -35,7 +35,7 @@
 #         return countAtLeastK == countLetters
 
 
-# T=O(n^2), S=O(n)
+# T=O(n), S=O(1)
 from collections import Counter
 class Solution:
     def longestSubstring(self, s: str, k: int) -> int:
