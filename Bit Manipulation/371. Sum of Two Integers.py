@@ -1,6 +1,15 @@
+"""
+1. Clarification
+2. Possible solutions
+    - Bit Manipulation, Maths
+3. Coding
+4. Tests
+"""
+
+
+# T=O(n), S=O(1)
 class Solution:
     def getSum(self, a: int, b: int) -> int:
-        carry = 0
         mask = 0xffffffff
         while b & mask != 0:
             carry = (a & b) << 1
