@@ -1,3 +1,4 @@
+// hashing
 // T=O(n)
 // S=O(n)
 

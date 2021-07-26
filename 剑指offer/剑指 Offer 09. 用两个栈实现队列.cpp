@@ -1,3 +1,4 @@
+// stack, queue
 // push: T=O(1); pop: T=O(1) Amortized
 // S=O(n)
 
