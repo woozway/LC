@@ -55,7 +55,7 @@
     - Gurantees Search Space is _**at least 2**_ in size at each step
     - Post-processing required. Loop/Recursion ends when you have 1 element left. Need to assess if the remaining element meets the condition.
     - in `while left < right` loop, lst[mid + 1] is always valid
-    - can use the right element as the benchmark (see leetcode 153 & 154)
+    - can use the right element as the benchmark (see **leetcode 153 & 154**)
   - Distinguishing Syntax:
     - Initial Condition: `left = 0, right = length - 1`
     - Termination: `left == right`
