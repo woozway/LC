@@ -1,8 +1,8 @@
 """
 1. Clarification
 2. Possible solutions
-     - Simulation + Set
-     - Layer by layer
+    - Simulation + Set
+    - Layer by layer
 3. Coding
 4. Tests
 """
