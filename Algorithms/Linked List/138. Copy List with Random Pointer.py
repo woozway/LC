@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - dfs (same as leetcode 133. Clone Graph)
-     - Iterative v1
-     - Iterative v2
+    - dfs (same as leetcode 133. Clone Graph)
+    - Iterative v1
+    - Iterative v2
 3. Coding
 4. Tests
 """
