@@ -14,33 +14,35 @@
 #         self.left = None
 #         self.right = None
 
+from collections import deque
 class Codec:
 
     def serialize(self, root: TreeNode) -> str:
-        def doit(node):
-            if node:
-                vals.append(str(node.val))
-                doit(node.left)
-                doit(node.right)
-            else:
-                vals.append('#')
+        def rserialize(node):
+            if not node:
+                strList.append("#,")
+                return
+            strList.append(str(node.val) + ",")
+            rserialize(node.left)
+            rserialize(node.right)
 
-        vals = []
-        doit(root)
-        return ' '.join(vals)
+        strList = list()
+        rserialize(root)
+        return "".join(strList)
 
     def deserialize(self, data: str) -> TreeNode:
-        def doit():
-            val = next(vals)
-            if val == '#':
+        def rdeserialize():
+            if dq[0] == "#":
+                dq.popleft()
                 return None
-            node = TreeNode(int(val))
-            node.left = doit()
-            node.right = doit()
-            return node
+            root = TreeNode(int(dq.popleft()))
+            root.left  = rdeserialize()
+            root.right = rdeserialize()
+            return root
 
-        vals = iter(data.split())
-        return doit()
+        strList = list(filter(lambda x: x, data.split(",")))
+        dq = deque(strList)
+        return rdeserialize()
 
 
 # Your Codec object will be instantiated and called as such:
