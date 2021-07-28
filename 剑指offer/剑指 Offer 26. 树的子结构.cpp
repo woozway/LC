@@ -13,6 +13,7 @@
  */
 class Solution {
   unordered_map<int, TreeNode*> val2treeIndex;
+
 public:
   bool isSubStructure(TreeNode* A, TreeNode* B) {
     dfs(A);

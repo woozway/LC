@@ -4,6 +4,7 @@
 
 class CQueue {
   stack<int> si, so;
+
 public:
   CQueue() {}
 

@@ -4,6 +4,7 @@
 
 class Solution {
   int count, m, n;
+
 public:
   int movingCount(int m, int n, int k) {
     vector<vector<int>> board(m, vector<int>(n));

@@ -5,6 +5,7 @@
 class Solution {
   int n, m, l;
   string w;
+
 public:
   bool exist(vector<vector<char>>& board, string word) {
     if (board.size() == 0 || board[0].size() == 0 || word.length() == 0) {

@@ -13,6 +13,7 @@
  */
 class Solution {
   unordered_map<int, int> inorderIndex;
+
 public:
   TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
     for (int i = 0; i < inorder.size(); i++) {
