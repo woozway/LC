@@ -32,7 +32,7 @@ class Codec:
 
     def deserialize(self, data: str) -> TreeNode:
         def rdeserialize():
-            if dq[0] == "#":
+            if dq and dq[0] == "#":
                 dq.popleft()
                 return None
             root = TreeNode(int(dq.popleft()))
@@ -40,7 +40,7 @@ class Codec:
             root.right = rdeserialize()
             return root
 
-        strList = list(filter(lambda x: x, data.split(",")))
+        strList = data.strip(",").split(",")
         dq = deque(strList)
         return rdeserialize()
 
