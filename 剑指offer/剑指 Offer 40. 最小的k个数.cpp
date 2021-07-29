@@ -9,7 +9,7 @@ public:
     if (arr.size() == 0) {
       return v;
     }
-    // might need to use Knuth shuffle algorithm to randomise arr
+    // need to run Knuth shuffle algorithm to randomise arr first
     int lo = 0, hi = arr.size()-1;
     while (hi > lo) {
       int i = partition(arr, lo, hi);
