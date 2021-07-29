@@ -1,5 +1,5 @@
 // divide and conquer, segment tree
-// T=O(n)
+// T=O(n) according to master theorem
 // S=O(lgn)
 
 class Solution {
