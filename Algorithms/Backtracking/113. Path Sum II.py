@@ -14,7 +14,7 @@
 #         self.left = left
 #         self.right = right
 
-# T=O(n), S=O(n)
+# T=O(n^2), S=O(n)
 class Solution:
     def pathSum(self, root: TreeNode, targetSum: int) -> List[List[int]]:
         def backtrack(node):
