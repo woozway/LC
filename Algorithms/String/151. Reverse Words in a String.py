@@ -1,9 +1,9 @@
 """
 1. Clarification
 2. Possible solutions
-     - Python built-in
-     - Hand-crafted
-     - Deque
+    - Python built-in
+    - Hand-crafted
+    - Deque
 3. Coding
 4. Tests
 """
@@ -56,22 +56,22 @@ class Solution:
             end += 1
 
 
-# # T=O(n), S=O(n)
-# class Solution:
-#     def reverseWords(self, s: str) -> str:
-#         if not s: return ''
-#         left, right = 0, len(s) - 1
-#         while left <= right and s[left] == ' ':
-#             left += 1
-#         while left <= right and s[right] == ' ':
-#             right -= 1
-#         d, word = collections.deque(), []
-#         while left <= right:
-#             if s[left] == ' ' and word:
-#                 d.appendleft(''.join(word))
-#                 word = []
-#             elif s[left] != ' ':
-#                 word.append(s[left])
-#             left += 1
-#         d.appendleft(''.join(word))
-#         return ' '.join(d)
+# T=O(n), S=O(n)
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        if not s: return ''
+        left, right = 0, len(s) - 1
+        while left <= right and s[left] == ' ':
+            left += 1
+        while left <= right and s[right] == ' ':
+            right -= 1
+        d, word = collections.deque(), []
+        while left <= right:
+            if s[left] == ' ' and word:
+                d.appendleft(''.join(word))
+                word = []
+            elif s[left] != ' ':
+                word.append(s[left])
+            left += 1
+        d.appendleft(''.join(word))
+        return ' '.join(d)
