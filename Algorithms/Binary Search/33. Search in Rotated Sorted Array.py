@@ -18,7 +18,7 @@ class Solution:
         return -1
 
 
-# T=O(lgn), S=O(1)
+# T=O(lgn), S=O(1), see also leetcode 81.
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         if not nums: return -1
