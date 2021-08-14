@@ -22,21 +22,22 @@ class Solution:
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         if not nums: return -1
-        lo, hi = 0, len(nums) - 1
+        n = len(nums)
+        lo, hi = 0, n-1
         while lo <= hi:
-            mid = (lo + hi) // 2
+            mid = (lo + hi)//2
             if nums[mid] == target:
                 return mid
-            elif nums[lo] <= nums[mid]:
-                if nums[lo] <= target < nums[mid]:
-                    hi = mid - 1
+            elif nums[0] <= nums[mid]:
+                if nums[0] <= target < nums[mid]:
+                    hi = mid-1
                 else:
-                    lo = mid + 1
+                    lo = mid+1
             else:
-                if nums[mid] < target <= nums[hi]:
-                    lo = mid + 1
+                if nums[mid] < target <= nums[n-1]:
+                    lo = mid+1
                 else:
-                    hi = mid - 1
+                    hi = mid-1
         return -1
 
 
@@ -44,20 +45,21 @@ class Solution:
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         if not nums: return -1
-        lo, hi = 0, len(nums) - 1
+        n = len(nums)
+        lo, hi = 0, n-1
         while lo <= hi:
-            mid = (lo + hi) // 2
+            mid = (lo + hi)//2
             if nums[mid] == target:
                 return mid
-            elif nums[mid] < nums[hi]:
-                if nums[mid] < target <= nums[hi]:
-                    lo = mid + 1
+            elif nums[mid] < nums[n-1]:
+                if nums[mid] < target <= nums[n-1]:
+                    lo = mid+1
                 else:
-                    hi = mid - 1
+                    hi = mid-1
             else:
-                if nums[lo] <= target < nums[mid]:
-                    hi = mid - 1
+                if nums[0] <= target < nums[mid]:
+                    hi = mid-1
                 else:
-                    lo = mid + 1
+                    lo = mid+1
         return -1
 
