@@ -51,7 +51,7 @@ class Solution:
             mid = (lo + hi)//2
             if nums[mid] == target:
                 return mid
-            elif nums[mid] < nums[n-1]:
+            elif nums[mid] <= nums[n-1]:
                 if nums[mid] < target <= nums[n-1]:
                     lo = mid+1
                 else:
