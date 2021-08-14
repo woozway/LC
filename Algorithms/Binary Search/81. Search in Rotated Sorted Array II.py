@@ -7,7 +7,7 @@
 """
 
 
-# T=O(lgn)*, S=O(1)
+# T=O(lgn)*, S=O(1), see also leetcode 33.
 class Solution:
     def search(self, nums: List[int], target: int) -> bool:
         if not nums: return False
