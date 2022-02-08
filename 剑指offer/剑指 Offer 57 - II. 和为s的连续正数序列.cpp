@@ -6,7 +6,7 @@ class Solution {
 public:
   vector<vector<int>> findContinuousSequence(int target) {
     vector<int> nums;
-    for (int i = 1; i <= 100000; i++) {
+    for (int i = 1; i <= target; i++) {
       nums.push_back(i);
     }
     int n = nums.size();
