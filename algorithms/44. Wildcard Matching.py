@@ -16,7 +16,7 @@ class Solution:
         if not s and not p: return True
         if not p: return False
         if not s:
-            return self.isMatch(s, p[1:]) if p[0]=='*' else False
+            return self.isMatch(s, p[1:]) if p[0] == '*' else False
         if p[0] == '?' or p[0] == s[0]:
             # 递归的条件就是只要有在前进就好，这样保证不会出现死循环
             return self.isMatch(s[1:], p[1:])
