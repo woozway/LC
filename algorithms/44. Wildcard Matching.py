@@ -1,7 +1,7 @@
 """
 1. Clarification
 2. Possible solutions
-    - Recursion
+    - Recursion + memoization
     - Dynamic programming
     - Greedy
 3. Coding
@@ -9,24 +9,19 @@
 """
 
 
-# # T=O((m+n)*2^(m+n/2)), S=O(m^2 + n^2)
-# class Solution:
-#     def isMatch(self, s: str, p: str) -> bool:
-#         if not s and not p:
-#             return True
-#         if not p:
-#             return False
-#         elif not s:
-#             return self.isMatch(s[:], p[1:]) if p[0] == '*' else False
-#         else:
-#             if p[0] == '?':
-#                 return self.isMatch(s[1:], p[1:])
-#             elif p[0] == '*':
-#                 return self.isMatch(s[:], p[1:]) or self.isMatch(s[1:], p[1:]) or self.isMatch(s[1:], p[:])
-#             elif p[0] == s[0]:
-#                 return self.isMatch(s[1:], p[1:])
-#             else:
-#                 return False
+# T=O(m*n), S=O(m*n)，同见leetcode 10. 正则表达式匹配
+class Solution:
+    @cache
+    def isMatch(self, s: str, p: str) -> bool:
+        if not s and not p: return True
+        if not p: return False
+        if not s:
+            return self.isMatch(s, p[1:]) if p[0]=='*' else False
+        if p[0] == '?' or p[0] == s[0]:
+            # 递归的条件就是只要有在前进就好，这样保证不会出现死循环
+            return self.isMatch(s[1:], p[1:])
+        else:
+            return self.isMatch(s, p[1:]) or self.isMatch(s[1:], p) if p[0] == '*' else False
 
 
 # T=O(m*n), S=O(m*n), see leetcode 10. also
