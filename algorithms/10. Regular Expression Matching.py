@@ -11,15 +11,19 @@
 
 # T=O((T+P)*2^(T+P/2)), S=O(T^2 + P^2) required 
 # but O((T+P)*2^(T+P/2)) since we're using python3
-# T=len(s), P=len(p), see leetcode 44. also
+# T=len(s), P=len(p), 同见 leetcode 44. 通配符匹配
 class Solution:
+    @cache
     def isMatch(self, s: str, p: str) -> bool:
-        if not p: return not s
-        first_match = bool(s) and p[0] in {s[0], '.'}
-        if len(p) >= 2 and p[1] == '*':
-            return self.isMatch(s, p[2:]) or (first_match and self.isMatch(s[1:], p))
+        if not s and not p: return True
+        if not p: return False
+        if not s:
+            return self.isMatch(s, p[2:]) if len(p)>=2 and p[1]=='*' else False
+        if p[0] == '.' or p[0] == s[0]:
+            # 递归的条件就是只要有在前进就好，这样保证不会出现死循环
+            return self.isMatch(s[1:], p) or self.isMatch(s, p[2:]) if len(p)>=2 and p[1]=='*' else self.isMatch(s[1:], p[1:])
         else:
-            return first_match and self.isMatch(s[1:], p[1:])
+            return self.isMatch(s, p[2:]) if len(p)>=2 and p[1]=='*' else False
 
 
 # T=O(T*P), S=O(T*P), dp[i][j]: Does s[i:] match p[j:]?
