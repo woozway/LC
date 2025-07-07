@@ -3,6 +3,7 @@ public:
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode dummy;
     ListNode *cur = &dummy;
+    
     int t = 0; // 进位
     while (l1 || l2 || t) {
       if (l1) t += l1->val, l1 = l1->next;
@@ -11,6 +12,7 @@ public:
       t /= 10;
       cur = cur->next;
     }
+    
     return dummy.next;
   }
 };
