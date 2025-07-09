@@ -8,7 +8,7 @@ public:
     auto &a = asteroids;
 
     vector<int> res;
-    for (int i = 0; i < n; i ++ ) {
+    for (int i = 0; i < n; i ++ )
       if (a[i] > 0) stk[ ++ tt] = a[i];
       else {
         if (tt && stk[tt] * a[i] < 0) {
@@ -23,7 +23,6 @@ public:
         }
         else stk[ ++ tt] = a[i];
       }
-    }
 
     while (tt) res.push_back(stk[tt -- ]);
     reverse(res.begin(), res.end());
