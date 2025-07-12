@@ -3,14 +3,14 @@ const int INF = 0x3f3f3f3f;
 class Solution {
   int res = 0;
 
-  void dfs(TreeNode *t, int maxn) {
+  void dfs(TreeNode *t, int maxv) {
     if (!t) return;
 
-    if (t->val >= maxn) res ++ ;
+    if (t->val >= maxv) res ++ ;
     
-    maxn = max(maxn, t->val);
-    dfs(t->left, maxn);
-    dfs(t->right, maxn);
+    maxv = max(maxv, t->val);
+    dfs(t->left, maxv);
+    dfs(t->right, maxv);
   }
 
 public:

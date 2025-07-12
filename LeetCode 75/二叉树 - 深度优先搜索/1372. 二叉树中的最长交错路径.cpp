@@ -16,7 +16,6 @@ class Solution {
 
 public:
   int longestZigZag(TreeNode* root) {
-    if (!root) return 0;
     dfs(root);
     return res - 1;
   }
