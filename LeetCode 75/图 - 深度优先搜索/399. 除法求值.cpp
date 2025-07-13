@@ -44,7 +44,7 @@ public:
       int a = get(s1), b = get(s2);
       double c = values[i];
 
-      add(a, b, c), add(b, a, 1/c);
+      add(a, b, c), add(b, a, 1 / c);
     }
 
     vector<double> res;
