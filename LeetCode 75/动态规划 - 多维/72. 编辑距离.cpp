@@ -4,7 +4,6 @@
 //    10: f[i,j-1]+1,    11: f[i-1,j-1] if a[i]==b[j] else f[i-1,j-1]+1
 // 增：f[i,j-1]+1；删：f[i-1,j]+1；替换：f[i-1,j-1] if a[i]==b[j] else f[i-1,j-1]+1
 const int N = 510;
-int n, m;
 char a[N], b[N];
 int f[N][N];
 
