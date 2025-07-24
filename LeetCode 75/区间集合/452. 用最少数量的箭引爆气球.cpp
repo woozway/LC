@@ -17,7 +17,7 @@ public:
     sort(range, range + n);
 
     int res = 0;
-    LL ed = - (1l << 60);
+    LL ed = - (1LL << 60);
     for (int i = 0; i < n; i ++ )
       if (range[i].l > ed) {
         res ++ ;
