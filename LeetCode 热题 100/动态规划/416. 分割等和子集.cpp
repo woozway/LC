@@ -9,7 +9,6 @@ class Solution {
 public:
   bool canPartition(vector<int>& nums) {
     int n = nums.size();
-    
     for (int i = 1; i <= n; i ++ ) a[i] = nums[i - 1];
 
     int s = accumulate(a + 1, a + n + 1, 0);
