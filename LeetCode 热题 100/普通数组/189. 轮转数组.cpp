@@ -5,8 +5,8 @@ public:
     auto &a = nums;
 
     k %= n; // 要先对n取余，否则越界或做无用功
-    reverse(nums.begin(), nums.begin() + n - k);
-    reverse(nums.end() - k, nums.end());
-    reverse(nums.begin(), nums.end());
+    reverse(a.begin(), a.begin() + n - k);
+    reverse(a.end() - k, a.end());
+    reverse(a.begin(), a.end());
   }
 };
