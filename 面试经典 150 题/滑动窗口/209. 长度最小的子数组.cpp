@@ -9,9 +9,6 @@ public:
     memset(s, 0, sizeof s);
     for (int i = 1; i <= n; i ++ ) s[i] = s[i - 1] + nums[i - 1];
 
-    for (int i = 0; i <= n; i ++ ) cout << s[i] << ' ';
-    cout << endl;
-
     int res = n + 1;
     // O(n), 双指针
     for (int i = 0, j = 0; i <= n; i ++ )
