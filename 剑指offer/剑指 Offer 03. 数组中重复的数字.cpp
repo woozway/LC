@@ -1,19 +1,14 @@
-// hashing
-// T=O(n)
-// S=O(n)
-
 class Solution {
 public:
   int findRepeatNumber(vector<int>& nums) {
-    unordered_map<int, int> um;
-    for (auto i : nums) {
-      um[i] += 1;
-    }
-    for (const auto &i : um) {
-      if (i.second > 1) {
-        return i.first;
-      }
-    }
-    return nums.size();
+    int n = nums.size();
+    auto &a = nums;
+    
+    unordered_map<int, int> M;
+    for (auto x : a) M[x] += 1;
+  
+    for (auto &[k, v] : M)
+      if (v > 1) return k;
+    return n;
   }
 };
