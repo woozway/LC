@@ -19,7 +19,6 @@ public:
     for (int i = 0; i < s.size(); i ++ ) if (!isspace(s[i])) str += s[i];
 
     unordered_map<char, int> pr{{'+', 1}, {'-', 1}, {'*', 2}, {'/', 2}};
-
     for (int i = 0; i < str.size(); i ++ ) {
       auto c = str[i];
       if (isdigit(c) || (c == '-' && (!i || str[i - 1] == '('))) {
