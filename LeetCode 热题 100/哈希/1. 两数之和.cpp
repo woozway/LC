@@ -4,11 +4,11 @@ public:
     int n = nums.size();
     auto &a = nums;
 
-    unordered_map<int, int> S;
+    // 哈希表M存：已经看过的a[k]和其下标k的(k,v)映射
+    unordered_map<int, int> M;
     for (int i = 0; i < n; i ++ ) {
-      if (S.count(target - a[i]))
-        return {S[target - a[i]], i};
-      S[a[i]] = i;
+      if (M.count(target - a[i])) return {M[target - a[i]], i};
+      M[a[i]] = i;
     }
     return {};
   }

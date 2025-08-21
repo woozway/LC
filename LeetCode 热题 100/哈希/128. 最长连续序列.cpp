@@ -3,6 +3,7 @@ public:
   int longestConsecutive(vector<int>& nums) {
     auto &a = nums;
 
+    // // O(nlgn) 排序去重后找连续序列
     // sort(a.begin(), a.end());
     // a.erase(unique(a.begin(), a.end()), a.end());
 
@@ -18,8 +19,8 @@ public:
 
     int res = 0;
     unordered_set<int> S(a.begin(), a.end());
-    for (auto &x : S) {
-      if (S.count(x + 1)) continue; // 先找到连续段的最右/左的数
+    for (auto &x : S) { // 先找到连续段的最右/左的数，再递减/增
+      if (S.count(x + 1)) continue;
 
       int y = x - 1;
       while (S.count(y)) y -- ;

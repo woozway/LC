@@ -1,6 +1,7 @@
 class Solution {
 public:
   vector<vector<string>> groupAnagrams(vector<string>& strs) {
+    // 每个s排序后放到同类vector中即可
     unordered_map<string, vector<string>> M;
     for (auto &s : strs) {
       string key = s;
@@ -9,7 +10,8 @@ public:
     }
     
     vector<vector<string>> res;
-    for (auto &[_, v] : M) res.push_back(v); // 像pair<>或者unordered_map<>可以这样拆解，语法糖
+    // 像pair或unordered_map可这样拆解，语法糖
+    for (auto &[_, v] : M) res.push_back(v);
     return res;
   }
 };
