@@ -10,7 +10,7 @@ public:
     for (int i = 0; i < n; i ++ ) {
       if (i && a[i] == a[i - 1]) continue; // a[i]跳过重复数字
 
-      // 双指针j,k指向两头，相向找符合条件的组合，参考 167. 两数之和II
+      // 双指针j,k相向找符合条件的组合，参考 167. 两数之和II
       for (int j = i + 1, k = n - 1; j < n; j ++ ) {
         while (j < k && a[i] + a[j] + a[k] > 0) k -- ;
 
