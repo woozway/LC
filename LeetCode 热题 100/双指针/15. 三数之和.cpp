@@ -16,8 +16,9 @@ public:
 
         while (j < k && a[i] + a[j] + a[k] > 0) k -- ;
 
-        // 这里push后加k--也行，因为后面的j指向数字肯定会单调变大，这里简单点
-        if (j < k && a[i] + a[j] + a[k] == 0) res.push_back({a[i], a[j], a[k]});
+        // 这里push后加k--也行，因为后面的j指向数字肯定会单调变大
+        if (j < k && a[i] + a[j] + a[k] == 0)
+          res.push_back({a[i], a[j], a[k]});
       }
     }
     return res;
