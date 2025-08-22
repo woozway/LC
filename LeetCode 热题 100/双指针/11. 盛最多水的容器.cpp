@@ -11,7 +11,7 @@ public:
     //     res = max(res, (i - j) * min(a[i], a[j]));
     // return res;
 
-    // O(n)，双指针i,j指向两头，往可能盛更多水的方向交汇
+    // O(n)，指针i,j指向头尾，哪头小丢哪头，往可能盛更多水的中间交汇
     int res = 0;
     for (int i = 0, j = n - 1; i < n; i ++ ) {
       while (i < j && a[i] > a[j]) {

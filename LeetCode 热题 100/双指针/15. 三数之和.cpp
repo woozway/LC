@@ -12,13 +12,12 @@ public:
 
       // 双指针j,k相向找符合条件的组合，参考 167. 两数之和II
       for (int j = i + 1, k = n - 1; j < n; j ++ ) {
+        if (j > i + 1 && a[j] == a[j - 1]) continue; // a[j]跳过重复数字
+
         while (j < k && a[i] + a[j] + a[k] > 0) k -- ;
 
-        if (j < k && a[i] + a[j] + a[k] == 0) {
-          if (j == i + 1 || a[j] != a[j - 1]) // a[j]跳过重复数字
-            res.push_back({a[i], a[j], a[k]});
-          k -- ;
-        }
+        // 这里push后加k--也行，因为后面的j指向数字肯定会单调变大，这里简单点
+        if (j < k && a[i] + a[j] + a[k] == 0) res.push_back({a[i], a[j], a[k]});
       }
     }
     return res;
