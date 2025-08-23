@@ -27,19 +27,16 @@ public:
     //   }
     // }
 
-    int cnt = 0; // 记录t中不重复的字符个数
-    for (auto &c : t) if (!at[c] ++ ) cnt ++ ; // cnt记录t中尚未被覆盖的字符个数
+    int cnt = 0; // 记录t中不重复的字符个数，同时动态记录t中尚未被覆盖的字符个数
+    for (auto &c : t) if (!at[c] ++ ) cnt ++ ;
 
     int len = 1e9, st = -1;
-    // 双指针j,i分别指向滑动窗口的左和右边界，维护s窗口内各在t中的字符统计数都<=字串t中
+    // 双指针j,i分别指向滑动窗口的左和右边界，保持s窗口内的各字符统计数都<=字串t中
     for (int i = 0, j = 0; i < ns; i ++ ) {
       if (++ as[s[i]] == at[s[i]]) cnt -- ;
 
-      while (j <= i && as[s[j]] > at[s[j]]) {
-        if (-- as[s[j]] < at[s[j]]) cnt ++ ;
-        j ++ ;
-      }
-      
+      while (j <= i && as[s[j]] > at[s[j]]) -- as[s[j ++ ]];
+
       if (j <= i && cnt == 0) // 窗口中覆盖t中全部字符
         if (len > i - j + 1) {
           len = i - j + 1;
