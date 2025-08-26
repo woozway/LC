@@ -1,11 +1,11 @@
 class Solution {
   ListNode* reverseList(ListNode* head) {
-    ListNode *pre = nullptr, *cur = head;
-    while (cur) {
-      ListNode *nxt = cur->next;
-      cur->next = pre, pre = cur, cur = nxt;
-    }
-    return pre;
+    if (!head) return nullptr;
+    if (!head->next) return head;
+    
+    auto res = reverseList(head->next);
+    head->next->next = head, head->next = nullptr;
+    return res;
   }
 
 public:
@@ -26,6 +26,7 @@ public:
     // }
     // return dummy.next;
 
+    // 递归解：找到前k个，反转，后面接递归解的返回值
     ListNode dummy{0, head};
     ListNode *r = &dummy;
     for (int i = 0; r && i < k; i ++ ) r = r->next;

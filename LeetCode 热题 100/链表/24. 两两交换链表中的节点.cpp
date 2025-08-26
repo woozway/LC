@@ -10,6 +10,7 @@ public:
     // }
     // return dummy.next;
 
+    // 递归解
     if (!head) return nullptr;
     if (!head->next) return head;
     

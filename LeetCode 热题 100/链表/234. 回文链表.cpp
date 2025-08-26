@@ -18,6 +18,8 @@ class Solution {
 public:
   bool isPalindrome(ListNode* head) {
     auto &a = head;
+    // O(1)空间复杂度：先用快慢指针取中点（偶数取第二个）
+    // 反转后半链表，然后逐步比对是否各节点是否相等
     ListNode *mid = middleNode(a);
     ListNode *b = reverseList(mid);
     while (b) {

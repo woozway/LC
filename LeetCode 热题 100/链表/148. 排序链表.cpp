@@ -1,7 +1,8 @@
 typedef pair<ListNode *, ListNode *> PLL;
 
-class Solution {    
-  ListNode* splitList(ListNode* head, int size) {
+class Solution {  
+  // 返回从head开始size个节点的后续链表头指针，并把head指向链表截断为size个节点
+  ListNode* splitList(ListNode *head, int size) {
     ListNode *t = head;
     for (int i = 0; i < size - 1 && t; i ++ ) t = t->next;
     if (!t || !t->next) return nullptr;
@@ -10,6 +11,7 @@ class Solution {
     return nxt;
   }
 
+  // 合并两个有序链表，返回合并后的头+尾指针
   PLL mergeTwoLists(ListNode *a, ListNode *b) {
     ListNode dummy;
     auto t = &dummy;
@@ -30,6 +32,7 @@ public:
     int n = 0;
     for (ListNode *t = head; t; t = t->next) n ++ ;
 
+    // O(1)空间，链表的归并排序：按倍增思想分别按1,2,4...为步长合并
     ListNode dummy(0, head);
     for (int step = 1; step < n; step *= 2) {
       ListNode *ed = &dummy;
@@ -38,9 +41,9 @@ public:
         ListNode *a = t;
         ListNode *b = splitList(a, step);
         t = splitList(b, step);
-        auto [head, tail] = mergeTwoLists(a, b);
-        ed->next = head;
-        ed = tail;
+        auto [front, rear] = mergeTwoLists(a, b);
+        ed->next = front;
+        ed = rear;
       }
     }
     return dummy.next;

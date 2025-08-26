@@ -18,6 +18,7 @@ public:
     int n = lists.size();
     if (!n) return nullptr;
 
+    // 链表的mergesort，两两合并有序数组
     auto &a = lists;
     for (int step = 1; step < n; step *= 2)
       for (int i = 0; i + step < n; i += step * 2)

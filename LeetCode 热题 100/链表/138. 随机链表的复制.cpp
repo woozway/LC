@@ -11,7 +11,7 @@ public:
     
     // Node *p = head->next;
     // Node *t = head;
-    // for (; t->next->next; t = t->next) {
+    // for ( ; t->next->next; t = t->next) {
     //   Node *copy = t->next;
     //   t->next = copy->next;
     //   copy->next = copy->next->next;
@@ -19,6 +19,7 @@ public:
     // t->next = nullptr;
     // return p;
 
+    // 递归解
     if (!head) return nullptr;
 
     if (!M.count(head)) {

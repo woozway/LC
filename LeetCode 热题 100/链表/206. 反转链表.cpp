@@ -1,6 +1,7 @@
 class Solution {
 public:
   ListNode* reverseList(ListNode* head) {
+    // // 迭代的比较妙
     // ListNode *pre = nullptr, *cur = head;
     // while (cur) {
     //   ListNode *nxt = cur->next;
@@ -8,6 +9,7 @@ public:
     // }
     // return pre;
     
+    // 递归更容易想
     if (!head) return nullptr;
     if (!head->next) return head;
     
