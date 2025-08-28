@@ -11,6 +11,7 @@ public:
     auto &g = grid;
     int m = g.size(), n = g[0].size();
 
+    // 将所有腐烂的橘子（2）入队，层序遍历朝4个方向往外感染新鲜橘子（1）
     queue<PII> q;
     for (int i = 0; i < m; i ++ )
       for (int j = 0; j < n; j ++ )
@@ -31,6 +32,7 @@ public:
       }
     }
 
+    // 若还存在新鲜橘子（1），返回-1，否则返回耗时
     int res = 0;
     for (int i = 0; i < m; i ++ )
       for (int j = 0; j < n; j ++ )

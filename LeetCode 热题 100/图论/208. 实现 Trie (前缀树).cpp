@@ -1,6 +1,12 @@
 const int N = 4e4 + 10;
-int son[N][26], cnt[N], idx;
+int son[N][26], cnt[N], idx; // 每条边表示一个字符，每个节点是一个前缀
 
+// trie[a][b]：a表示节点编号（和最多有多少个节点有关），b表示分叉
+//      0
+//    / | \  ..
+//  a   b   c  ..
+// ..  /|\  |\ ..
+//    a b c
 class Trie {
 public:
   Trie() {
@@ -13,10 +19,10 @@ public:
     int p = 0;
     for (int i = 0; i < word.size(); i ++ ) {
       int t = word[i] - 'a';
-      if (!son[p][t]) son[p][t] = ++ idx;
+      if (!son[p][t]) son[p][t] = ++ idx; // 每个idx都对应一个独立前缀
       p = son[p][t];
     }
-    cnt[p] ++ ;
+    cnt[p] ++ ; // cnt[i]是从Trie的根节点0走到i这个节点位置所对应的单词个数
   }
   
   bool search(string word) {
