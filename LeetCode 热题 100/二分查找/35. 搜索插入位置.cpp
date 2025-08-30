@@ -4,7 +4,7 @@ public:
     int n = nums.size();
     auto &a = nums;
 
-    // 分成(...), (k, ...)两部分
+    // 分成(<k, ..., <k), (>=k, ..., >=k)两部分
     int l = 0, r = n - 1;
     while (l < r) {
       int mid = l + r >> 1;

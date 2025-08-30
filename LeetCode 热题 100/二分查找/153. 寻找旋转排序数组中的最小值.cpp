@@ -4,7 +4,7 @@ public:
     int n = nums.size();
     auto &a = nums;
 
-    // 分成：(...), (k, ...)两端递增序列
+    // 分成：(...), (k, ...)两段递增序列
     int l = 0, r = n - 1;
     while (l < r) {
       int mid = l + r >> 1;

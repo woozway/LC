@@ -7,7 +7,7 @@ public:
     int n = nums.size();
 
     vector<int> res;
-    // 分成(...), (k, ...)两部分
+    // 分成(<k, ..., <k), (>=k, ..., >=k)两部分
     int l = 0, r = n - 1;
     while (l < r) {
       int mid = l + r >> 1;
@@ -18,7 +18,7 @@ public:
     if (a[l] != target) return {-1, -1};
     res.push_back(l);
 
-    // 分成(..., k), (...)两部分
+    // 分成(<=k, ..., <=k), (>k, ..., >k)两部分
     l = 0, r = n - 1;
     while (l < r) {
       int mid = l + r + 1 >> 1;
