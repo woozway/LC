@@ -1,5 +1,5 @@
 const int N = 1e5 + 10;
-int stk[N], tt; // 经典单调栈问题
+int stk[N], tt; // 单调栈一般用于找左/右边最近的第一个比自己小/大的数
 
 class Solution {
 public:

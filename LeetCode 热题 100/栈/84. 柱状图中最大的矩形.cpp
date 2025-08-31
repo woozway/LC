@@ -18,6 +18,7 @@ public:
     //   }
     // }
 
+    // 从左到右，左右到左，用单调栈找左/右边最近的第一个比自己小的数
     for (int tt = 0, i = 0; i < n; i ++ ) {
       while (tt && a[stk[tt]] >= a[i]) tt -- ;
       if (tt) l[i] = stk[tt];

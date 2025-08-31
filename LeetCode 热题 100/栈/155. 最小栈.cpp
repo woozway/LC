@@ -1,4 +1,5 @@
 class MinStack {
+  // 2个栈，一个正常存，另一个存最小值
   stack<int> stk, min_stk;
 
 public:
