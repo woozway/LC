@@ -5,7 +5,7 @@ public:
     stack<string> stk1;
     stack<int> stk2;
 
-    for (int i = 0; i < n; i ++ ) {
+    for (int i = 0; i < n; i ++ )
       if (s[i] == ']') {
         string str = "";
         while (stk1.top() != "[") str = stk1.top() + str, stk1.pop();
@@ -24,7 +24,6 @@ public:
         i = j - 1;
       }
       else stk1.push(string(1, s[i]));
-    }
 
     string res = "";
     while (stk1.size()) res = stk1.top() + res, stk1.pop();
