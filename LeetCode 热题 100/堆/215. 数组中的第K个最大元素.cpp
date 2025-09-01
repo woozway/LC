@@ -18,6 +18,7 @@ public:
     for (int i = 1; i <= n; i ++ ) h[i] = nums[i - 1];
     cnt = n;
 
+    // O(n)建堆
     for (int i = n / 2; i; i -- ) down(i);
 
     int res;
