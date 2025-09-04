@@ -4,7 +4,7 @@ public:
     int n = nums.size();
     auto &a = nums;
 
-    // 数组版，142. 环形链表 II
+    // 数组版环形链表，同见：142. 环形链表 II
     int slow = 0, fast = 0;
     while (1) {
       fast = a[fast], fast = a[fast];
