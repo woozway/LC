@@ -9,7 +9,7 @@ public:
     memset(f, 0, sizeof f);
     for (int i = 0; i < n; i ++ ) f[i][i] = 1;
 
-    // 区间DP问题：st, len
+    // 区间DP问题：最长回文子串起始位置start，长度length
     int start = 0, length = 1;
     for (int len = 2; len <= n; len ++ )
       for (int st = 0; st + len - 1 < n; st ++ )
